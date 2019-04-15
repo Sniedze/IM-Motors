@@ -1,19 +1,21 @@
-import React, { Component } from 'react';
-import Home from './Home.jsx'
-import Inventory from './Inventory.jsx'
-import Finance from './Finance.jsx'
-import AboutUs from './AboutUs.jsx'
+import React, { Component } from "react";
+import { Switch, Route, HashRouter } from "react-router-dom";
+import Home from "./Home.jsx";
+import Inventory from "./Inventory.jsx";
+import Finance from "./Finance.jsx";
+import AboutUs from "./AboutUs.jsx";
 
-class App extends Component {
+export default class App extends Component {
   render() {
     return (
-      <div>
-        <Home />
-        <Inventory />
-        <Finance />
-        <AboutUs />
-      </div>
+      <HashRouter>
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/inventory" component={Inventory} />
+          <Route path="/finance" component={Finance} />
+          <Route path="/about" component={AboutUs} />
+        </Switch>
+      </HashRouter>
     );
-  };
+  }
 }
-export default App;

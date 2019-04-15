@@ -1,11 +1,10 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
+import MotorsLogo from "../assets/logo.png";
 
-class Logo extends Component {
+export default class Logo extends Component {
   render() {
     return (
-      <div>
-      </div>
+      <img className="logoImage" src={MotorsLogo} alt={"Hen in the house"} />
     );
-  };
+  }
 }
-export default Logo;

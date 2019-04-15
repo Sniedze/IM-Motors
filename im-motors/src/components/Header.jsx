@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import Logo from './Logo.jsx'
-import Menu from './Menu.jsx'
+import React, { Component } from "react";
+import Logo from "./Logo.jsx";
+import Menu from "./Menu.jsx";
 
-class Header extends Component {
+export default class Header extends Component {
   render() {
     return (
       <div>
@@ -10,6 +10,5 @@ class Header extends Component {
         <Menu />
       </div>
     );
-  };
+  }
 }
-export default Header;

@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import Header from './Header.jsx'
-import Footer from './Footer.jsx'
+import React, { Component } from "react";
+import Header from "./Header.jsx";
+import Footer from "./Footer.jsx";
 
-class Finance extends Component {
+export default class Finance extends Component {
   render() {
     return (
       <div>
@@ -10,6 +10,5 @@ class Finance extends Component {
         <Footer />
       </div>
     );
-  };
+  }
 }
-export default Finance;

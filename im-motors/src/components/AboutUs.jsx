@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import Header from './Header.jsx'
-import Footer from './Footer.jsx'
+import React, { Component } from "react";
+import Header from "./Header.jsx";
+import Footer from "./Footer.jsx";
 
-class AboutUs extends Component {
+export default class AboutUs extends Component {
   render() {
     return (
       <div>
@@ -10,6 +10,5 @@ class AboutUs extends Component {
         <Footer />
       </div>
     );
-  };
+  }
 }
-export default AboutUs;
