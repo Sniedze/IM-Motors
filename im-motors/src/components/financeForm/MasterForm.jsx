@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import PersonalInfo from "./PersonalInfo.jsx";
-import ResidenceInfo from "./ResidenceInfo.jsx";
+import DriversLicence from "./DriversLicence.jsx";
+// import ResidenceInfo from "./ResidenceInfo.jsx";
 
 export default class MasterForm extends Component {
   constructor(props) {
@@ -12,13 +13,14 @@ export default class MasterForm extends Component {
       lastName: "",
       ssn: "",
       dob: "",
+      startDate: new Date(),
       gender: "",
       phone: "",
       email: "",
-      driverLicence: "",
+      driversLicence: "",
       expiryDate: "",
       country: "",
-      state: "",
+      region: "",
       genderOptions: ["Male", "Female", "Non-binary"]
     };
 
@@ -34,6 +36,7 @@ export default class MasterForm extends Component {
 
     alert("Your application is submitted!");
   };
+
   render() {
     return (
       <React.Fragment>
@@ -47,12 +50,17 @@ export default class MasterForm extends Component {
             middleName={this.state.middleName}
             lastName={this.state.lastName}
             ssn={this.state.ssn}
-            dob={this.state.dob}
+            dob={this.state.startDate}
             gender={this.state.gender}
+            genderPlaceholder="Select Gender"
             genderOptions={this.state.genderOptions}
-            placeholder={"Select Gender"}
             phone={this.state.phone}
             email={this.state.email}
+          />
+          <DriversLicence
+            driversLicence={this.state.driversLicence}
+            expiryDate={this.state.expiryDate}
+            handleChange={this.handleChange}
           />
           {/* <ResidenceInfo /> */}
           <input type="submit" value="Submit" />

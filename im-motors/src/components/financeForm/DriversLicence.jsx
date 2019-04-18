@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import CountrySelection from "./CountrySelection";
+import DateSelector from "./DateSelector.jsx";
 
 export default class DriversLicenceInfo extends Component {
   render() {
@@ -9,33 +11,14 @@ export default class DriversLicenceInfo extends Component {
           <input
             placeholder="Enter Number "
             onChange={this.props.handleChange("driverLicence")}
-            defaultValue={this.props.driverLicence}
+            defaultValue={this.props.driversLicence}
           />
         </div>
         <div>
           <label>D/L Expiry Date</label>
-          <input
-            placeholder="Enter Expiry Date "
-            onChange={this.props.handleChange("expiryDate")}
-            defaultValue={this.props.expiryDate}
-          />
+          <DateSelector placeholder="Enter Expiry Date " />
         </div>
-        <div>
-          <label>Country</label>
-          <select
-            placeholder="Select Country "
-            onChange={this.props.handleChange("country")}
-            defaultValue={this.props.country}
-          />
-        </div>
-        <div>
-          <label>State</label>
-          <select
-            placeholder="Select State "
-            onChange={this.props.handleChange("state")}
-            defaultValue={this.props.state}
-          />
-        </div>
+        <CountrySelection />
       </form>
     );
   }

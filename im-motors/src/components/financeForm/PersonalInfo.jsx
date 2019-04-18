@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import DateSelector from "./DateSelector.jsx";
 
 export default class PersonalInfo extends Component {
   render() {
@@ -39,11 +40,7 @@ export default class PersonalInfo extends Component {
         </div>
         <div>
           <label>DoB</label>
-          <input
-            placeholder="Enter Date of Birth"
-            onChange={this.props.handleChange("DOB")}
-            defaultValue={this.props.dob}
-          />
+          <DateSelector  />
         </div>
         <div>
           <label>Gender</label>
@@ -52,7 +49,7 @@ export default class PersonalInfo extends Component {
             defaultValue={this.props.gender}
           >
             <option value="" disabled>
-              {this.props.placeholder}
+              {this.props.genderPlaceholder}
             </option>
             {this.props.genderOptions.map(option => {
               return (
@@ -78,22 +75,6 @@ export default class PersonalInfo extends Component {
             placeholder="Email Address"
             onChange={this.props.handleChange("email")}
             defaultValue={this.props.email}
-          />
-        </div>
-        <div>
-          <label>D/L#</label>
-          <input
-            placeholder="Driver Licence Number "
-            onChange={this.props.handleChange("driverLicence")}
-            defaultValue={this.props.driverLicence}
-          />
-        </div>
-        <div>
-          <label>D/L Expiry Date</label>
-          <input
-            placeholder="D/L Expiry Date "
-            onChange={this.props.handleChange("dLExpiry")}
-            defaultValue={this.props.dLExpiry}
           />
         </div>
       </div>
