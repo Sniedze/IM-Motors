@@ -7,10 +7,7 @@ export default class MasterForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentStep: 1,
-      firstName: "",
-      middleName: "",
-      lastName: "",
+      fullName: "",
       ssn: "",
       dob: "",
       startDate: new Date(),
@@ -21,14 +18,51 @@ export default class MasterForm extends Component {
       expiryDate: "",
       country: "",
       region: "",
-      genderOptions: ["Male", "Female", "Non-binary"]
+      genderOptions: ["Male", "Female", "Non-binary"],
+      errors: {
+        fullName: "",
+        ssn: "",
+        dob: "",
+        phone: "",
+        email: "",
+        gender: ""
+      }
     };
 
-    this.handleChange = this.handleChange.bind(this);
+    // this.handleChange = this.handleChange.bind(this);
   }
   handleChange = name => event => {
-    this.setState({
-      [name]: event.target.value
+    event.preventDefault();
+    const { name, value } = event.target;
+    const validSsn = RegExp(/^\d{9}$/);
+    const validPhone = RegExp(
+      /^[+]?(1-|1\s|1|\d{3}-|\d{3}\s|)?((\(\d{3}\))|\d{3})(-|\s)?(\d{3})(-|\s)?(\d{4})$/g
+    );
+    const validEmailRegex = RegExp(
+      /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/
+    );
+    let errors = this.state.errors;
+    switch (name) {
+      case "fullName":
+        errors.fullName =
+          value.length < 5 ? "Full Name must be 5 characters long!" : "";
+        break;
+      case "ssn":
+        errors.ssn = validSsn.test(value) ? "" : "Enter valid SSN";
+        break;
+      case "phone":
+        errors.phone = validPhone.test(value) ? "" : "Enter valid phone number";
+        break;
+      case "email":
+        errors.email = validEmailRegex.test(value) ? "" : "Email is not valid!";
+        break;
+
+      default:
+        break;
+    }
+
+    this.setState({ errors, [name]: value }, () => {
+      console.log(errors);
     });
   };
   handleSubmit = event => {
@@ -41,8 +75,8 @@ export default class MasterForm extends Component {
     return (
       <React.Fragment>
         <h1>Application for Credit</h1>
-        <h3>Step{this.state.currentStep}</h3>
-        <form onSubmit={this.handleSubmit}>
+
+        <form onSubmit={this.handleSubmit} noValidate>
           <PersonalInfo
             currentStep={this.state.currentStep}
             handleChange={this.handleChange}

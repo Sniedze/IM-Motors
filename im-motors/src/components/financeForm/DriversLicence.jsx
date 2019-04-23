@@ -5,7 +5,7 @@ import DateSelector from "./DateSelector.jsx";
 export default class DriversLicenceInfo extends Component {
   render() {
     return (
-      <form className="drivers-licence-info">
+      <div className="drivers-licence-info">
         <div>
           <label>D/L#</label>
           <input
@@ -19,7 +19,7 @@ export default class DriversLicenceInfo extends Component {
           <DateSelector placeholder="Enter Expiry Date " />
         </div>
         <CountrySelection />
-      </form>
+      </div>
     );
   }
 }

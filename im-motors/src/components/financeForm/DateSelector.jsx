@@ -1,5 +1,7 @@
 import React from "react";
 import DatePicker from "react-datepicker";
+
+
 import "react-datepicker/dist/react-datepicker.css";
 
 export default class DateSelector extends React.Component {
@@ -23,6 +25,7 @@ export default class DateSelector extends React.Component {
         selected={this.state.startDate}
         onChange={this.handleChange}
         placeholderText="Click to select a date"
+        dateFormat="dd.MM.YYYY"
       />
     );
   }
