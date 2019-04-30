@@ -10,8 +10,9 @@ export default class DriversLicenceInfo extends Component {
           <label>D/L#</label>
           <input
             placeholder="Enter Number "
-            onChange={this.props.handleChange("driverLicence")}
+            onChange={this.props.handleChange("driversLicence")}
             defaultValue={this.props.driversLicence}
+            name="driversLicence"
           />
         </div>
         <div>

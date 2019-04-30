@@ -9,6 +9,7 @@ export default class CountrySelection extends Component {
 
   selectCountry(val) {
     this.setState({ country: val });
+    console.log(val);
   }
 
   selectRegion(val) {
@@ -22,11 +23,13 @@ export default class CountrySelection extends Component {
         <CountryDropdown
           value={country}
           onChange={val => this.selectCountry(val)}
+          name="country"
         />
         <RegionDropdown
           country={country}
           value={region}
           onChange={val => this.selectRegion(val)}
+          name="region"
         />
       </div>
     );

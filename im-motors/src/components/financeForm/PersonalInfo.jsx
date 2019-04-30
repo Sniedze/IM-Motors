@@ -12,6 +12,8 @@ export default class PersonalInfo extends Component {
             onChange={this.props.handleChange("fullName")}
             defaultValue={this.props.fullName}
             name="fullName"
+            noValidate
+            required={true}
           />
         </div>
         <div>
@@ -22,6 +24,8 @@ export default class PersonalInfo extends Component {
             onChange={this.props.handleChange("ssn#")}
             defaultValue={this.props.ssn}
             name="ssn"
+            noValidate
+            required
           />
         </div>
         <div>
@@ -34,10 +38,9 @@ export default class PersonalInfo extends Component {
             onChange={this.props.handleChange("gender")}
             defaultValue={this.props.gender}
             name="gender"
+            noValidate
           >
-            <option value="" disabled>
-              {this.props.genderPlaceholder}
-            </option>
+            <option value="">{this.props.genderPlaceholder}</option>
             {this.props.genderOptions.map(option => {
               return (
                 <option key={option} value={option} label={option}>
@@ -54,6 +57,8 @@ export default class PersonalInfo extends Component {
             onChange={this.props.handleChange("phone")}
             defaultValue={this.props.phone}
             name="phone"
+            noValidate
+            required
           />
         </div>
         <div>
@@ -63,6 +68,8 @@ export default class PersonalInfo extends Component {
             onChange={this.props.handleChange("email")}
             defaultValue={this.props.email}
             name="email"
+            noValidate
+            required
           />
         </div>
       </div>

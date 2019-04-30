@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import PersonalInfo from "./PersonalInfo.jsx";
 import DriversLicence from "./DriversLicence.jsx";
+import "../../sass/App.scss";
 // import ResidenceInfo from "./ResidenceInfo.jsx";
 
 export default class MasterForm extends Component {
@@ -9,15 +10,15 @@ export default class MasterForm extends Component {
     this.state = {
       fullName: "",
       ssn: "",
-      dob: "",
-      startDate: new Date(),
+      //dob: "",
+      //startDate: new Date(),
       gender: "",
       phone: "",
       email: "",
       driversLicence: "",
-      expiryDate: "",
-      country: "",
-      region: "",
+      //expiryDate: "",
+      //country: "",
+      //region: "",
       genderOptions: ["Male", "Female", "Non-binary"],
       errors: {
         fullName: "",
@@ -28,8 +29,6 @@ export default class MasterForm extends Component {
         gender: ""
       }
     };
-
-    // this.handleChange = this.handleChange.bind(this);
   }
   handleChange = name => event => {
     event.preventDefault();
@@ -67,24 +66,43 @@ export default class MasterForm extends Component {
   };
   handleSubmit = event => {
     event.preventDefault();
-
-    alert("Your application is submitted!");
+    const validateForm = errors => {
+      let valid = true;
+      Object.values(errors).map(
+        // if we have an error string set valid to false
+        val => val.length > 0 && (valid = false)
+      );
+      return valid;
+    };
+    if (validateForm(this.state.errors)) {
+      console.info("Valid Form");
+      const form = event.target;
+      const data = new FormData(event.target.value);
+      const options = {
+        method: "POST",
+        body: data
+      };
+      //delete options.headers["Content-Type"];
+      fetch(
+        "https://5cc0aaa482ec6a00149f3e37.mockapi.io/applications",
+        options
+      );
+    } else {
+      console.error("Invalid Form");
+    }
   };
 
   render() {
     return (
       <React.Fragment>
         <h1>Application for Credit</h1>
-
         <form onSubmit={this.handleSubmit} noValidate>
           <PersonalInfo
-            currentStep={this.state.currentStep}
             handleChange={this.handleChange}
             firstName={this.state.firstName}
             middleName={this.state.middleName}
             lastName={this.state.lastName}
             ssn={this.state.ssn}
-            dob={this.state.startDate}
             gender={this.state.gender}
             genderPlaceholder="Select Gender"
             genderOptions={this.state.genderOptions}
