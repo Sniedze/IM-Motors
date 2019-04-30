@@ -4,7 +4,7 @@ import Home from "./Home.jsx";
 import Inventory from "./Inventory.jsx";
 import Finance from "./Finance.jsx";
 import AboutUs from "./AboutUs.jsx";
-import Car from "./Car.jsx";
+import CarInfo from "./Car.jsx";
 
 export default class App extends Component {
   render() {
@@ -15,7 +15,7 @@ export default class App extends Component {
           <Route path="/inventory" component={Inventory} />
           <Route path="/finance" component={Finance} />
           <Route path="/about" component={AboutUs} />
-          <Route path="/car" component={Car} />
+          <Route path="/inventory/:carId" component={CarInfo} />
         </Switch>
       </HashRouter>
     );
