@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-import DateSelector from "./DateSelector.jsx";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import { CountryDropdown, RegionDropdown } from "react-country-region-selector";
 
 export default class PersonalInfo extends Component {
   render() {
@@ -30,7 +32,13 @@ export default class PersonalInfo extends Component {
         </div>
         <div>
           <label>DoB</label>
-          <DateSelector />
+          <DatePicker
+            selected={this.props.dob}
+            onChange={this.props.handleChangeDob}
+            placeholder="Click to select a date"
+            dateFormat="dd.MM.YYYY"
+            name="dob"
+          />
         </div>
         <div>
           <label>Gender</label>
@@ -72,6 +80,38 @@ export default class PersonalInfo extends Component {
             required
           />
         </div>
+        <div>
+          <label>D/L#</label>
+          <input
+            placeholder="Enter Number "
+            onChange={this.props.handleChange("driversLicence")}
+            defaultValue={this.props.driversLicence}
+            name="driversLicence"
+          />
+        </div>
+        <div>
+          <label>Expiry Date</label>
+          <DatePicker
+            selected={this.props.expiryDate}
+            onChange={this.props.handleChangeExpiry}
+            placeholder="Click to select a date"
+            dateFormat="dd.MM.YYYY"
+            name="expiryDate"
+          />
+        </div>
+        <label>D/L Country</label>
+        <CountryDropdown
+          value={this.props.country}
+          onChange={this.props.handleChangeCountry}
+          name="country"
+        />
+        <label>D/L Region</label>
+        <RegionDropdown
+          country={this.props.country}
+          value={this.props.region}
+          onChange={this.props.handleChangeRegion}
+          name="region"
+        />
       </div>
     );
   }

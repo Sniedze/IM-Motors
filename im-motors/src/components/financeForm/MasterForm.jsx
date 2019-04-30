@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import PersonalInfo from "./PersonalInfo.jsx";
-import DriversLicence from "./DriversLicence.jsx";
 import "../../sass/App.scss";
 // import ResidenceInfo from "./ResidenceInfo.jsx";
 
@@ -10,15 +9,14 @@ export default class MasterForm extends Component {
     this.state = {
       fullName: "",
       ssn: "",
-      //dob: "",
-      //startDate: new Date(),
+      dob: new Date(),
       gender: "",
       phone: "",
       email: "",
       driversLicence: "",
-      //expiryDate: "",
-      //country: "",
-      //region: "",
+      expiryDate: new Date(),
+      country: "",
+      region: "",
       genderOptions: ["Male", "Female", "Non-binary"],
       errors: {
         fullName: "",
@@ -30,6 +28,31 @@ export default class MasterForm extends Component {
       }
     };
   }
+
+  selectCountry = val => {
+    this.setState({
+      country: val
+    });
+  };
+
+  selectRegion = val => {
+    this.setState({
+      region: val
+    });
+  };
+
+  handleChangeDob = date => {
+    this.setState({
+      dob: date
+    });
+  };
+
+  handleChangeExpiry = date => {
+    this.setState({
+      expiryDate: date
+    });
+  };
+
   handleChange = name => event => {
     event.preventDefault();
     const { name, value } = event.target;
@@ -77,7 +100,8 @@ export default class MasterForm extends Component {
     if (validateForm(this.state.errors)) {
       console.info("Valid Form");
       const form = event.target;
-      const data = new FormData(event.target.value);
+      const data = { [event.target.name]: event.target.value };
+      console.log(this.state);
       const options = {
         method: "POST",
         body: data
@@ -98,6 +122,10 @@ export default class MasterForm extends Component {
         <h1>Application for Credit</h1>
         <form onSubmit={this.handleSubmit} noValidate>
           <PersonalInfo
+            handleChangeCountry={this.selectCountry}
+            handleChangeRegion={this.selectRegion}
+            handleChangeDob={this.handleChangeDob}
+            handleChangeExpiry={this.handleChangeExpiry}
             handleChange={this.handleChange}
             firstName={this.state.firstName}
             middleName={this.state.middleName}
@@ -108,11 +136,11 @@ export default class MasterForm extends Component {
             genderOptions={this.state.genderOptions}
             phone={this.state.phone}
             email={this.state.email}
-          />
-          <DriversLicence
             driversLicence={this.state.driversLicence}
             expiryDate={this.state.expiryDate}
-            handleChange={this.handleChange}
+            dob={this.state.dob}
+            country={this.state.country}
+            region={this.state.region}
           />
           {/* <ResidenceInfo /> */}
           <input type="submit" value="Submit" />
