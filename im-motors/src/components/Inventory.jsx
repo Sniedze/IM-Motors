@@ -17,7 +17,6 @@ export default class Inventory extends Component {
     fetch(`https://5be00dbef2ef840013994a6d.mockapi.io/users/`)
       .then(e => e.json())
       .then(result => {
-        console.log(result);
         this.setState({ data: result });
       });
   }
@@ -25,7 +24,6 @@ export default class Inventory extends Component {
     let person = this.state.data.map(item => (
       <>
         <NavLink to={`/inventory/${item.id}`} activeClassName="active">
-          <Route path="/inventory/:carId" component={CarInfo} />
           <div key={item.id}>
             <h1 key={item.createdAt}>{item.name}</h1>
             <img key={item.comment} src={item.avatar} alt="Profile" />
@@ -36,6 +34,11 @@ export default class Inventory extends Component {
     return (
       <div>
         <Header />
+        <Route
+          path="/inventory/:carId"
+          component={CarInfo}
+          props={this.state.data}
+        />
         {person}
         <Footer />
       </div>
