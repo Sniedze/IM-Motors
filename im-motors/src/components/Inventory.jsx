@@ -3,8 +3,6 @@ import Header from "./Header.jsx";
 import Footer from "./Footer.jsx";
 import { Link, Route, Switch } from "react-router-dom";
 import CarInfo from "./Car.jsx";
-//import { Switch, Route, HashRouter } from "react-router-dom";
-//import Subpage from "./Subpage.jsx";
 
 export default class Inventory extends Component {
   constructor() {
@@ -22,34 +20,27 @@ export default class Inventory extends Component {
   }
 
   render() {
-    let person = this.state.data.map(item => (
-      <>
-        <Switch>
-          <Route path="/inventory/:carId" component={CarInfo} />
-          <Link to={`/inventory/${item.id}`}>
-            <div key={item.id}>
-              <h1 key={item.createdAt}>{item.name}</h1>
-              <img key={item.comment} src={item.avatar} alt="Profile" />
-            </div>
-          </Link>
-        </Switch>
-      </>
+    let cars = this.state.data.map(item => (
+      <Link to={`/inventory/${item.id}`} key={`/inventory/${item.id}`}>
+        <h1 key={item.createdAt}>{item.name}</h1>
+        <img key={item.comment} src={item.avatar} alt="Profile" />
+      </Link>
     ));
-    let link = (
+    let inventoryNav = (
       <Switch>
         <Route path="/inventory/:carId" component={CarInfo} />
-        <Link to={`/inventory/${person.id}`}>{person}</Link>
+        <>
+          <nav>{cars}</nav>
+        </>
       </Switch>
     );
-    {
-      return (
-        <div>
-          <Header />
-          {link}
-          <Footer />
-        </div>
-      );
-    }
+
+    return (
+      <>
+        <Header />
+        {inventoryNav}
+        <Footer />
+      </>
+    );
   }
 }
-// {/* <Route path="/inventory/:carId" component={CarInfo} /> */}
