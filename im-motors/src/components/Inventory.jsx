@@ -1,18 +1,17 @@
 import React, { Component } from "react";
 import Header from "./Header.jsx";
 import Footer from "./Footer.jsx";
-import { NavLink, Route, Switch, HashRouter } from "react-router-dom";
+import { Link, Route, Switch } from "react-router-dom";
 import CarInfo from "./Car.jsx";
 //import { Switch, Route, HashRouter } from "react-router-dom";
 //import Subpage from "./Subpage.jsx";
 
 export default class Inventory extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
       data: []
     };
-    //this.handler = this.handler.bind(this);
   }
   componentDidMount() {
     fetch(`https://5be00dbef2ef840013994a6d.mockapi.io/users/`)
@@ -22,35 +21,35 @@ export default class Inventory extends Component {
       });
   }
 
-  /*   handler() {
-    this.setState({
-      fullInventory: !false
-    });
-  } */
   render() {
     let person = this.state.data.map(item => (
       <>
-        <NavLink
-          to={`/inventory/${item.id}`}
-          activeClassName="active"
-          /* onClick={this.handler} */
-        >
-          <div key={item.id}>
-            <h1 key={item.createdAt}>{item.name}</h1>
-            <img key={item.comment} src={item.avatar} alt="Profile" />
-          </div>
-        </NavLink>
+        <Switch>
+          <Route path="/inventory/:carId" component={CarInfo} />
+          <Link to={`/inventory/${item.id}`}>
+            <div key={item.id}>
+              <h1 key={item.createdAt}>{item.name}</h1>
+              <img key={item.comment} src={item.avatar} alt="Profile" />
+            </div>
+          </Link>
+        </Switch>
       </>
     ));
+    let link = (
+      <Switch>
+        <Route path="/inventory/:carId" component={CarInfo} />
+        <Link to={`/inventory/${person.id}`}>{person}</Link>
+      </Switch>
+    );
     {
       return (
         <div>
           <Header />
-          <Route path="/inventory/:carId" component={CarInfo} />
-          {person}
+          {link}
           <Footer />
         </div>
       );
     }
   }
 }
+// {/* <Route path="/inventory/:carId" component={CarInfo} /> */}
