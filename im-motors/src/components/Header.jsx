@@ -5,10 +5,10 @@ import Menu from "./Menu.jsx";
 export default class Header extends Component {
   render() {
     return (
-      <div>
+      <header>
         <Logo />
         <Menu />
-      </div>
+      </header>
     );
   }
 }
