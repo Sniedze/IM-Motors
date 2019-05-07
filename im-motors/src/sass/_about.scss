@@ -1,0 +1,71 @@
+$graycolor: #cecece;
+$fontfamily: "Kanit", sans-serif;
+@mixin displyFlex {
+  display: flex;
+  justify-content: space-around;
+}
+.body p {
+  padding: 0 1em;
+}
+.header {
+  padding: 1em;
+  display: flex;
+  justify-content: space-between;
+  img {
+    width: 10%;
+    height: 20%;
+  }
+}
+nav {
+  ul {
+    @include displyFlex;
+    list-style: none;
+    li {
+      padding: 0 1em;
+      a {
+        text-decoration: none;
+        color: white;
+        font-family: $fontfamily;
+      }
+    }
+  }
+}
+.form-container {
+  padding: 1em;
+  box-shadow: 1px 1px 20px darkgray;
+  margin-left: 2em;
+}
+.all-contact-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 3%;
+}
+.contact-info-wrapper {
+  box-shadow: 1px 1px 20px darkgray;
+  margin-right: 2em;
+}
+.social-wrapper {
+  @include displyFlex;
+  width: 40%;
+  .social {
+    width: 2em;
+    height: 2em;
+    // border: 1px solid red;
+  }
+  #fb {
+    background: url(../assets/fbwhite.png) no-repeat;
+    background-position: center;
+    background-size: 40%;
+  }
+  #tweeter {
+    background: url(../assets/twitter.png) no-repeat;
+    background-position: center;
+    background-size: 60%;
+  }
+
+  #email {
+    background: url(../assets/mail.png) no-repeat;
+    background-position: center;
+    background-size: 60%;
+  }
+}

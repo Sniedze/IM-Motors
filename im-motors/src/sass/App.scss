@@ -2,3 +2,10 @@
 @import "inventory";
 @import "finance";
 @import "about";
+@import "header";
+$graycolor: #cecece;
+$redcolor: #e52528;
+$fontfamily: "Kanit", sans-serif;
+.body {
+  width: 100vw;
+}
