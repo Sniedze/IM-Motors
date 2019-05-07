@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PersonalInfo from "./PersonalInfo.jsx";
-
 import ResidenceInfo from "./ResidenceInfo.jsx";
+import EmploymentInfo from "./EmploymentInfo.jsx";
 
 const validateForm = ({ errors, ...rest }) => {
   let valid = true;
@@ -38,7 +38,25 @@ export default class MasterForm extends Component {
       zip: null,
       years: null,
       months: null,
+      type: "",
       payment: null,
+      employmentChoice: "",
+      explanation: "",
+      additionalIncome: "",
+      status: "",
+      employer: null,
+      employmentAddress: null,
+      employmentCity: null,
+      employmentCountry: null,
+      employmentRegion: null,
+      employmentZip: null,
+      employmentYears: null,
+      employmentMonths: null,
+      workPhone: null,
+      income: null,
+      frequency: null,
+      occupation: null,
+      supervisor: "",
 
       errors: {
         fullName: "",
@@ -55,7 +73,19 @@ export default class MasterForm extends Component {
         zip: "",
         years: "",
         months: "",
-        payment: ""
+        payment: "",
+        employer: "",
+        employmentAddress: "",
+        employmentCity: "",
+        employmentCountry: "",
+        employmentRegion: "",
+        employmentZip: "",
+        employmentYears: "",
+        employmentMonths: "",
+        workPhone: "",
+        income: "",
+        frequency: "",
+        occupation: ""
       }
     };
   }
@@ -73,13 +103,25 @@ export default class MasterForm extends Component {
   };
   selectResidenceCountry = val => {
     this.setState({
-      country: val
+      residenceCountry: val
+    });
+  };
+
+  selectEmploymentRegion = val => {
+    this.setState({
+      residenceRegion: val
+    });
+  };
+
+  selectEmploymentCountry = val => {
+    this.setState({
+      residenceCountry: val
     });
   };
 
   selectResidenceRegion = val => {
     this.setState({
-      region: val
+      residenceRegion: val
     });
   };
 
@@ -143,7 +185,53 @@ export default class MasterForm extends Component {
         break;
       case "payment":
         errors.payment =
-          value.length < 2 ? "Enter monthly residence payment" : "";
+          value.length < 1 ? "Enter monthly residence payment" : "";
+        break;
+      case "employer":
+        errors.employer =
+          value.length < 3
+            ? "Employer name must be min 3 characters long!"
+            : "";
+        break;
+
+      case "workPhone":
+        errors.workPhone = validPhone.test(value)
+          ? ""
+          : "Enter valid phone number";
+        break;
+
+      case "employmentCity":
+        errors.employmentCity =
+          value.length < 3 ? "City name must be min 3 characters long!" : "";
+        break;
+      case "employmentRegion":
+        errors.employmentRegion =
+          value.length < 3 ? "State/Region must be min 3 characters long!" : "";
+        break;
+      case "employmentCountry":
+        errors.employmentCountry =
+          value.length < 3 ? "Country must be min 3 characters long!" : "";
+        break;
+      case "employmentZip":
+        errors.employmentZip = value.length < 1 ? "Enter valdi ZIP code" : "";
+        break;
+      case "employmentYears":
+        errors.employmentYears =
+          value.length < 1 ? "Enter time of employment" : "";
+        break;
+      case "employmentMonths":
+        errors.employmentMonths =
+          value.length < 1 ? "Enter time of employment" : "";
+        break;
+      case "income":
+        errors.income = value.length < 1 ? "Enter your income" : "";
+        break;
+      case "frequency":
+        errors.frequency =
+          value.length < 1 ? "Enter your income frequency" : "";
+        break;
+      case "occupation":
+        errors.occupation = value.length < 1 ? "Enter your occupation" : "";
         break;
 
       default:
@@ -208,7 +296,6 @@ export default class MasterForm extends Component {
             fulltName={this.state.fullName}
             ssn={this.state.ssn}
             gender={this.state.gender}
-            genderPlaceholder="Select Gender"
             genderOptions={this.state.genderOptions}
             phone={this.state.phone}
             email={this.state.email}
@@ -229,12 +316,36 @@ export default class MasterForm extends Component {
             zip={this.state.zip}
             years={this.state.years}
             months={this.state.years}
+            type={this.state.type}
             payment={this.state.payment}
             errors={this.state.errors}
             handleChange={this.handleChange}
             handleChangeCountry={this.selectResidenceCountry}
             handleChangeRegion={this.selectResidenceRegion}
           />
+          <EmploymentInfo
+            employmentChoice={this.state.employmentChoice}
+            explanation={this.state.explanation}
+            additionalIncome={this.state.additionalIncome}
+            selfEmployed={this.state.selfEmployed}
+            status={this.state.status}
+            employer={this.state.employer}
+            employmentAddress={this.state.employmentAddress}
+            employmentCity={this.state.employmentCity}
+            employmentCountry={this.state.employmentCountry}
+            employmentRegion={this.state.employmentRegion}
+            employmentZip={this.state.employmentZip}
+            employmentYears={this.state.employmentYears}
+            employmentMonths={this.state.employmentMonths}
+            workPhone={this.state.workPhone}
+            income={this.state.income}
+            frequency={this.state.frequency}
+            occupation={this.state.occupation}
+            supervisor={this.state.supervisor}
+            handleChangeCountry={this.selectEmploymentCountry}
+            handleChangeRegion={this.selectEmploymentRegion}
+          />
+
           <input type="submit" value="Submit" />
         </form>
       </React.Fragment>

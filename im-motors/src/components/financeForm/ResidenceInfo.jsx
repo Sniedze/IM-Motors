@@ -65,10 +65,26 @@ export default class ResidenceInfo extends Component {
             <span className="errorMessage">{this.props.errors.city}</span>
           )}
         </div>
+
+        <div className=" input-field residence-country">
+          <label>Country</label>
+          <span className="required">*</span>
+          <CountryDropdown
+            value={this.props.residenceCountry}
+            onChange={this.props.handleChangeCountry}
+            name="residenceCountry"
+          />
+          {this.props.errors.residenceCountry.length > 0 && (
+            <span className="errorMessage">
+              {this.props.errors.residenceCountry}
+            </span>
+          )}
+        </div>
         <div className=" input-field residence-region">
           <label> State/Region</label>
+          <span className="required">*</span>
           <RegionDropdown
-            country={this.props.residenceRegion}
+            country={this.props.residenceCountry}
             value={this.props.residenceRegion}
             onChange={this.props.handleChangeRegion}
             name="residenceRegion"
@@ -79,17 +95,108 @@ export default class ResidenceInfo extends Component {
             </span>
           )}
         </div>
-        <div className=" input-field residence-country">
-          <label>Country</label>
-          <CountryDropdown
-            value={this.props.residenceCountry}
-            onChange={this.props.handleChangeCountry}
-            name="residenceCountry"
+        <div className=" input-field zip">
+          <label>Zip</label>
+          <span className="required">*</span>
+          <input
+            placeholder="Enter the Zip"
+            onChange={this.props.handleChange}
+            defaultValue={this.props.zip}
+            name="zip"
+            noValidate
+            required
           />
-          {this.props.errors.residenceCity.length > 0 && (
-            <span className="errorMessage">
-              {this.props.errors.residenceCity}
-            </span>
+          {this.props.errors.zip.length > 0 && (
+            <span className="errorMessage">{this.props.errors.zip}</span>
+          )}
+        </div>
+        <div className=" input-field time">
+          <label>Time at Residence</label>
+          <span className="required">*</span>
+          <select
+            onChange={this.props.handleChange}
+            defaultValue={this.props.years}
+            name="years"
+            noValidate
+          >
+            <option value="" label="-Years-" />
+            <option key="1" value="1" label="1" />
+            <option key="2" value="2" label="2" />
+            <option key="3" value="3" label="3" />
+            <option key="4" value="4" label="4" />
+            <option key="5" value="5" label="5" />
+            <option key="6" value="6" label="6" />
+            <option key="7" value="7" label="7" />
+            <option key="8" value="8" label="8" />
+            <option key="9" value="9" label="9" />
+            <option key="10" value="1" label="1" />
+            <option key="11" value="2" label="2" />
+            <option key="12" value="3" label="3" />
+            <option key="13" value="1" label="1" />
+            <option key="14" value="2" label="2" />
+            <option key="15" value="3" label="3" />
+            <option key="16" value="16" label="16" />
+            <option key="17" value="17" label="17" />
+            <option key="18" value="18" label="18" />
+            <option key="19" value="19" label="19" />
+            <option key="20" value="20+" label="20+" />
+          </select>
+          {this.props.errors.city.length > 0 && (
+            <span className="errorMessage">{this.props.errors.years}</span>
+          )}
+          <select
+            onChange={this.props.handleChange}
+            defaultValue={this.props.months}
+            name="months"
+            noValidate
+          >
+            <option value="" label="-Months-" />
+            <option key="one" value="1" label="1" />
+            <option key="two" value="2" label="2" />
+            <option key="three" value="3" label="3" />
+            <option key="four" value="4" label="4" />
+            <option key="five" value="5" label="5" />
+            <option key="six" value="6" label="6" />
+            <option key="seven" value="7" label="7" />
+            <option key="eight" value="8" label="8" />
+            <option key="nine" value="9" label="9" />
+            <option key="ten" value="10" label="10" />
+            <option key="eleven" value="11" label="11" />
+          </select>
+          {this.props.errors.months.length > 0 && (
+            <span className="errorMessage">{this.props.errors.months}</span>
+          )}
+        </div>
+        <div className=" input-field residence-type">
+          <label>Residence Type</label>
+          <select
+            onChange={this.props.handleChange}
+            defaultValue={this.props.type}
+            name="type"
+            noValidate
+          >
+            <option value="" label="--" />
+            <option key="family" value="With family" label="With family" />
+            <option key="military" value="Military" label="Military" />
+            <option key="mortgage" value="Own-mortgage" label="Own-mortgage" />
+            <option key="outright" value="Own-outright" label="Own-outright" />
+            <option key="rent" value="Rent" label="Rent" />
+            <option key="other" value="Other" label="Other" />
+          </select>
+        </div>
+        <div className=" input-field payment">
+          <label>Monthly payment $</label>
+          <span className="required">*</span>
+          <input
+            placeholder="If none, enter 0"
+            onChange={this.props.handleChange}
+            defaultValue={this.props.payment}
+            name="payment"
+            noValidate
+            required
+          />
+          {this.props.errors.payment.length > 0 && (
+            <span className="errorMessage">{this.props.errors.payment}</span>
           )}
         </div>
       </div>
