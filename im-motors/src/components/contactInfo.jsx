@@ -12,10 +12,9 @@ class ContactInfo extends Component {
         <div>
           Working hours
           <ul>
-            <li>Monday-Thursday : 8:00-16:00 </li>
-            <li>Monday-Thursday : 8:00-16:00 </li>
-            <li>Friday : 8:00-15:00 </li>
-            <li>Saturday-Sunday : 9:00-12:00 </li>
+            <li>Monday-Friday : 8:00-18:00 </li>
+            <li>Saturday : 8:00-16:00 </li>
+            <li>Sunday : By appointment only </li>
           </ul>
         </div>
       </div>
