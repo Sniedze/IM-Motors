@@ -16,6 +16,7 @@ $fontfamily: "Kanit", sans-serif;
     height: 20%;
   }
 }
+
 nav {
   ul {
     @include displyFlex;
@@ -43,6 +44,14 @@ nav {
 .contact-info-wrapper {
   box-shadow: 1px 1px 20px darkgray;
   margin-right: 2em;
+  display: grid;
+  padding: 1em;
+  .contact-info {
+    .fa,
+    .fas {
+      color: navy;
+    }
+  }
 }
 .social-wrapper {
   @include displyFlex;
@@ -53,19 +62,35 @@ nav {
     // border: 1px solid red;
   }
   #fb {
-    background: url(../assets/fbwhite.png) no-repeat;
+    background: url(../assets/fb.png) no-repeat;
     background-position: center;
-    background-size: 40%;
+    background-size: 32%;
   }
   #tweeter {
-    background: url(../assets/twitter.png) no-repeat;
+    background: url(../assets/tweeterblue.png) no-repeat;
     background-position: center;
     background-size: 60%;
   }
 
   #email {
-    background: url(../assets/email.png) no-repeat;
+    background: url(../assets/blueemail.png) no-repeat;
     background-position: center;
     background-size: 60%;
   }
+}
+.working-hours {
+  h4 {
+    font-size: 1.5em;
+  }
+  ul {
+    font-size: 60%;
+    padding-left: 1em;
+    li {
+      list-style: none;
+    }
+  }
+}
+.contact-info-wrapper,
+.form-container {
+  background-color: white;
 }
