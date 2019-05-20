@@ -9,3 +9,54 @@ $fontfamily: "Kanit", sans-serif;
 .body {
   width: 100vw;
 }
+
+@mixin display-grid {
+  display: -ms-grid;
+  display: grid;
+}
+
+body {
+  background-color: #cecece;
+  header {
+    .logoImage {
+      width: 150px;
+    }
+    .active {
+      border-bottom: red 3px solid;
+    }
+
+    nav {
+      margin: 0 auto;
+      @media only screen and (min-width: 370px) {
+        //   position: absolute;
+        //   left: 20%;
+        //   top: 0;
+      }
+
+      ul {
+        font-size: 25pt;
+        @media only screen and (max-width: 370px) {
+          padding: 5px;
+        }
+        li {
+          list-style: none;
+          cursor: pointer;
+          display: inline-block;
+          padding: 25px;
+          @media only screen and (max-width: 370px) {
+            display: inline-block;
+            font-size: 17pt;
+          }
+
+          a {
+            text-decoration: none;
+            color: #ffffff;
+          }
+          a:hover {
+            color: #999b98;
+          }
+        }
+      }
+    }
+  }
+}
