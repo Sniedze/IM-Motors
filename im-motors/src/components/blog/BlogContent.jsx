@@ -18,7 +18,6 @@ export default class PersonalInfo extends Component {
     return (
       <Switch>
         <Route path="/blog/:articleId" component={Article} />
-
         <nav>{articleLinks}</nav>
       </Switch>
     );
