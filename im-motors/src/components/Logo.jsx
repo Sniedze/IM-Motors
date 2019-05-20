@@ -5,7 +5,7 @@ import whatWeDo from "../assets/what-we-do.png";
 export default class Logo extends Component {
   render() {
     return (
-      <img className="logoImage" src={MotorsLogo} alt={"Hen in the house"} />
+      <img className="logoImage" src={MotorsLogo} alt={"IM Motors logo"} />
     );
   }
 }

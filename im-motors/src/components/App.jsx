@@ -14,7 +14,7 @@ export default class App extends Component {
           <Route path="/" exact component={Home} />
           <Route path="/inventory" component={Inventory} />
           <Route path="/finance" component={Finance} />
-          {/* <Route path="/about" component={AboutUs} /> */}
+          <Route path="/about" component={AboutUs} /> /}
           <Route path="/blog" component={Blog} />
         </Switch>
       </HashRouter>
