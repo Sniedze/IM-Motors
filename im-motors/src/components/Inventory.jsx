@@ -3,6 +3,7 @@ import Header from "./Header.jsx";
 import Footer from "./Footer.jsx";
 import { Link, Route, Switch } from "react-router-dom";
 import CarInfo from "./Car.jsx";
+import SortButtons from "./sortInventory";
 
 export default class Inventory extends Component {
   constructor() {
@@ -20,7 +21,7 @@ export default class Inventory extends Component {
   }
 
   render() {
-    let cars = this.state.data.map(item => (
+    let carsLinks = this.state.data.map(item => (
       <Link to={`/inventory/${item.id}`} key={`/inventory/${item.id}`}>
         <h1 key={item.createdAt}>{item.name}</h1>
         <img key={item.comment} src={item.avatar} alt="Profile" />
@@ -30,7 +31,7 @@ export default class Inventory extends Component {
       <Switch>
         <Route path="/inventory/:carId" component={CarInfo} />
         <>
-          <nav>{cars}</nav>
+          <nav>{carsLinks}</nav>
         </>
       </Switch>
     );
@@ -38,6 +39,7 @@ export default class Inventory extends Component {
     return (
       <>
         <Header />
+        <SortButtons fetched={this.state.data} />
         {inventoryNav}
         <Footer />
       </>
