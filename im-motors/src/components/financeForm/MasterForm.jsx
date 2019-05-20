@@ -57,6 +57,7 @@ export default class MasterForm extends Component {
       frequency: null,
       occupation: null,
       supervisor: "",
+     
 
       errors: {
         fullName: "",
@@ -74,8 +75,8 @@ export default class MasterForm extends Component {
         years: "",
         months: "",
         payment: "",
-        employer: "",
         employmentAddress: "",
+        employer: "",
         employmentCity: "",
         employmentCountry: "",
         employmentRegion: "",
@@ -123,6 +124,13 @@ export default class MasterForm extends Component {
     this.setState({
       residenceRegion: val
     });
+  };
+
+  handleEmploymentInput = val => {
+    this.setState({
+      choice: val
+    });
+    
   };
 
   handleChange = event => {
@@ -344,6 +352,7 @@ export default class MasterForm extends Component {
             supervisor={this.state.supervisor}
             handleChangeCountry={this.selectEmploymentCountry}
             handleChangeRegion={this.selectEmploymentRegion}
+            errors={this.state.errors}
           />
 
           <input type="submit" value="Submit" />

@@ -26,6 +26,11 @@ export default class Menu extends Component {
               About Us
             </NavLink>
           </li>
+          <li>
+            <NavLink to="/blog" activeClassName="active">
+              Blog
+            </NavLink>
+          </li>
         </ul>
       </nav>
     );
