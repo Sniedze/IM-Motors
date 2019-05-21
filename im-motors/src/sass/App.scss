@@ -16,10 +16,9 @@ $fontfamily: "Kanit", sans-serif;
 }
 
 body {
-  background-color: #cecece;
   header {
     .logoImage {
-      width: 150px;
+      width: 210px;
     }
     .active {
       border-bottom: red 3px solid;
@@ -27,10 +26,12 @@ body {
 
     nav {
       margin: 0 auto;
-      @media only screen and (min-width: 370px) {
+      display: none;
+      @media only screen and (min-width: 400px) {
         //   position: absolute;
         //   left: 20%;
         //   top: 0;
+        display: flex;
       }
 
       ul {
@@ -50,7 +51,7 @@ body {
 
           a {
             text-decoration: none;
-            color: #ffffff;
+            color: black;
           }
           a:hover {
             color: #999b98;
