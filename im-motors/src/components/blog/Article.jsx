@@ -11,9 +11,16 @@ export default class Article extends Component {
     const {
       match: { params }
     } = this.props;
-    fetch(
-      `https://5cc0aaa482ec6a00149f3e37.mockapi.io/articles/${params.articleId}`
-    )
+    fetch(`https://immotors-65ac.restdb.io/rest/articles/${params.articleId}`, {
+      async: true,
+      crossDomain: true,
+      method: "GET",
+      headers: {
+        "content-type": "application/json",
+        "x-apikey": "5ce2d6b1780a473c8df5c9ef",
+        "cache-control": "no-cache"
+      }
+    })
       .then(e => e.json())
       .then(article => {
         this.setState({ data: article });
@@ -24,9 +31,14 @@ export default class Article extends Component {
     return (
       <div>
         <h1>{this.state.data.Title}</h1>
-        <img src={this.state.data.avatar} alt="Profile" />
-        <p className="short-description">{this.state.data.ShortDescription}</p>
-        <p className="date">{this.state.data.date}</p>
+        <img
+          alt={this.state.data.alt}
+          src={`https://immotors-65ac.restdb.io/media/${
+            this.state.data.BigImage
+          }`}
+        />
+        }<p className="short-description">{this.state.data.LongDescription}</p>
+        <p className="date">{this.state.data.CreationDate}</p>
       </div>
     );
   }

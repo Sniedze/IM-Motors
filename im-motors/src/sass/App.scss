@@ -26,7 +26,7 @@ body {
 
     nav {
       margin: 0 auto;
-      display: none;
+      //display: none;
       @media only screen and (min-width: 400px) {
         //   position: absolute;
         //   left: 20%;
@@ -45,7 +45,7 @@ body {
           display: inline-block;
           padding: 25px;
           @media only screen and (max-width: 370px) {
-            display: inline-block;
+            
             font-size: 17pt;
           }
 
@@ -55,6 +55,7 @@ body {
           }
           a:hover {
             color: #999b98;
+            text-decoration: none;
           }
         }
       }
