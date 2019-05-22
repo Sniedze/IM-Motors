@@ -4,7 +4,12 @@ class Membership extends Component {
   render() {
     return (
       <div className="container">
-        <h2>Fill in the form and benefit from our </h2>
+        <h2>Become a member </h2>
+        <ul>
+          <li>- Discount for the first purchase</li>
+          <li>- Get free cinema tickets</li>
+          <li>- Collect loyalty points</li>
+        </ul>
       </div>
     );
   }
