@@ -11,7 +11,7 @@ export default class Article extends Component {
     const {
       match: { params }
     } = this.props;
-    console.log("another", this.props);
+    
     fetch(`https://immotors-65ac.restdb.io/rest/articles/${params.articleId}`, {
       async: true,
       crossDomain: true,
