@@ -14,9 +14,7 @@ class ContactInfo extends Component {
             <i className="fas fa-phone" />
             <span> </span>(475) 234-3912
           </p>
-          <p>
-            <SocialMedia />
-          </p>
+          <SocialMedia />
         </div>
 
         <div className="working-hours">

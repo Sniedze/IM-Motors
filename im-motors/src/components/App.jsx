@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Switch, Route, HashRouter } from "react-router-dom";
-import Home from "./Home.jsx";
+import Home from "./home/Home.jsx";
 import Inventory from "./Inventory.jsx";
 import Finance from "./Finance.jsx";
 import AboutUs from "./AboutUs.jsx";

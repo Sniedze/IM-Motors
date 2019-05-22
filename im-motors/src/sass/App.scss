@@ -18,7 +18,7 @@ $fontfamily: "Kanit", sans-serif;
 body {
   header {
     .logoImage {
-      width: 210px;
+      width: 130px;
     }
     .active {
       border-bottom: red 3px solid;
@@ -45,7 +45,6 @@ body {
           display: inline-block;
           padding: 25px;
           @media only screen and (max-width: 370px) {
-            
             font-size: 17pt;
           }
 
