@@ -12,16 +12,13 @@ export default class ReviewInput extends Component {
   handleChange = event => {
     event.preventDefault();
     const { name, value } = event.target;
-
-    console.log("Name: ", name);
-    console.log("Value: ", value);
     this.setState({ [name]: value }, () => console.log(this.state));
   };
 
   handleSubmit = event => {
     event.preventDefault();
     const data = this.state;
-    console.log(this.state);
+   
     fetch("https://immotors-65ac.restdb.io/rest/reviews", {
       async: true,
       crossDomain: true,
