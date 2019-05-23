@@ -6,10 +6,6 @@
 $graycolor: #cecece;
 $redcolor: #e52528;
 
-.body {
-  width: 100vw;
-}
-
 @mixin display-grid {
   display: -ms-grid;
   display: grid;
