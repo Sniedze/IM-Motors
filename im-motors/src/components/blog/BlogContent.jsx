@@ -18,6 +18,8 @@ export default class BlogContent extends Component {
         </div>
       </Link>
     ));
+    console.log("this", articleLinks);
+
     return (
       <Switch>
         <Route path="/blog/:articleId" component={Article} />
