@@ -31,9 +31,7 @@ export default class ReviewInput extends Component {
       processData: false,
       body: JSON.stringify(data)
     }).then(response => {
-      response.json().then(data => {
-        console.log("Successful" + data);
-      });
+      response.json();
     });
     event.target.reset();
   };
@@ -41,6 +39,7 @@ export default class ReviewInput extends Component {
   render() {
     return (
       <div className="review-input">
+      <h2></h2>
         <form onSubmit={this.handleSubmit} noValidate>
           <div className="name">
             <label>Name</label>
@@ -50,9 +49,7 @@ export default class ReviewInput extends Component {
               name="person"
               noValidate
             />
-            {/* {this.props.errors.fullName.length > 0 && (
-              <span className="errorMessage">{this.props.errors.fullName}</span>
-            )} */}
+           
           </div>
           <div className="feedback">
             <label>Your Feedback</label>
@@ -62,9 +59,7 @@ export default class ReviewInput extends Component {
               name="feedback"
               noValidate
             />
-            {/* {this.props.errors.ssn.length > 0 && (
-              <span className="errorMessage">{this.props.errors.ssn}</span>
-            )} */}
+           
           </div>
 
           <div className="stars">
@@ -76,7 +71,7 @@ export default class ReviewInput extends Component {
               noValidate
             >
               <option value="" label="--" />
-              <option key="five" value="5" label={"✩✩✩✩✩"} />
+              <option key="five" value="5" label="✩✩✩✩✩" />
               <option key="four" value="4" label="✩✩✩✩" />
               <option key="three" value="3" label="✩✩✩" />
               <option key="two" value="2" label="✩✩" />
