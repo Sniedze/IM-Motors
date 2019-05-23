@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import { Switch, Route, HashRouter } from "react-router-dom";
-import Home from "./Home.jsx";
+import Home from "./home/Home.jsx";
 import Inventory from "./Inventory.jsx";
 import Finance from "./Finance.jsx";
 import AboutUs from "./AboutUs.jsx";
 import Blog from "./blog/Blog.jsx";
+import MembershipForm from "./home/membershipForm";
 
 export default class App extends Component {
   render() {
@@ -16,6 +17,7 @@ export default class App extends Component {
           <Route path="/finance" component={Finance} />
           <Route path="/about" component={AboutUs} /> /}
           <Route path="/blog" component={Blog} />
+          <Route path="/membership" component={MembershipForm} />
         </Switch>
       </HashRouter>
     );

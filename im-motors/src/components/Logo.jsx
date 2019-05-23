@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import MotorsLogo from "../assets/logofinal.png";
-import whatWeDo from "../assets/what-we-do.png";
+import MotorsLogo from "../assets/editedlogo.png";
 
 export default class Logo extends Component {
   render() {

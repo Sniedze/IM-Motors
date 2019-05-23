@@ -1,20 +1,17 @@
 import React, { Component } from "react";
-import Header from "../Header.jsx";
-import Footer from "../Footer.jsx";
-import BlogContent from "./BlogContent";
+import ReviewInput from "./ReviewInput";
+import ReviewPosts from "./ReviewPosts";
 
-const endpoint = "https://immotors-65ac.restdb.io/rest/articles";
-
-export default class Blog extends Component {
-  constructor() {
-    super();
+export default class Reviews extends Component {
+  constructor(props) {
+    super(props);
     this.state = {
       data: []
-    }; //Current state returns an empty array
+    };
   }
 
   componentDidMount() {
-    fetch(endpoint, {
+    fetch("https://immotors-65ac.restdb.io/rest/reviews", {
       async: true,
       crossDomain: true,
       method: "GET",
@@ -26,16 +23,16 @@ export default class Blog extends Component {
     }).then(res => {
       res.json().then(result => {
         this.setState({ data: result });
-        
       });
     });
   }
+
   render() {
     return (
-      <div>
-        <Header />
-        <BlogContent articles={this.state.data} />
-        <Footer />
+      <div className="reviews">
+        <h2>Customers about IM Motors:</h2>
+        <ReviewPosts posts={this.state.data} />
+        <ReviewInput />
       </div>
     );
   }

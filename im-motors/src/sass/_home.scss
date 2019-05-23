@@ -1,11 +1,17 @@
-.membership {
-  width: 60vw;
-  height: 30vw;
-  border: 1px solid black;
-  border-radius: 20px;
+body {
+  h2,
+  li {
+    font-family: "Questrial", sans-serif;
+  }
 }
-.membership {
-  p {
-    padding: 1em;
+.container {
+  ul {
+    h2 {
+      font-size: 2em;
+    }
+    li {
+      list-style: none;
+      font-size: 1.1em;
+    }
   }
 }
