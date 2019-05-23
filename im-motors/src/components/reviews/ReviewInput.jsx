@@ -39,7 +39,7 @@ export default class ReviewInput extends Component {
   render() {
     return (
       <div className="review-input">
-      <h2></h2>
+        <h2>Your opinion matters</h2>
         <form onSubmit={this.handleSubmit} noValidate>
           <div className="name">
             <label>Name</label>
@@ -49,7 +49,6 @@ export default class ReviewInput extends Component {
               name="person"
               noValidate
             />
-           
           </div>
           <div className="feedback">
             <label>Your Feedback</label>
@@ -59,7 +58,6 @@ export default class ReviewInput extends Component {
               name="feedback"
               noValidate
             />
-           
           </div>
 
           <div className="stars">
