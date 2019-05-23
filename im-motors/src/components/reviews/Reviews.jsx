@@ -10,7 +10,7 @@ export default class Reviews extends Component {
     };
   }
 
-  fetchingData() {
+  componentDidMount() {
     fetch("https://immotors-65ac.restdb.io/rest/reviews", {
       async: true,
       crossDomain: true,
@@ -26,10 +26,7 @@ export default class Reviews extends Component {
       });
     });
   }
-  componentDidMount() {
-    this.fetchingData();
-    this.timer = setInterval(() => this.fetchingData(), 20000);
-  }
+
   render() {
     return (
       <div className="reviews">
