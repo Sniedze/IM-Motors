@@ -28,7 +28,7 @@ export default class Reviews extends Component {
   }
   componentDidMount() {
     this.fetchingData();
-    this.timer = setInterval(() => this.fetchingData(), 2000);
+    this.timer = setInterval(() => this.fetchingData(), 20000);
   }
   render() {
     return (
