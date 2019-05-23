@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link, Route, Switch } from "react-router-dom";
 import Article from "./Article.jsx";
 
-export default class PersonalInfo extends Component {
+export default class BlogContent extends Component {
   render() {
     // const { errors } = this.props.state;
     let articleLinks = this.props.articles.map(item => (

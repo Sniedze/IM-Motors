@@ -26,8 +26,7 @@ export default class Blog extends Component {
     }).then(res => {
       res.json().then(result => {
         this.setState({ data: result });
-        //5ce2d6b1780a473c8df5c9ef
-        console.log(result);
+        
       });
     });
   }
