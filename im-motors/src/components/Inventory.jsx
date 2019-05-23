@@ -30,9 +30,7 @@ export default class Inventory extends Component {
     let inventoryNav = (
       <Switch>
         <Route path="/inventory/:carId" component={CarInfo} />
-        <>
-          <nav>{carsLinks}</nav>
-        </>
+        <nav>{carsLinks}</nav>
       </Switch>
     );
 
