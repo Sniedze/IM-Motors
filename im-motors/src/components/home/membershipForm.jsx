@@ -1,11 +1,15 @@
 import React, { Component } from "react";
 import UserContact from "../contactForm.jsx";
-import { Link } from "react-router-dom";
 
 class MembershipForm extends Component {
   state = {};
   render() {
-    return <UserContact />;
+    return (
+      <div>
+        <h2> Just a few steps to get all benefits</h2>
+        <UserContact />
+      </div>
+    );
   }
 }
 
