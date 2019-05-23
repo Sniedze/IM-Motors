@@ -6,7 +6,7 @@ export default class PersonalInfo extends Component {
     // const { errors } = this.props.state;
     return (
       <div className="personal-info">
-      <h2>Personal Information</h2>
+        <h2>Personal Information</h2>
         <div className="input-field name">
           <label>Full Name</label>
           <span className="required">*</span>
@@ -60,7 +60,7 @@ export default class PersonalInfo extends Component {
             name="gender"
             noValidate
           >
-            <option value="" label={this.props.genderPlaceholder} />
+            <option value="" label="--" />
             <option key="male" value="Male" label="Male" />
             <option key="female" value="Female" label="Female" />
             <option key="other" value="Other" label="Other" />
@@ -113,7 +113,6 @@ export default class PersonalInfo extends Component {
           <input
             defaultValue={this.props.expiryDate}
             onChange={this.props.handleChange}
-            placeholder="Click to select a date"
             type="date"
             name="expiryDate"
           />

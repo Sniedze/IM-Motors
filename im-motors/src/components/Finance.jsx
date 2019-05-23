@@ -8,6 +8,7 @@ export default class Finance extends Component {
     return (
       <div>
         <Header />
+        <p>Here are some text which describe company's mission</p>
         <MasterForm />
         <Footer />
       </div>

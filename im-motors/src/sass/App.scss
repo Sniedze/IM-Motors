@@ -2,6 +2,9 @@
 @import "inventory";
 @import "finance";
 @import "about";
+@import "header";
+$graycolor: #cecece;
+$redcolor: #e52528;
 
 @mixin display-grid {
   display: -ms-grid;
@@ -9,10 +12,9 @@
 }
 
 body {
-  background-color: #cecece;
   header {
     .logoImage {
-      width: 150px;
+      width: 130px;
     }
     .active {
       border-bottom: red 3px solid;
@@ -20,10 +22,12 @@ body {
 
     nav {
       margin: 0 auto;
-      @media only screen and (min-width: 370px) {
+      //display: none;
+      @media only screen and (min-width: 400px) {
         //   position: absolute;
         //   left: 20%;
         //   top: 0;
+        // display: flex;
       }
 
       ul {
@@ -37,16 +41,16 @@ body {
           display: inline-block;
           padding: 25px;
           @media only screen and (max-width: 370px) {
-            display: inline-block;
             font-size: 17pt;
           }
 
           a {
             text-decoration: none;
-            color: #ffffff;
+            color: black;
           }
           a:hover {
             color: #999b98;
+            text-decoration: none;
           }
         }
       }
