@@ -4,8 +4,7 @@ import Article from "./Article.jsx";
 
 export default class BlogContent extends Component {
   render() {
-    // const { errors } = this.props.state;
-    console.log("this", this.props.articles);
+    // const { errors } = this.props.state; console.log("this", this.props.articles);
     let articleLinks = this.props.articles.map(item => (
       <Link to={`/blog/${item._id}`} key={`/blog/${item._id}`}>
         <div className="article">
