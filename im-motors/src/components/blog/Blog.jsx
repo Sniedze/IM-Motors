@@ -32,7 +32,7 @@ export default class Blog extends Component {
   }
   render() {
     return (
-      <div>
+      <div className="blog">
         <Header />
         <BlogContent articles={this.state.data} />
         <Footer />
