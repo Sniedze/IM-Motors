@@ -28,13 +28,12 @@ export default class HomeFilter extends Component {
   }
   handleChange = event => {
     this.setState({ [event.target.name]: event.target.value });
-    this.refetch(event.target);
+    this.reFilter(event.target);
   };
-  refetch = target => {
-    fetch(
-      this.state.endpoint + `?q={"${target.name}":"${target.value}"}`,
-      this.state.fetchSettings
-    ).then(e => e.json().then(result => console.log(result)));
+  reFilter = target => {
+    let modelList = this.state.data.filter(obj => {
+      return obj.Manufacturer === target.value;
+    });
   };
   render() {
     //map out each fetched item's property, weed out repetition with Set(), turn it back into array
