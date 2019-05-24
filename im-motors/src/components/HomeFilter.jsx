@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 
 export default class HomeFilter extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       endpoint: "https://immotors-65ac.restdb.io/rest/cars",
       fetchSettings: {
@@ -16,7 +16,9 @@ export default class HomeFilter extends Component {
         }
       },
       data: [],
-      selections: { make: null, model: null, year: null }
+      make: "",
+      model: "",
+      year: ""
     };
   }
   componentDidMount() {
@@ -24,11 +26,11 @@ export default class HomeFilter extends Component {
       e.json().then(result => this.setState({ data: result }))
     );
   }
-  handleChange(value) {
-    // this.state.selections.setState({ make: value }); fix this to set state of make
-    //console.log(this.state.selections.make);
-  }
+  handleChange = event => {
+    this.setState({ [event.target.name]: event.target.value });
+  };
   render() {
+    console.log(this.state.make);
     //map out each fetched item's property, weed out repetition with Set(), turn it back into array
     const uniqueMakerList = Array.from(
       new Set(this.state.data.map(item => item.Manufacturer))
@@ -41,7 +43,12 @@ export default class HomeFilter extends Component {
     ));
 
     return (
-      <select className="hFilterDropdown make" onChange={this.handleChange}>
+      <select
+        name="make"
+        defaultValue={this.state.make}
+        className="hFilterDropdown make"
+        onChange={this.handleChange}
+      >
         <option value={null} label="-Make-" />
         {makerOptions}
       </select>
