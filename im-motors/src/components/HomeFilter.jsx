@@ -28,9 +28,15 @@ export default class HomeFilter extends Component {
   }
   handleChange = event => {
     this.setState({ [event.target.name]: event.target.value });
+    this.refetch(event.target);
+  };
+  refetch = target => {
+    fetch(
+      this.state.endpoint + `?q={"${target.name}":"${target.value}"}`,
+      this.state.fetchSettings
+    ).then(e => e.json().then(result => console.log(result)));
   };
   render() {
-    console.log(this.state.make);
     //map out each fetched item's property, weed out repetition with Set(), turn it back into array
     const uniqueMakerList = Array.from(
       new Set(this.state.data.map(item => item.Manufacturer))
@@ -43,15 +49,24 @@ export default class HomeFilter extends Component {
     ));
 
     return (
-      <select
-        name="make"
-        defaultValue={this.state.make}
-        className="hFilterDropdown make"
-        onChange={this.handleChange}
-      >
-        <option value={null} label="-Make-" />
-        {makerOptions}
-      </select>
+      <div className="filterContainer">
+        <select
+          name="Manufacturer"
+          defaultValue={this.state.make}
+          className="hFilterDropdown make"
+          onChange={this.handleChange}
+        >
+          <option value={null} label="-Make-" />
+          {makerOptions}
+        </select>
+
+        <select name="model" defaultValue={this.state.model}>
+          <option value={null} label="-Model-" />
+        </select>
+        <select name="year" defaultValue={this.state.year}>
+          <option value={null} label="-Year-" />
+        </select>
+      </div>
     );
   }
 }
