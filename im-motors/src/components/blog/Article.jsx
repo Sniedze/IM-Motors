@@ -30,16 +30,15 @@ export default class Article extends Component {
 
   render() {
     return (
-      <div>
-        <h1>{this.state.data.Title}</h1>
+      <div className="one-article">
+        <h2>{this.state.data.Title}</h2>
         <img
           alt={this.state.data.alt}
           src={`https://immotors-65ac.restdb.io/media/${
             this.state.data.BigImage
           }`}
         />
-        }<p className="short-description">{this.state.data.LongDescription}</p>
-        
+        <p className="long-description">{this.state.data.LongDescription}</p>
       </div>
     );
   }

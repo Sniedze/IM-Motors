@@ -135,7 +135,6 @@ export default class MasterForm extends Component {
     event.preventDefault();
     const { name, value } = event.target;
     let errors = this.state.errors;
-
     console.log("Name: ", name);
     console.log("Value: ", value);
     const validSsn = RegExp(/^\d{9}$/);
@@ -273,15 +272,6 @@ export default class MasterForm extends Component {
           console.log("Successful" + data);
         });
       });
-      //delete options.headers["Content-Type"];
-      // fetch("https://5cc0aaa482ec6a00149f3e37.mockapi.io/applications", {
-      //   method: "POST",
-      //   body: JSON.stringify(data),
-      //   headers: {
-      //     Accept: "application/json",
-      //     "Content-Type": "application/json"
-      //   }
-      // });
     } else {
       console.error("Invalid Form");
       alert("All required fields must be filled!");
