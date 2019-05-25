@@ -2,10 +2,9 @@ import React, { Component } from "react";
 import { Link, Route, Switch } from "react-router-dom";
 import Article from "./Article.jsx";
 
-export default class PersonalInfo extends Component {
+export default class BlogContent extends Component {
   render() {
     // const { errors } = this.props.state;
-    console.log("this", this.props.articles);
     let articleLinks = this.props.articles.map(item => (
       <Link to={`/blog/${item._id}`} key={`/blog/${item._id}`}>
         <div className="article">
@@ -19,6 +18,8 @@ export default class PersonalInfo extends Component {
         </div>
       </Link>
     ));
+    console.log("this", articleLinks);
+
     return (
       <Switch>
         <Route path="/blog/:articleId" component={Article} />

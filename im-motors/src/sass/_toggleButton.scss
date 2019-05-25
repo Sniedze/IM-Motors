@@ -1,0 +1,19 @@
+.toggle-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: transparent;
+  width: 30px;
+  height: 30px;
+  border: none;
+  box-sizing: border-box;
+  position: absolute;
+  right: 1.5rem;
+  top: 1rem;
+  cursor: pointer;
+  .toggle-line {
+    width: 30px;
+    height: 3px;
+    background-color: white;
+  }
+}

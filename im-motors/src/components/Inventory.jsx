@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Header from "./Header.jsx";
 import Footer from "./Footer.jsx";
 import { Link, Route, Switch } from "react-router-dom";
 import CarInfo from "./Car.jsx";
@@ -38,7 +37,6 @@ export default class Inventory extends Component {
 
     return (
       <>
-        <Header />
         {/* <SortButtons fetched={this.state.data} /> */}
         {inventoryNav}
         <Footer />

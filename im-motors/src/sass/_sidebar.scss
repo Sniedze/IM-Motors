@@ -1,0 +1,18 @@
+.side-drawer {
+  background-color: black;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 70%;
+  max-width: 400px;
+  z-index: 200;
+  transform: translateX(100%);
+  transition: transform 0.2s ease-out;
+  ul {
+    display: unset;
+  }
+}
+.side-drawer.open {
+  transform: translateX(0);
+}

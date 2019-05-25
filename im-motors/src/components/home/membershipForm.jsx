@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 import UserContact from "../contactForm.jsx";
+import Header from "../Header.jsx";
 
 class MembershipForm extends Component {
   state = {};
   render() {
     return (
       <div>
+        <Header />
         <h2> Just a few steps to get all benefits</h2>
         <UserContact />
       </div>

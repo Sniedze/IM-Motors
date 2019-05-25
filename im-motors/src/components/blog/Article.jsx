@@ -11,7 +11,7 @@ export default class Article extends Component {
     const {
       match: { params }
     } = this.props;
-    console.log("another", this.props);
+
     fetch(`https://immotors-65ac.restdb.io/rest/articles/${params.articleId}`, {
       async: true,
       crossDomain: true,
@@ -39,7 +39,7 @@ export default class Article extends Component {
           }`}
         />
         }<p className="short-description">{this.state.data.LongDescription}</p>
-        <p className="date">{this.state.data.CreationDate}</p>
+        
       </div>
     );
   }

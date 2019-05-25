@@ -33,8 +33,8 @@ export default class MasterForm extends Component {
       streetName: null,
       apartament: "",
       city: null,
-      residenceRegion: null,
-      residenceCountry: null,
+      residenceRegion: undefined,
+      residenceCountry: undefined,
       zip: null,
       years: null,
       months: null,
@@ -47,8 +47,8 @@ export default class MasterForm extends Component {
       employer: null,
       employmentAddress: null,
       employmentCity: null,
-      employmentCountry: null,
-      employmentRegion: null,
+      employmentCountry: undefined,
+      employmentRegion: undefined,
       employmentZip: null,
       employmentYears: null,
       employmentMonths: null,
@@ -57,7 +57,6 @@ export default class MasterForm extends Component {
       frequency: null,
       occupation: null,
       supervisor: "",
-     
 
       errors: {
         fullName: "",
@@ -130,7 +129,6 @@ export default class MasterForm extends Component {
     this.setState({
       choice: val
     });
-    
   };
 
   handleChange = event => {
