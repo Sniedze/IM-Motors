@@ -7,7 +7,6 @@ class MembershipForm extends Component {
   render() {
     return (
       <div>
-        <Header />
         <h2> Just a few steps to get all benefits</h2>
         <UserContact />
       </div>

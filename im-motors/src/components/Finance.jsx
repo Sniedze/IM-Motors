@@ -7,7 +7,6 @@ export default class Finance extends Component {
   render() {
     return (
       <div>
-        <Header />
         <p>Here are some text which describe company's mission</p>
         <MasterForm />
         <Footer />

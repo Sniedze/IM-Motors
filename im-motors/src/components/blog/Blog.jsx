@@ -26,14 +26,17 @@ export default class Blog extends Component {
     }).then(res => {
       res.json().then(result => {
         this.setState({ data: result });
-        
       });
     });
   }
   render() {
     return (
+<<<<<<< HEAD
       <div className="blog">
         <Header />
+=======
+      <div>
+>>>>>>> landingpage
         <BlogContent articles={this.state.data} />
         <Footer />
       </div>
