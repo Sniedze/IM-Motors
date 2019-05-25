@@ -20,6 +20,21 @@ const slideDrawer = props => {
               Inventory
             </NavLink>
           </li>
+          <li>
+            <NavLink to="/finance" activeClassName="active">
+              Finance
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/about" activeClassName="active">
+              About us
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/blog" activeClassName="active">
+              Blog
+            </NavLink>
+          </li>
         </ul>
       </nav>
       <button className="close-button">
