@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 export default class Menu extends Component {
   render() {
     return (
-      <nav>
+      <nav className="menu">
         <ul>
           <li>
             <NavLink to="/" exact activeClassName="active">

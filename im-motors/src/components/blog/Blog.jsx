@@ -31,12 +31,8 @@ export default class Blog extends Component {
   }
   render() {
     return (
-<<<<<<< HEAD
       <div className="blog">
-        <Header />
-=======
-      <div>
->>>>>>> landingpage
+      
         <BlogContent articles={this.state.data} />
         <Footer />
       </div>

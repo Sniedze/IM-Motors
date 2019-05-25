@@ -30,7 +30,7 @@ export default class Inventory extends Component {
       });
     });
   }
- 
+
   render() {
     let carsLinks = this.state.data.map(item => (
       <div className="car" key={item._id}>
@@ -57,7 +57,7 @@ export default class Inventory extends Component {
       <Switch>
         <Route path="/inventory/:carId" component={CarInfo} />
         <>
-          <nav>{carsLinks}</nav>
+          <div className="carList">{carsLinks}</div>
         </>
       </Switch>
     );

@@ -12,7 +12,6 @@ export default class Car extends Component {
     this.renderMyData();
   }
 
-  
   renderMyData = () => {
     const {
       match: { params }
@@ -32,18 +31,15 @@ export default class Car extends Component {
       .then(car => {
         this.setState({ data: car });
       });
-    
   };
- 
+
   render() {
     console.log(this.state.data);
     return (
-      <div>
+      <div className="one-car">
         <h1>
-        {this.state.data.Year} {" "}
-          {this.state.data.Manufacturer} {this.state.data.Model}{" "}
-          {this.state.data.Engine}
-          
+          {this.state.data.Year} {this.state.data.Manufacturer}{" "}
+          {this.state.data.Model} {this.state.data.Engine}
         </h1>
         <img
           key={this.state.data.comment}
