@@ -27,10 +27,11 @@ export default class Inventory extends Component {
     }).then(res => {
       res.json().then(result => {
         this.setState({ data: result });
+        console.log(this.state.data);
       });
     });
   }
-
+ 
   render() {
     let carsLinks = this.state.data.map(item => (
       <div className="car" key={item._id}>
@@ -39,7 +40,7 @@ export default class Inventory extends Component {
           key={`/inventory/${item.Manufacturer}${item.Model}`}
         >
           <h1>
-            {item.Year.slice(0, 4)} {item.Manufacturer} {item.Model}
+            {item.Year} {item.Manufacturer} {item.Model}
             {""} {item.Engine}
           </h1>
           <img

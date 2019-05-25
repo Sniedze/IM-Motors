@@ -9,6 +9,11 @@ export default class Car extends Component {
     };
   }
   componentDidMount() {
+    this.renderMyData();
+  }
+
+  
+  renderMyData = () => {
     const {
       match: { params }
     } = this.props;
@@ -27,16 +32,18 @@ export default class Car extends Component {
       .then(car => {
         this.setState({ data: car });
       });
-  }
-
+    
+  };
+ 
   render() {
     console.log(this.state.data);
     return (
       <div>
         <h1>
-          {this.state.data.Manufacturer} {this.state.data.Model}
+        {this.state.data.Year} {" "}
+          {this.state.data.Manufacturer} {this.state.data.Model}{" "}
           {this.state.data.Engine}
-          {this.state.data.Year}
+          
         </h1>
         <img
           key={this.state.data.comment}

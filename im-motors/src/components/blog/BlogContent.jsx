@@ -7,8 +7,8 @@ export default class BlogContent extends Component {
     // const { errors } = this.props.state;
 
     let articleLinks = this.props.articles.map(item => (
-      <div className="article">
-        <Link to={`/blog/${item._id}`} key={`/blog/${item._id}`}>
+      <div className="article" key={item._id}>
+        <Link to={`/blog/${item._id}`}>
           <React.Fragment>
             <h2>{item.Title}</h2>
             <img
@@ -21,7 +21,6 @@ export default class BlogContent extends Component {
         </Link>
       </div>
     ));
-    console.log("this", articleLinks);
 
     return (
       <Switch>
