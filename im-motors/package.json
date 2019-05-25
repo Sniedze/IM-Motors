@@ -3,13 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "2": "^2.0.0",
     "axios": "^0.18.0",
     "bootstrap": "^4.3.1",
+    "font-awesome": "^4.7.0",
+    "mdbreact": "^4.14.0",
     "moment": "^2.24.0",
     "node-sass": "^4.11.0",
     "react": "^16.8.6",
+    "react-burger-menu": "^2.6.10",
     "react-country-region-selector": "^1.4.3",
     "react-dom": "^16.8.6",
+    "react-error-overlay": "^4.0.0",
     "react-router-dom": "^5.0.0",
     "react-scripts": "2.1.8"
   },
@@ -28,5 +33,6 @@
     "not ie <= 11",
     "not op_mini all"
   ],
-  "devDependencies": {}
+  "devDependencies": {},
+  "mdbreact": "git+https://github.com/mdbootstrap/React-Bootstrap-with-Material-Design.git"
 }

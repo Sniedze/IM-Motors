@@ -1,16 +1,15 @@
 import React, { Component } from "react";
 import Logo from "./Logo.jsx";
 import Menu from "./Menu.jsx";
-
+import ToggleButton from "./BurgerMenu/TogglerMenuButton";
 export default class Header extends Component {
   render() {
     return (
-      <div className="header">
-        <header>
-          <Logo />
-          <Menu />
-        </header>
-      </div>
+      <header>
+        <Logo />
+        <Menu />
+        <ToggleButton click={this.props.handleSlide} />
+      </header>
     );
   }
 }
