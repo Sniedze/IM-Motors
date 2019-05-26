@@ -16,8 +16,7 @@ export default class HomeFilter extends Component {
         }
       },
       data: [],
-      make: "",
-      model: "",
+      models: "",
       year: ""
     };
   }
@@ -34,6 +33,7 @@ export default class HomeFilter extends Component {
     let modelList = this.state.data.filter(obj => {
       return obj.Manufacturer === target.value;
     });
+    this.setState({ models: modelList });
   };
   render() {
     //map out each fetched item's property, weed out repetition with Set(), turn it back into array
@@ -59,8 +59,14 @@ export default class HomeFilter extends Component {
           {makerOptions}
         </select>
 
-        <select name="model" defaultValue={this.state.model}>
+        <select name="model" defaultValue={this.state.models}>
           <option value={null} label="-Model-" />
+          {this.state.models &&
+            this.state.models.map(item => (
+              <option key={item.Model} value={item.Model}>
+                {item.Model}
+              </option>
+            ))}
         </select>
         <select name="year" defaultValue={this.state.year}>
           <option value={null} label="-Year-" />
