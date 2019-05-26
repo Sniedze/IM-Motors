@@ -78,7 +78,8 @@ export default class HomeFilter extends Component {
           onChange={this.handleChange}
         >
           <option value={null} label="-Model-" />
-          {this.state.models &&
+          {// needs fixing on duplicate models (See Maker)
+          this.state.models &&
             this.state.models.map(item => (
               <option key={item.Model} value={item.Model}>
                 {item.Model}
@@ -91,12 +92,15 @@ export default class HomeFilter extends Component {
           onChange={this.handleChange}
         >
           <option value={null} label="-Year-" />
-          {/* this.state.years &&                   ----needs fix on Maker change
+          {
+            // needs fixing on duplicate Years (See Maker)
+            /* this.state.years &&                   ----needs fix on Maker change
             this.state.years.map(item => (
               <option key={item} value={item}>
                 {item}
               </option>
-            )) */}
+            )) */
+          }
         </select>
       </div>
     );
