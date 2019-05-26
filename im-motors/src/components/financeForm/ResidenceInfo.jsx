@@ -6,7 +6,7 @@ export default class ResidenceInfo extends Component {
     // const { errors } = this.props.state;
     return (
       <div className="residence-info">
-        <h2>Residence Information</h2>
+        <h3>Residence Information</h3>
         <div className="input-field street#">
           <label>Street No.</label>
           <span className="required">*</span>

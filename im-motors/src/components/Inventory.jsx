@@ -36,12 +36,12 @@ export default class Inventory extends Component {
       <div className="car" key={item._id}>
         <Link
           to={`/inventory/${item._id}`}
-          key={`/inventory/${item.Manufacturer}${item.Model}`}
+          
         >
-          <h1>
+          <h4>
             {item.Year} {item.Manufacturer} {item.Model}
             {""} {item.Engine}
-          </h1>
+          </h4>
           <img
             key={item.comment}
             src={`https://immotors-65ac.restdb.io/media/${item.MainImage}`}

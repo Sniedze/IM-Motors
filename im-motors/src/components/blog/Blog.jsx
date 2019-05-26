@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Header from "../Header.jsx";
 import Footer from "../Footer.jsx";
 import BlogContent from "./BlogContent";
 
@@ -32,7 +31,6 @@ export default class Blog extends Component {
   render() {
     return (
       <div className="blog">
-      
         <BlogContent articles={this.state.data} />
         <Footer />
       </div>

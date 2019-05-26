@@ -9,13 +9,11 @@ export default class EmploymentInfo extends Component {
     };
   }
 
- 
-
   render() {
     // const { errors } = this.props.state;
     return (
       <div className="employment-info">
-        <h2>Employment Information</h2>
+        <h3>Employment Information</h3>
         <div className=" input-field employment-choice">
           <label>Are you employed?</label>
           <select
@@ -162,6 +160,7 @@ export default class EmploymentInfo extends Component {
             <label>Time at job</label>
             <span className="required">*</span>
             <select
+              className="employment-years"
               onChange={this.props.handleChange}
               defaultValue={this.props.employmentYears}
               name="employmentYears"
@@ -194,7 +193,9 @@ export default class EmploymentInfo extends Component {
                 {this.props.errors.employmentYears}
               </span>
             )}
+           
             <select
+              className="employment-months"
               onChange={this.props.handleChange}
               defaultValue={this.props.months}
               name="months"
@@ -300,16 +301,13 @@ export default class EmploymentInfo extends Component {
         </div>
         <div className=" input-field additional-income">
           <label>Input additional gross monthly income $</label>
-          <select
+          <input
             onChange={this.props.handleChange}
             defaultValue={this.props.additionalIncome}
-            name="additionalIncome"
+            name="supervisor"
             noValidate
-          >
-            <option value="" label="--" />
-            <option key="yes" value="Yes" label="Yes" />
-            <option key="no" value="No" label="No" />
-          </select>
+            required
+          />
         </div>
       </div>
     );

@@ -37,10 +37,10 @@ export default class Car extends Component {
     console.log(this.state.data);
     return (
       <div className="one-car">
-        <h1>
+        <h4>
           {this.state.data.Year} {this.state.data.Manufacturer}{" "}
           {this.state.data.Model} {this.state.data.Engine}
-        </h1>
+        </h4>
         <img
           key={this.state.data.comment}
           src={`https://immotors-65ac.restdb.io/media/${

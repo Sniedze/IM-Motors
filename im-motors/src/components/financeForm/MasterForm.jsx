@@ -281,7 +281,7 @@ export default class MasterForm extends Component {
   render() {
     return (
       <React.Fragment>
-        <h1>Application for Credit</h1>
+        <h2>Application for Credit</h2>
         <form onSubmit={this.handleSubmit} noValidate>
           <PersonalInfo
             handleChangeCountry={this.selectCountry}
