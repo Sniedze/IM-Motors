@@ -17,7 +17,7 @@ export default class HomeFilter extends Component {
       },
       data: [],
       models: "",
-      year: ""
+      years: ""
     };
   }
   componentDidMount() {
@@ -27,13 +27,26 @@ export default class HomeFilter extends Component {
   }
   handleChange = event => {
     this.setState({ [event.target.name]: event.target.value });
-    this.reFilter(event.target);
+    if (event.target.name === "Manufacturer") {
+      this.setModels(event.target);
+    } else if (event.target.name === "Model") {
+      this.setYears(event.target);
+    }
   };
-  reFilter = target => {
+  setModels = target => {
     let modelList = this.state.data.filter(obj => {
       return obj.Manufacturer === target.value;
     });
     this.setState({ models: modelList });
+  };
+  setYears = target => {
+    let carYears = this.state.models.map(obj => {
+      if (obj.Model === target.value) {
+        return obj.Year;
+      }
+      return null; //this due to react warning for arrow functions to return something all the time, NEEDS FIX ON RETURNING EMPTY OBJECT
+    });
+    this.setState({ years: carYears });
   };
   render() {
     //map out each fetched item's property, weed out repetition with Set(), turn it back into array
@@ -59,7 +72,11 @@ export default class HomeFilter extends Component {
           {makerOptions}
         </select>
 
-        <select name="model" defaultValue={this.state.models}>
+        <select
+          name="Model"
+          defaultValue={this.state.models}
+          onChange={this.handleChange}
+        >
           <option value={null} label="-Model-" />
           {this.state.models &&
             this.state.models.map(item => (
@@ -68,8 +85,18 @@ export default class HomeFilter extends Component {
               </option>
             ))}
         </select>
-        <select name="year" defaultValue={this.state.year}>
+        <select
+          name="Year"
+          defaultValue={this.state.year}
+          onChange={this.handleChange}
+        >
           <option value={null} label="-Year-" />
+          {/* this.state.years &&                   ----needs fix on Maker change
+            this.state.years.map(item => (
+              <option key={item} value={item}>
+                {item}
+              </option>
+            )) */}
         </select>
       </div>
     );
