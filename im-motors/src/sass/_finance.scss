@@ -25,26 +25,27 @@
         margin: 10px;
         width: 70vw;
         .employment-years,
-        .employment-months {
-          width: 120px;
+        .employment-months,
+        .residence-years,
+        .residence-months {
+          width: 105px;
           display: inline-block;
         }
-        .employment-months {
+        .employment-months,
+        .residence-months {
           margin-left: 10px;
         }
-        input {
+        input, select {
           background-color: white;
           display: block;
-          width: 250px;
+          width: 220px;
           height: 25px;
           border: 1px solid grey;
         }
         select {
-          background-color: white;
-          display: block;
-          width: 250px;
+         
           height: 28px;
-          border: 1px solid grey;
+          
         }
 
         label {
