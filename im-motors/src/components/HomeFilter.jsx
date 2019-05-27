@@ -21,14 +21,15 @@ export default class HomeFilter extends Component {
     };
   }
   componentDidMount() {
+    //fetch cars for filtering on mount
     fetch(this.state.endpoint, this.state.fetchSettings).then(e =>
       e.json().then(result => this.setState({ data: result }))
     );
   }
   handleChange = event => {
-    this.setState({ [event.target.name]: event.target.value });
     if (event.target.name === "Manufacturer") {
       this.setModels(event.target);
+      this.setState({ years: "" }); // reset year selection if back to make
     } else if (event.target.name === "Model") {
       this.setYears(event.target);
     }
@@ -37,24 +38,27 @@ export default class HomeFilter extends Component {
     let modelList = this.state.data.filter(obj => {
       return obj.Manufacturer === target.value;
     });
-    this.setState({ models: modelList });
+    const uniqueModelList = Array.from(new Set(modelList)); //weeds out possible repetition in model list
+    this.setState({ models: uniqueModelList });
   };
   setYears = target => {
-    let carYears = this.state.models.map(obj => {
+    let yearList = this.state.models.map(obj => {
       if (obj.Model === target.value) {
         return obj.Year;
       }
-      return null; //this due to react warning for arrow functions to return something all the time, NEEDS FIX ON RETURNING EMPTY OBJECT
+      return null; //arrow function must return something
     });
-    this.setState({ years: carYears });
+    const uniqueYearList = Array.from(new Set(yearList)); //weeds out possible repetition in year list
+    this.setState({ years: uniqueYearList });
   };
   render() {
     //map out each fetched item's property, weed out repetition with Set(), turn it back into array
     const uniqueMakerList = Array.from(
       new Set(this.state.data.map(item => item.Manufacturer))
     );
-    //map out options for dropdown menu
-    const makerOptions = uniqueMakerList.map(item => (
+
+    //map out make options for dropdown menu
+    const makeOptions = uniqueMakerList.map(item => (
       <option key={item} value={item}>
         {item}
       </option>
@@ -69,7 +73,7 @@ export default class HomeFilter extends Component {
           onChange={this.handleChange}
         >
           <option value={null} label="-Make-" />
-          {makerOptions}
+          {makeOptions}
         </select>
 
         <select
@@ -78,8 +82,7 @@ export default class HomeFilter extends Component {
           onChange={this.handleChange}
         >
           <option value={null} label="-Model-" />
-          {// needs fixing on duplicate models (See Maker)
-          this.state.models &&
+          {this.state.models && //only if state is set (models exist)
             this.state.models.map(item => (
               <option key={item.Model} value={item.Model}>
                 {item.Model}
@@ -92,15 +95,15 @@ export default class HomeFilter extends Component {
           onChange={this.handleChange}
         >
           <option value={null} label="-Year-" />
-          {
-            // needs fixing on duplicate Years (See Maker)
-            /* this.state.years &&                   ----needs fix on Maker change
-            this.state.years.map(item => (
-              <option key={item} value={item}>
-                {item}
-              </option>
-            )) */
-          }
+          {this.state.years && //only if state is set (years exist)
+            this.state.years.map(
+              item =>
+                item && ( // only if item has value (is true), to fix the empty year due to; return null (see setYears())
+                  <option key={item} value={item}>
+                    {item}
+                  </option>
+                )
+            )}
         </select>
       </div>
     );
