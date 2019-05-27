@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import SubmitBtn from "./SubmitButton";
 export default class HomeFilter extends Component {
   constructor(props) {
     super(props);
@@ -27,6 +27,8 @@ export default class HomeFilter extends Component {
     );
   }
   handleChange = event => {
+    console.log(event.target.value);
+    this.setState({ [event.target.name]: event.target.value });
     if (event.target.name === "Manufacturer") {
       this.setModels(event.target);
       this.setState({ years: "" }); // reset year selection if back to make
@@ -105,6 +107,11 @@ export default class HomeFilter extends Component {
                 )
             )}
         </select>
+        <SubmitBtn
+          make={this.state.Manufacturer}
+          model={this.state.Model}
+          year={this.state.Year}
+        />
       </div>
     );
   }
