@@ -3,7 +3,7 @@ import Footer from "../Footer.jsx";
 import Membership from "./membership";
 import TeenagerOffers from "./TeenagerOffers"
 import Reviews from "../reviews/Reviews";
-import HomeFilter from "../HomeFilter";
+import HomeFilter from "./filter/HomeFilter";
 
 export default class Home extends Component {
   render() {
