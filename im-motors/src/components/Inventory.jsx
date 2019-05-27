@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Footer from "./Footer.jsx";
 import { Link, Route, Switch } from "react-router-dom";
 import CarInfo from "./Car.jsx";
+import TeenagerOffers from "./home/TeenagerOffers";
 
 //import SortButtons from "./sortInventory";
 
@@ -34,10 +35,7 @@ export default class Inventory extends Component {
   render() {
     let carsLinks = this.state.data.map(item => (
       <div className="car" key={item._id}>
-        <Link
-          to={`/inventory/${item._id}`}
-          
-        >
+        <Link to={`/inventory/${item._id}`}>
           <h4>
             {item.Year} {item.Manufacturer} {item.Model}
             {""} {item.Engine}
@@ -66,6 +64,7 @@ export default class Inventory extends Component {
       <>
         {/* <SortButtons fetched={this.state.data} /> */}
         {inventoryNav}
+        <TeenagerOffers data={this.state.data} />
         <Footer />
       </>
     );

@@ -106,22 +106,20 @@ export default class MasterForm extends Component {
       residenceCountry: val
     });
   };
-
-  selectEmploymentRegion = val => {
-    this.setState({
-      residenceRegion: val
-    });
-  };
-
-  selectEmploymentCountry = val => {
-    this.setState({
-      residenceCountry: val
-    });
-  };
-
   selectResidenceRegion = val => {
     this.setState({
       residenceRegion: val
+    });
+  };
+  selectEmploymentRegion = val => {
+    this.setState({
+      employmentRegion: val
+    });
+  };  
+
+  selectEmploymentCountry = val => {
+    this.setState({
+      employmentCountry: val
     });
   };
 
