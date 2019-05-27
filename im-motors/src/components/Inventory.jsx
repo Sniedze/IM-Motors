@@ -34,10 +34,7 @@ export default class Inventory extends Component {
   render() {
     let carsLinks = this.state.data.map(item => (
       <div className="car" key={item._id}>
-        <Link
-          to={`/inventory/${item._id}`}
-          
-        >
+        <Link to={`/inventory/${item._id}`}>
           <h4>
             {item.Year} {item.Manufacturer} {item.Model}
             {""} {item.Engine}
