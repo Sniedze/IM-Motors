@@ -27,7 +27,6 @@ export default class HomeFilter extends Component {
     );
   }
   handleChange = event => {
-    console.log(event.target.value);
     this.setState({ [event.target.name]: event.target.value });
     if (event.target.name === "Manufacturer") {
       this.setModels(event.target);
