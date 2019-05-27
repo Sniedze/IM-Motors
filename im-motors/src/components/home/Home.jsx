@@ -11,7 +11,7 @@ export default class Home extends Component {
       <div className="home">
         <Membership />
         <HomeFilter />
-        <TeenagerOffers/>
+        {/* <TeenagerOffers/> */}
         <Reviews />
         <Footer />
       </div>

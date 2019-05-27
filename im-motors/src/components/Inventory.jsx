@@ -64,7 +64,7 @@ export default class Inventory extends Component {
       <>
         {/* <SortButtons fetched={this.state.data} /> */}
         {inventoryNav}
-        <TeenagerOffers data={this.state.data} />
+        {/* <TeenagerOffers data={this.state.data} /> */}
         <Footer />
       </>
     );
