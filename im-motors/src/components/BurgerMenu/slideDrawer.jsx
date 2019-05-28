@@ -1,10 +1,14 @@
-import React, { Component } from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
 
-export default class Menu extends Component {
-  render() {
-    return (
-      <nav className="menu">
+const slideDrawer = props => {
+  let drawerClasses = "side-drawer";
+  if (props.show) {
+    drawerClasses = "side-drawer open";
+  }
+  return (
+    <div>
+      <nav className={drawerClasses}>
         <ul>
           <li>
             <NavLink to="/" exact activeClassName="active">
@@ -23,7 +27,7 @@ export default class Menu extends Component {
           </li>
           <li>
             <NavLink to="/about" activeClassName="active">
-              About Us
+              About us
             </NavLink>
           </li>
           <li>
@@ -33,6 +37,10 @@ export default class Menu extends Component {
           </li>
         </ul>
       </nav>
-    );
-  }
-}
+      <button className="close-button">
+        <i class="fas fa-times" />
+      </button>
+    </div>
+  );
+};
+export default slideDrawer;

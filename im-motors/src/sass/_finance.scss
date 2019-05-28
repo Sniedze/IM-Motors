@@ -1,42 +1,74 @@
-form {
-  .personal-info {
-    background-color: #c4c4c4;
-    // .input-field {
-    //   border-bottom: 1px solid #ced4da;
+.finance-page {
+  h3 {
+    font-size: 6vw;
+    text-align: center;
+  }
+  h2 {
+    font-size: 7vw;
+    text-align: center;
+  }
+  p {
+    text-align: left;
+  }
+  form {
+    width: 90vw;
+    margin: 0 auto;
 
-    //   input {
-    //     background-color: #c4c4c4;
-    //     border: none;
-    //     height: 50px;
-    //   }
+    .personal-info,
+    .residence-info,
+    .employment-info {
+      width: 80vw;
+      padding: 1em;
+      box-shadow: 1px 1px 20px darkgray;
+      background-color: white;
+      .input-field {
+        margin: 10px;
+        width: 70vw;
+        .employment-years,
+        .employment-months,
+        .residence-years,
+        .residence-months {
+          width: 105px;
+          display: inline-block;
+        }
+        .employment-months,
+        .residence-months {
+          margin-left: 10px;
+        }
+        input, select {
+          background-color: white;
+          display: block;
+          width: 220px;
+          height: 25px;
+          border: 1px solid grey;
+        }
+        select {
+         
+          height: 28px;
+          
+        }
 
-    //   select {
-    //     background-color: #c4c4c4;
-    //     border-color: #c4c4c4;
-    //   }
-    //   label {
-    //     color: #757575;
-    //   }
-    //   label.active {
-    //     border-bottom: none;
-    //   }
-    .required {
-      color: rgba(255, 0, 0, 0.534);
-      font-size: 20pt;
-      top: 5%;
-      left: 7em;
+        label {
+          color: black;
+        }
+
+        .required {
+          color: rgba(255, 0, 0, 0.534);
+          font-size: 15pt;
+          margin-right: 30vw;
+        }
+        // div.date-text {
+        //   border-bottom: 1px solid #ced4da;
+        //   margin-top: 1.5rem;
+        //   margin-bottom: 1.5rem;
+        // }
+        span.errorMessage {
+          color: red;
+        }
+        .error {
+          border: 5px solid red;
+        }
+      }
     }
-    //   div.date-text {
-    //     border-bottom: 1px solid #ced4da;
-    //     margin-top: 1.5rem;
-    //     margin-bottom: 1.5rem;
-    //   }
-    span.errorMessage {
-      color: red;
-    }
-    .error {
-      border: 5px solid red;
-    }
-    // }
   }
 }

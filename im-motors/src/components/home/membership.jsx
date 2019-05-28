@@ -7,8 +7,9 @@ class Membership extends Component {
     return (
       <div className="container">
         <Link to="/membership">
-          <h2>Become a member </h2>
           <ul>
+            <h2>Become a member </h2>
+
             <li>- Discount for the first purchase</li>
             <li>- Get free cinema tickets</li>
             <li>- Collect loyalty points</li>

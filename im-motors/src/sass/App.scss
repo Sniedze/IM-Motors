@@ -3,6 +3,12 @@
 @import "finance";
 @import "about";
 @import "header";
+@import "sidebar";
+@import "toggleButton";
+@import "backdrop";
+@import "blog";
+@import "oneCar";
+
 $graycolor: #cecece;
 $redcolor: #e52528;
 
@@ -12,9 +18,11 @@ $redcolor: #e52528;
 }
 
 body {
+  background-color: #cecece !important;
   header {
     .logoImage {
-      width: 130px;
+      width: 110px;
+      padding: 1rem;
     }
     .active {
       border-bottom: red 3px solid;
@@ -22,12 +30,12 @@ body {
 
     nav {
       margin: 0 auto;
-      //display: none;
+      display: none;
       @media only screen and (min-width: 400px) {
         //   position: absolute;
         //   left: 20%;
         //   top: 0;
-        // display: flex;
+        display: flex;
       }
 
       ul {

@@ -15,9 +15,9 @@ export default class ReviewPosts extends Component {
   render() {
     return this.props.posts.map(item => (
       <div key={item._id} className="review-posts">
-        <h3>{item.person}</h3>
-        {this.createStarImages(item.stars)}
-        <p>{item.feedback}</p>
+        {item.stars > 2 && <h4>{item.person}</h4>}
+        {item.stars > 2 && <span>{this.createStarImages(item.stars)}</span>}
+        {item.stars > 2 && <p>{item.feedback}</p>}
       </div>
     ));
   }

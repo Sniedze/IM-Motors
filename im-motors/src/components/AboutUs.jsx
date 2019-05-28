@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import Header from "./Header.jsx";
+
 import Footer from "./Footer.jsx";
 import UserContact from "./contactForm.jsx";
-import "bootstrap/dist/css/bootstrap.min.css";
+//import "bootstrap/dist/css/bootstrap.min.css";
 import ContacInfo from "./contactInfo";
 
 // import Users from "./users";
@@ -11,8 +11,6 @@ export default class AboutUs extends Component {
   render() {
     return (
       <div className="body">
-        <Header />
-
         <p>
           Here are some text which describe company's mission.Contrary to
           popular belief, Lorem Ipsum is not simply random text. It has roots in

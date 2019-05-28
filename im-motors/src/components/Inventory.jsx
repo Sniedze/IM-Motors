@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import Header from "./Header.jsx";
 import Footer from "./Footer.jsx";
 import { Link, Route, Switch } from "react-router-dom";
 import CarInfo from "./Car.jsx";
+import TeenagerOffers from "./home/TeenagerOffers";
+
 //import SortButtons from "./sortInventory";
 
 export default class Inventory extends Component {
@@ -12,33 +13,58 @@ export default class Inventory extends Component {
       data: []
     };
   }
+
   componentDidMount() {
-    fetch(`https://5be00dbef2ef840013994a6d.mockapi.io/users/`)
-      .then(e => e.json())
-      .then(result => {
+    fetch("https://immotors-65ac.restdb.io/rest/cars", {
+      async: true,
+      crossDomain: true,
+      method: "GET",
+      headers: {
+        "content-type": "application/json",
+        "x-apikey": "5ce2d6b1780a473c8df5c9ef",
+        "cache-control": "no-cache"
+      }
+    }).then(res => {
+      res.json().then(result => {
         this.setState({ data: result });
+        console.log(this.state.data);
       });
+    });
   }
 
   render() {
     let carsLinks = this.state.data.map(item => (
-      <Link to={`/inventory/${item.id}`} key={`/inventory/${item.id}`}>
-        <h1 key={item.createdAt}>{item.name}</h1>
-        <img key={item.comment} src={item.avatar} alt="Profile" />
-      </Link>
+      <div className="car" key={item._id}>
+        <Link to={`/inventory/${item._id}`}>
+          <h4>
+            {item.Year} {item.Manufacturer} {item.Model}
+            {""} {item.Engine}
+          </h4>
+          <img
+            key={item.comment}
+            src={`https://immotors-65ac.restdb.io/media/${item.MainImage}`}
+            alt="Profile"
+          />
+          <p>Price: ${item.Price}</p>
+          <p className="member-price">Member`s Price: ${item.MemberPrice}</p>
+          <p>Mileage: {item.Mileage} mi</p>
+        </Link>
+      </div>
     ));
     let inventoryNav = (
       <Switch>
         <Route path="/inventory/:carId" component={CarInfo} />
-        <nav>{carsLinks}</nav>
+        <>
+          <div className="carList">{carsLinks}</div>
+        </>
       </Switch>
     );
 
     return (
       <>
-        <Header />
         {/* <SortButtons fetched={this.state.data} /> */}
         {inventoryNav}
+        {/* <TeenagerOffers data={this.state.data} /> */}
         <Footer />
       </>
     );

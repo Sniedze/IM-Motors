@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Header from "../Header.jsx";
 import Footer from "../Footer.jsx";
 import BlogContent from "./BlogContent";
 
@@ -26,14 +25,12 @@ export default class Blog extends Component {
     }).then(res => {
       res.json().then(result => {
         this.setState({ data: result });
-        
       });
     });
   }
   render() {
     return (
-      <div>
-        <Header />
+      <div className="blog">
         <BlogContent articles={this.state.data} />
         <Footer />
       </div>

@@ -1,0 +1,27 @@
+.carList {
+    
+    
+    .car {
+      text-align: center;
+      padding: 10px;
+      &:hover {
+        text-decoration: none;
+      }
+      a {
+        color: #000000;
+        &:hover {
+          text-decoration: none;
+        }
+        h2 {
+          text-align: center;
+        }
+        img {
+          width: 70vw;
+        }
+        p {
+          text-align: left;
+        }
+      }
+    }
+  }
+  

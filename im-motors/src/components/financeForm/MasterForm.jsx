@@ -106,22 +106,20 @@ export default class MasterForm extends Component {
       residenceCountry: val
     });
   };
-
-  selectEmploymentRegion = val => {
-    this.setState({
-      residenceRegion: val
-    });
-  };
-
-  selectEmploymentCountry = val => {
-    this.setState({
-      residenceCountry: val
-    });
-  };
-
   selectResidenceRegion = val => {
     this.setState({
       residenceRegion: val
+    });
+  };
+  selectEmploymentRegion = val => {
+    this.setState({
+      employmentRegion: val
+    });
+  };  
+
+  selectEmploymentCountry = val => {
+    this.setState({
+      employmentCountry: val
     });
   };
 
@@ -135,7 +133,6 @@ export default class MasterForm extends Component {
     event.preventDefault();
     const { name, value } = event.target;
     let errors = this.state.errors;
-
     console.log("Name: ", name);
     console.log("Value: ", value);
     const validSsn = RegExp(/^\d{9}$/);
@@ -273,15 +270,6 @@ export default class MasterForm extends Component {
           console.log("Successful" + data);
         });
       });
-      //delete options.headers["Content-Type"];
-      // fetch("https://5cc0aaa482ec6a00149f3e37.mockapi.io/applications", {
-      //   method: "POST",
-      //   body: JSON.stringify(data),
-      //   headers: {
-      //     Accept: "application/json",
-      //     "Content-Type": "application/json"
-      //   }
-      // });
     } else {
       console.error("Invalid Form");
       alert("All required fields must be filled!");
@@ -291,7 +279,7 @@ export default class MasterForm extends Component {
   render() {
     return (
       <React.Fragment>
-        <h1>Application for Credit</h1>
+        <h2>Application for Credit</h2>
         <form onSubmit={this.handleSubmit} noValidate>
           <PersonalInfo
             handleChangeCountry={this.selectCountry}

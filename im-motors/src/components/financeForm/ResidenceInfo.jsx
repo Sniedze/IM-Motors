@@ -6,7 +6,7 @@ export default class ResidenceInfo extends Component {
     // const { errors } = this.props.state;
     return (
       <div className="residence-info">
-        <h2>Residence Information</h2>
+        <h3>Residence Information</h3>
         <div className="input-field street#">
           <label>Street No.</label>
           <span className="required">*</span>
@@ -113,7 +113,7 @@ export default class ResidenceInfo extends Component {
         <div className=" input-field time">
           <label>Time at Residence</label>
           <span className="required">*</span>
-          <select
+          <select className="residence-years"
             onChange={this.props.handleChange}
             defaultValue={this.props.years}
             name="years"
@@ -129,12 +129,12 @@ export default class ResidenceInfo extends Component {
             <option key="7" value="7" label="7" />
             <option key="8" value="8" label="8" />
             <option key="9" value="9" label="9" />
-            <option key="10" value="1" label="1" />
-            <option key="11" value="2" label="2" />
-            <option key="12" value="3" label="3" />
-            <option key="13" value="1" label="1" />
-            <option key="14" value="2" label="2" />
-            <option key="15" value="3" label="3" />
+            <option key="10" value="10" label="10" />
+            <option key="11" value="11" label="11" />
+            <option key="12" value="12" label="12" />
+            <option key="13" value="13" label="13" />
+            <option key="14" value="14" label="14" />
+            <option key="15" value="15" label="15" />
             <option key="16" value="16" label="16" />
             <option key="17" value="17" label="17" />
             <option key="18" value="18" label="18" />
@@ -145,6 +145,7 @@ export default class ResidenceInfo extends Component {
             <span className="errorMessage">{this.props.errors.years}</span>
           )}
           <select
+          className="residence-months"
             onChange={this.props.handleChange}
             defaultValue={this.props.months}
             name="months"
