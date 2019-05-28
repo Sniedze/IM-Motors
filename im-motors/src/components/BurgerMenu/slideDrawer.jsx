@@ -38,7 +38,7 @@ const slideDrawer = props => {
         </ul>
       </nav>
       <button className="close-button">
-        <i class="fas fa-times" />
+        <i className="fas fa-times" />
       </button>
     </div>
   );

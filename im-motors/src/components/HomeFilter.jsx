@@ -25,6 +25,8 @@ export default class HomeFilter extends Component {
       e.json().then(result => this.setState({ data: result }))
     );
   }
+ 
+
   handleChange = event => {
     this.setState({ [event.target.name]: event.target.value });
     if (event.target.name === "Manufacturer") {
