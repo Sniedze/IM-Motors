@@ -64,4 +64,10 @@ body {
       }
     }
   }
+  .close-button span {
+    color: white;
+    z-index: 300;
+    position: absolute;
+    right: 2rem;
+  }
 }
