@@ -1,18 +1,10 @@
+@import "membership-car";
+@import "carfilter";
+
 body {
   h2,
   li {
     font-family: "Questrial", sans-serif;
     color: #000000;
-  }
-}
-.container {
-  ul {
-    h2 {
-      font-size: 2em;
-    }
-    li {
-      list-style: none;
-      font-size: 1.1em;
-    }
   }
 }

@@ -12,6 +12,15 @@
   ul {
     display: unset;
   }
+  .close-button {
+    color: white;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    span {
+      color: white;
+    }
+  }
 }
 .side-drawer.open {
   transform: translateX(0);

@@ -30,11 +30,7 @@ export default class Blog extends Component {
   }
   render() {
     return (
-<<<<<<< HEAD
-      <div>
-=======
       <div className="blog">
->>>>>>> 74b1a427c28859be6178c0faffc72fc362014591
         <BlogContent articles={this.state.data} />
         <Footer />
       </div>

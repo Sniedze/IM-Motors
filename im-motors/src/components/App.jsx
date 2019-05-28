@@ -32,7 +32,10 @@ export default class App extends Component {
     return (
       <HashRouter>
         <Header handleSlide={this.toggleClickHandler} />
-        <SideDrawer show={this.state.sideDrawerOpen} />
+        <SideDrawer
+          show={this.state.sideDrawerOpen}
+          close={this.backDropHandler}
+        />
         {backdrop}
 
         <Switch>
