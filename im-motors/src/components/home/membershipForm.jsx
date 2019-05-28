@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import UserContact from "../contactForm.jsx";
-import Header from "../Header.jsx";
 
 class MembershipForm extends Component {
   state = {};

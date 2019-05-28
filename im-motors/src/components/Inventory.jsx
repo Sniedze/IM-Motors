@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Footer from "./Footer.jsx";
 import { Link, Route, Switch } from "react-router-dom";
 import CarInfo from "./Car.jsx";
+import TeenagerOffers from "./home/TeenagerOffers";
 
 //import SortButtons from "./sortInventory";
 
@@ -30,18 +31,15 @@ export default class Inventory extends Component {
       });
     });
   }
- 
+
   render() {
     let carsLinks = this.state.data.map(item => (
       <div className="car" key={item._id}>
-        <Link
-          to={`/inventory/${item._id}`}
-          key={`/inventory/${item.Manufacturer}${item.Model}`}
-        >
-          <h1>
+        <Link to={`/inventory/${item._id}`}>
+          <h4>
             {item.Year} {item.Manufacturer} {item.Model}
             {""} {item.Engine}
-          </h1>
+          </h4>
           <img
             key={item.comment}
             src={`https://immotors-65ac.restdb.io/media/${item.MainImage}`}
@@ -57,7 +55,7 @@ export default class Inventory extends Component {
       <Switch>
         <Route path="/inventory/:carId" component={CarInfo} />
         <>
-          <nav>{carsLinks}</nav>
+          <div className="carList">{carsLinks}</div>
         </>
       </Switch>
     );
@@ -66,6 +64,7 @@ export default class Inventory extends Component {
       <>
         {/* <SortButtons fetched={this.state.data} /> */}
         {inventoryNav}
+        {/* <TeenagerOffers data={this.state.data} /> */}
         <Footer />
       </>
     );

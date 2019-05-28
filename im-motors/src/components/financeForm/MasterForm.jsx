@@ -106,22 +106,20 @@ export default class MasterForm extends Component {
       residenceCountry: val
     });
   };
-
-  selectEmploymentRegion = val => {
-    this.setState({
-      residenceRegion: val
-    });
-  };
-
-  selectEmploymentCountry = val => {
-    this.setState({
-      residenceCountry: val
-    });
-  };
-
   selectResidenceRegion = val => {
     this.setState({
       residenceRegion: val
+    });
+  };
+  selectEmploymentRegion = val => {
+    this.setState({
+      employmentRegion: val
+    });
+  };  
+
+  selectEmploymentCountry = val => {
+    this.setState({
+      employmentCountry: val
     });
   };
 
@@ -281,7 +279,7 @@ export default class MasterForm extends Component {
   render() {
     return (
       <React.Fragment>
-        <h1>Application for Credit</h1>
+        <h2>Application for Credit</h2>
         <form onSubmit={this.handleSubmit} noValidate>
           <PersonalInfo
             handleChangeCountry={this.selectCountry}
