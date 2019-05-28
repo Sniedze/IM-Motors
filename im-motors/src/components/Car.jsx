@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import KBB from "../assets/kbb.png";
+import SlideShow from "./SlideShow";
 
 export default class Car extends Component {
   constructor() {
@@ -35,6 +36,7 @@ export default class Car extends Component {
 
   render() {
     console.log(this.state.data);
+
     return (
       <div className="one-car">
         <h4>
@@ -48,6 +50,8 @@ export default class Car extends Component {
           }`}
           alt="Profile"
         />
+        <p>{this.state.data.LongDescription}</p> 
+        <p>Mileage: {this.state.data.Mileage} mi</p>
         <p>Price: ${this.state.data.Price}</p>
         <p className="member-price">
           Member`s Price: ${this.state.data.MemberPrice}
