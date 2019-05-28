@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-
+import CarImage from "../../assets/car-side.png";
 class Membership extends Component {
   state = {};
   render() {
     return (
-      <div className="container">
+      <div className="membership-container">
         <Link to="/membership">
           <ul>
             <h2>Become a member </h2>
@@ -15,6 +15,7 @@ class Membership extends Component {
             <li>- Collect loyalty points</li>
           </ul>
         </Link>
+        <img src={CarImage} alt="car-image" />
       </div>
     );
   }

@@ -1,0 +1,19 @@
+.membership-container {
+  display: flex;
+  justify-content: space-around;
+  img {
+    width: 190px;
+    height: 185px;
+  }
+  h2 {
+    font-size: 1.2rem;
+  }
+  ul {
+    padding-left: 1.2em;
+    margin-top: 1.5em;
+    li {
+      list-style: none;
+      font-size: 0.7rem;
+    }
+  }
+}
