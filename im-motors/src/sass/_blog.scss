@@ -4,6 +4,11 @@
     padding: 10px;
   }
   .article {
+    background-color: white;
+    text-align: center;
+    padding: 10px;
+    margin: 35px;
+    box-shadow: 0 0 5px 5px darkgrey;
     text-align: center;
     padding: 10px;
     &:hover {
@@ -16,6 +21,7 @@
       }
       h2 {
         text-align: center;
+        font-size: 19pt;
       }
       img {
         width: 70vw;

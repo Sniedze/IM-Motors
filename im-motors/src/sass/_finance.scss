@@ -17,10 +17,10 @@
     .personal-info,
     .residence-info,
     .employment-info {
-      width: 80vw;
       padding: 1em;
       box-shadow: 1px 1px 20px darkgray;
       background-color: white;
+      margin: 20px;
       .input-field {
         margin: 10px;
         width: 70vw;
@@ -35,7 +35,8 @@
         .residence-months {
           margin-left: 10px;
         }
-        input, select {
+        input,
+        select {
           background-color: white;
           display: block;
           width: 220px;
@@ -43,19 +44,18 @@
           border: 1px solid grey;
         }
         select {
-         
           height: 28px;
-          
         }
 
         label {
           color: black;
+          margin-bottom: 0;
         }
 
         .required {
           color: rgba(255, 0, 0, 0.534);
           font-size: 15pt;
-          margin-right: 30vw;
+          margin-right: 20vw;
         }
         // div.date-text {
         //   border-bottom: 1px solid #ced4da;
@@ -69,6 +69,15 @@
           border: 5px solid red;
         }
       }
+    }
+    .submit-btn {
+      text-align: center;
+      vertical-align: center;
+      height: 40px;
+      width: 87%;
+      margin: 0 auto;
+      background-color: #fccc5c;
+      border-radius: 5px;
     }
   }
 }
