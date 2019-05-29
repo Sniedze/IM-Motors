@@ -44,7 +44,7 @@ export default class Inventory extends Component {
             alt="Profile"
           />
           <p>Price: ${item.Price}</p>
-          <p className="member-price">Member`s Price: ${item.MemberPrice}</p>
+          <p className="member-price">Member`s price: <span> ${item.MemberPrice}</span></p>
           <p>Mileage: {item.Mileage} mi</p>
         </Link>
       </div>

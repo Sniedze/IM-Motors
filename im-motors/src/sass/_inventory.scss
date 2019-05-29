@@ -1,27 +1,32 @@
 .carList {
-    
-    
-    .car {
-      text-align: center;
-      padding: 10px;
+  .car {
+    background-color: white;
+    text-align: center;
+    padding: 10px;
+    margin: 35px;
+    box-shadow: 0 0 5px 5px darkgrey;
+    &:hover {
+      text-decoration: none;
+    }
+    a {
+      color: #000000;
       &:hover {
         text-decoration: none;
       }
-      a {
-        color: #000000;
-        &:hover {
-          text-decoration: none;
-        }
-        h2 {
-          text-align: center;
-        }
-        img {
-          width: 70vw;
-        }
-        p {
-          text-align: left;
+      h2 {
+        text-align: center;
+      }
+      img {
+        width: 70vw;
+      }
+      p {
+        text-align: left;
+        &.member-price {
+          span {
+            color: #E52528;
+          }
         }
       }
     }
   }
-  
+}

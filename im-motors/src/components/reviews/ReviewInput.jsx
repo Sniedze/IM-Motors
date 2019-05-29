@@ -41,36 +41,22 @@ export default class ReviewInput extends Component {
       <div className="review-input">
         <h2>Your opinion matters</h2>
         <form onSubmit={this.handleSubmit} noValidate>
-          <div className="name form-group">
+          <div className="name ">
             <label>Name</label>
             <input
               onChange={this.handleChange}
               defaultValue={this.props.person}
               name="person"
               noValidate
-              className="form-control"
             />
           </div>
-          <div className="feedback form-group">
-            <label>Your Feedback</label>
-            <textarea
-              onChange={this.handleChange}
-              defaultValue={this.props.feedback}
-              name="feedback"
-              noValidate
-              className="form-control"
-            />
-          </div>
-
           <div className="stars ">
-            <label className="my-1 mr-2">Rate Us</label>
+            <label>Rate Us</label>
             <select
               onChange={this.handleChange}
               defaultValue={this.props.stars}
               name="stars"
               noValidate
-              className="custom-select my-1 mr-sm-2"
-              id="rate-input"
             >
               <option value="" label="--" />
               <option key="five" value="5" label="✩✩✩✩✩" />
@@ -80,11 +66,18 @@ export default class ReviewInput extends Component {
               <option key="one" value="1" label="✩" />
             </select>
           </div>
-          <input
-            type="submit"
-            value="Submit"
-            className="btn btn-primary my-1"
-          />
+          <div className="feedback ">
+            <label>Your Feedback</label>
+            <textarea
+              onChange={this.handleChange}
+              defaultValue={this.props.feedback}
+              name="feedback"
+              noValidate
+            />
+          </div>
+
+          
+          <input type="submit" value="Submit" className="submit-button" />
         </form>
       </div>
     );
