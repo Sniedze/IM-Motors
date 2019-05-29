@@ -3,32 +3,50 @@ import Footer from "./Footer.jsx";
 import { Link, Route, Switch } from "react-router-dom";
 import CarInfo from "./Car.jsx";
 
-
 //import SortButtons from "./sortInventory";
 
 export default class Inventory extends Component {
   constructor() {
     super();
     this.state = {
+      endpoint: "https://immotors-65ac.restdb.io/rest/cars",
+      fetchSettings: {
+        async: true,
+        crossDomain: true,
+        method: "GET",
+        headers: {
+          "content-type": "application/json",
+          "x-apikey": "5ce2d6b1780a473c8df5c9ef",
+          "cache-control": "no-cache"
+        }
+      },
       data: []
     };
   }
 
   componentDidMount() {
-    fetch("https://immotors-65ac.restdb.io/rest/cars", {
-      async: true,
-      crossDomain: true,
-      method: "GET",
-      headers: {
-        "content-type": "application/json",
-        "x-apikey": "5ce2d6b1780a473c8df5c9ef",
-        "cache-control": "no-cache"
+    const urlParams = new URLSearchParams(this.props.location.search);
+    const make = urlParams.get("make");
+    const model = urlParams.get("model");
+    const year = urlParams.get("year");
+    let searchQuery = ``;
+    if (year) {
+      searchQuery = `?q={"Manufacturer":"${make}", "Model": "${model}", "Year":"${year}"}`;
+    }
+    if (model) {
+      searchQuery = `?q={"Manufacturer":"${make}", "Model": "${model}"}`;
+    }
+    if (make) {
+      searchQuery = `?q={"Manufacturer":"${make}"}`;
+    }
+
+    fetch(this.state.endpoint + searchQuery, this.state.fetchSettings).then(
+      res => {
+        res.json().then(result => {
+          this.setState({ data: result });
+        });
       }
-    }).then(res => {
-      res.json().then(result => {
-        this.setState({ data: result });
-      });
-    });
+    );
   }
 
   render() {
@@ -63,7 +81,7 @@ export default class Inventory extends Component {
       <>
         {/* <SortButtons fetched={this.state.data} /> */}
         {inventoryNav}
-                <Footer />
+        <Footer />
       </>
     );
   }

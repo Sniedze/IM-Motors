@@ -14,32 +14,39 @@ export default class SubmitButton extends Component {
   };
   render() {
     if (this.state.redirect) {
-      //let searchQueries = this.props.filter(prop => {});
-      if (this.props.make) {
+      ///const searchQuery =
+      if (this.props.year) {
         return (
           <Redirect
             push
             to={{
               pathname: "/inventory",
-              search: `?=${this.props.make}`,
-              state: {
-                make: this.props.make,
-                model: this.props.model,
-                year: this.props.year
-              }
+              search: `?make=${this.props.make}`
             }}
           />
         );
-      }
-
-      //return <Redirect push to={`/inventory?=${this.props.make}`} />;
+      } else if (this.props.model) {
+        return (
+          <Redirect
+            push
+            to={{
+              pathname: "/inventory",
+              search: `?make=${this.props.make}&model=${this.props.model}`
+            }}
+          />
+        );
+      } else
+        return (
+          <Redirect
+            push
+            to={{
+              pathname: "/inventory",
+              search: `?make=${this.props.make}`
+            }}
+          />
+        );
     }
-    /*     let route = (
-      <Switch>
-        <Link to={`/inventory`} />
-        <Route path="/inventory" component={Inventory} />
-      </Switch>
-    ); */
+
     return (
       <button id="hFilterSubmit" onClick={this.handleSubmit}>
         Go!
