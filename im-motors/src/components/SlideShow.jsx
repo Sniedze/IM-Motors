@@ -23,7 +23,6 @@ export default class SlideShow extends React.Component {
   };
 
   nextSlide = () => {
-    let noImage = "https://immotors-65ac.restdb.io/media/";
     const lastIndex = this.props.slides.length - 1;
     const { currentImageIndex } = this.state;
     const shouldResetIndex = currentImageIndex === lastIndex;
@@ -36,9 +35,6 @@ export default class SlideShow extends React.Component {
   };
 
   render() {
-    let noImage = "https://immotors-65ac.restdb.io/media/";
-    //console.log(this.props.slides);
-    console.log(this.props.slides);
     return (
       <div className="carousel">
         <img
@@ -50,7 +46,6 @@ export default class SlideShow extends React.Component {
         <img
           className="image-slide"
           src={this.props.slides[this.state.currentImageIndex]}
-          //src={this.props.src}
           alt=""
         />
         <img

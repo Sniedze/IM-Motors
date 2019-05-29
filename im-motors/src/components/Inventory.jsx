@@ -3,7 +3,6 @@ import Footer from "./Footer.jsx";
 import { Link, Route, Switch } from "react-router-dom";
 import CarInfo from "./Car.jsx";
 
-
 //import SortButtons from "./sortInventory";
 
 export default class Inventory extends Component {
@@ -27,7 +26,6 @@ export default class Inventory extends Component {
     }).then(res => {
       res.json().then(result => {
         this.setState({ data: result });
-        console.log(this.state.data);
       });
     });
   }
@@ -64,7 +62,7 @@ export default class Inventory extends Component {
       <>
         {/* <SortButtons fetched={this.state.data} /> */}
         {inventoryNav}
-                <Footer />
+        <Footer />
       </>
     );
   }
