@@ -3,13 +3,27 @@
     text-align: center;
   }
   padding: 10px;
-  .carousel{
-  img {
+  .carousel {
+    position: relative;
+    img {
       display: block;
-    width: 80vw;
-    height: 100px;
-    margin: 0 auto;
-  }}
+      width: 80vw;
+      height: auto;
+      margin: 0 auto;
+    }
+    .arrow {
+      width: 35px;
+      height: 35px;
+      position: absolute;
+      top: 42%
+    }
+    .back-arrow{
+      left: 8%
+    }
+    .forward-arrow{
+      right: 8%
+    }
+  }
   .kbb {
     width: 10vw;
     text-align: left;

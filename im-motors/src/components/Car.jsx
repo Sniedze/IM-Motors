@@ -20,15 +20,15 @@ export default class Car extends Component {
       this.state.src2,
       this.state.src3,
       this.state.src4
-      // { src: this.state.src1 },
-      // { src: this.state.src2 },
-      // { src: this.state.src3 },
-      // { src: this.state.src4 }
     ];
-    //console.log(imagesArray);
-    return this.setState({ images: imagesArray });
 
-    //return imagesArray;
+    for (let i = 0; i < imagesArray.length; i++) {
+      if (imagesArray[i] === "https://immotors-65ac.restdb.io/media/") {
+        imagesArray.splice(i);
+      }
+    }
+
+    return this.setState({ images: imagesArray });
   };
 
   componentDidMount() {
@@ -55,7 +55,6 @@ export default class Car extends Component {
         this.setState({ data: car });
         this.renderImages(this.state.data);
         this.createImageArray();
-        // console.log(this.state.images);
       });
   };
 
@@ -76,7 +75,6 @@ export default class Car extends Component {
 
   render() {
     return (
-      //console.log(this.state.images),
       <div className="one-car">
         <h3>
           {this.state.data.Year} {this.state.data.Manufacturer}{" "}
@@ -84,13 +82,7 @@ export default class Car extends Component {
         </h3>
 
         <SlideShow slides={this.state.images} keys={this.state} />
-        {/* <img
-          key={this.state.data.comment}
-          src={`https://immotors-65ac.restdb.io/media/${
-            this.state.data.MainImage
-          }`}
-          alt="Profile"
-        /> */}
+
         <p>{this.state.data.LongDescription}</p>
         <p>Mileage: {this.state.data.Mileage} mi</p>
         <p>Price: ${this.state.data.Price}</p>
