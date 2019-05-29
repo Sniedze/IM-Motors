@@ -16,6 +16,7 @@ export default class Footer extends Component {
               <img id="twt" src={Tweeter} alt="tweeter" />
               <img id="insta" src={Instagram} alt="instagram" />
             </div>
+
             <div className="phone-address">
               <div className="phone">
                 <img src={Phone} alt="phone" />
