@@ -21,7 +21,9 @@ export default class SubmitButton extends Component {
             push
             to={{
               pathname: "/inventory",
-              search: `?make=${this.props.make}`
+              search: `?make=${this.props.make}&model=${
+                this.props.model
+              }&year=${this.props.year}`
             }}
           />
         );

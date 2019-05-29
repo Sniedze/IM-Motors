@@ -29,17 +29,13 @@ export default class Inventory extends Component {
     const make = urlParams.get("make");
     const model = urlParams.get("model");
     const year = urlParams.get("year");
-    let searchQuery = ``;
+    let searchQuery = `?q={"Manufacturer":"${make}"}`;
     if (year) {
       searchQuery = `?q={"Manufacturer":"${make}", "Model": "${model}", "Year":"${year}"}`;
     }
     if (model) {
       searchQuery = `?q={"Manufacturer":"${make}", "Model": "${model}"}`;
     }
-    if (make) {
-      searchQuery = `?q={"Manufacturer":"${make}"}`;
-    }
-
     fetch(this.state.endpoint + searchQuery, this.state.fetchSettings).then(
       res => {
         res.json().then(result => {
