@@ -15,10 +15,8 @@ export default class AboutUs extends Component {
           a piece of classical Latin literature from 45 BC, making it over 2000
           years old.
         </p>
-        <div className="all-contact-wrapper">
-          <UserContact />
-          <ContacInfo />
-        </div>
+
+        <UserContact />
 
         <Footer />
       </div>

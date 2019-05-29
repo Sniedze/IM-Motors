@@ -6,8 +6,13 @@
 .footer {
   .contactinfo-container {
     @include flex-display;
-
+    flex-direction: column;
+    background-color: white;
+    padding: 2em 1em;
     .soMe {
+      display: grid;
+      grid-gap: 30px;
+      width: 100%;
       .soMe-icons {
         @include flex-display;
         img {
@@ -22,8 +27,8 @@
         display: flex;
         justify-content: center;
         img {
-          height: 25px;
-          width: 20px;
+          height: 20px;
+          width: 15px;
         }
         p {
           padding-left: 1em;
@@ -31,8 +36,8 @@
       }
     }
     iframe {
-      width: 45%;
-      height: 45%;
+      height: 60%;
+      width: 100%;
     }
   }
 }
