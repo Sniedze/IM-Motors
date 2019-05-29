@@ -18,7 +18,7 @@ $fontfamily: "Kanit", sans-serif;
 
 nav {
   ul {
-    @include displyFlex;
+    //@include displyFlex;
     list-style: none;
     li {
       padding: 0 1em;
@@ -53,7 +53,7 @@ nav {
   }
 }
 .social-wrapper {
-  @include displyFlex;
+  //@include displyFlex;
   width: 40%;
   .social {
     width: 2em;
