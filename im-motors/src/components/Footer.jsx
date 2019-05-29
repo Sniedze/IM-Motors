@@ -27,6 +27,7 @@ export default class Footer extends Component {
             height="300"
             frameBorder="0"
             allowFullscreen
+            title="AdressMap"
           />
         </div>
       </div>
