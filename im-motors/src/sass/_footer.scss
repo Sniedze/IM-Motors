@@ -1,0 +1,38 @@
+@mixin flex-display {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.footer {
+  .contactinfo-container {
+    @include flex-display;
+
+    .soMe {
+      .soMe-icons {
+        @include flex-display;
+        img {
+          width: 30px;
+        }
+        #fb {
+          width: 18px;
+        }
+      }
+      .phone,
+      .address {
+        display: flex;
+        justify-content: center;
+        img {
+          height: 25px;
+          width: 20px;
+        }
+        p {
+          padding-left: 1em;
+        }
+      }
+    }
+    iframe {
+      width: 45%;
+      height: 45%;
+    }
+  }
+}

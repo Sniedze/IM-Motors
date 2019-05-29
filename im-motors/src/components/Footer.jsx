@@ -12,13 +12,19 @@ export default class Footer extends Component {
         <div className="contactinfo-container">
           <section className="soMe">
             <div className="soMe-icons">
-              <img src={FB} alt="facebook" />
-              <img src={Tweeter} alt="tweeter" />
-              <img src={Instagram} alt="instagram" />
+              <img id="fb" src={FB} alt="facebook" />
+              <img id="twt" src={Tweeter} alt="tweeter" />
+              <img id="insta" src={Instagram} alt="instagram" />
             </div>
             <div className="phone-address">
-              <div className="phone" />
-              <div className="address" />
+              <div className="phone">
+                <img src={Phone} alt="phone" />
+                <p> (475) 234-3912</p>
+              </div>
+              <div className="address">
+                <img src={Address} alt="phone" />
+                <p> 1574 Stratford Ave </p>
+              </div>
             </div>
           </section>
           <iframe
