@@ -20,12 +20,14 @@ export default class Car extends Component {
       this.state.src2,
       this.state.src3,
       this.state.src4
-      // { src: this.state.src1 },
-      // { src: this.state.src2 },
-      // { src: this.state.src3 },
-      // { src: this.state.src4 }
     ];
-    //console.log(imagesArray);
+    
+    for (let i = 0; i < imagesArray.length; i++) {
+      if (imagesArray[i] === "https://immotors-65ac.restdb.io/media/") {
+        imagesArray.splice(i);
+      }
+    }
+    console.log(imagesArray);
     return this.setState({ images: imagesArray });
 
     //return imagesArray;

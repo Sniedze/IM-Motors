@@ -1,4 +1,6 @@
 import React from "react";
+import ForwardArrow from "../assets/forward-arrow.png";
+import BackArrow from "../assets/back-arrow.png";
 
 export default class SlideShow extends React.Component {
   constructor(props) {
@@ -21,9 +23,11 @@ export default class SlideShow extends React.Component {
   };
 
   nextSlide = () => {
+    let noImage = "https://immotors-65ac.restdb.io/media/";
     const lastIndex = this.props.slides.length - 1;
     const { currentImageIndex } = this.state;
     const shouldResetIndex = currentImageIndex === lastIndex;
+
     const index = shouldResetIndex ? 0 : currentImageIndex + 1;
 
     this.setState({
@@ -32,36 +36,30 @@ export default class SlideShow extends React.Component {
   };
 
   render() {
+    let noImage = "https://immotors-65ac.restdb.io/media/";
     //console.log(this.props.slides);
-    console.log(this.props.slides[0]);
+    console.log(this.props.slides);
     return (
       <div className="carousel">
-        <Arrow
-          direction="left"
-          clickFunction={this.previousSlide}
-          glyph="&#9664;"
+        <img
+          className="arrow back-arrow"
+          src={BackArrow}
+          onClick={this.previousSlide}
+          alt="Back arrow"
         />
-        {this.props.slides[this.state.currentImageIndex] === null && (
-          <span className="errorMessage">{this.props.errors.employer}</span>
-        )}
         <img
           className="image-slide"
           src={this.props.slides[this.state.currentImageIndex]}
           //src={this.props.src}
           alt=""
         />
-        <Arrow
-          direction="right"
-          clickFunction={this.nextSlide}
-          glyph="&#9654;"
+        <img
+          className="arrow forward-arrow"
+          src={ForwardArrow}
+          onClick={this.nextSlide}
+          alt="Forward arrow"
         />
       </div>
     );
   }
 }
-
-const Arrow = ({ direction, clickFunction, glyph }) => (
-  <div className={`slide-arrow ${direction}`} onClick={clickFunction}>
-    {glyph}
-  </div>
-);
