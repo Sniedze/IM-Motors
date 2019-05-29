@@ -26,7 +26,6 @@ export default class HomeFilter extends Component {
       e.json().then(result => this.setState({ data: result }))
     );
   }
- 
 
   handleChange = event => {
     this.setState({ [event.target.name]: event.target.value });
@@ -69,7 +68,7 @@ export default class HomeFilter extends Component {
 
     return (
       <div className="filterContainer">
-        <h2>Search a car by make</h2>
+        <h2>Search in our inventory</h2>
         <div className="main-container">
           <div className="selects-wrapper">
             <select
