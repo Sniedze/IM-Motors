@@ -6,15 +6,17 @@ class Membership extends Component {
   render() {
     return (
       <div className="membership-container">
-        <Link to="/membership">
-          <ul>
-            <h2>Become a member </h2>
+        <section className="clickable-area">
+          <Link to="/membership">
+            <ul>
+              <h2>Become a member </h2>
 
-            <li>- Discount for the first purchase</li>
-            <li>- Get free cinema tickets</li>
-            <li>- Collect loyalty points</li>
-          </ul>
-        </Link>
+              <li>- Discount for the first purchase</li>
+              <li>- Get free cinema tickets</li>
+              <li>- Collect loyalty points</li>
+            </ul>
+          </Link>
+        </section>
         <img src={CarImage} alt="car" />
       </div>
     );
