@@ -15,7 +15,7 @@ class Membership extends Component {
             <li>- Collect loyalty points</li>
           </ul>
         </Link>
-        <img src={CarImage} alt="car-image" />
+        <img src={CarImage} alt="car" />
       </div>
     );
   }

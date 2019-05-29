@@ -13,27 +13,48 @@ const slideDrawer = props => {
         <nav>
           <ul>
             <li>
-              <NavLink to="/" exact activeClassName="active">
+              <NavLink
+                to="/"
+                exact
+                activeClassName="active"
+                onClick={props.close}
+              >
                 Home
               </NavLink>
             </li>
             <li>
-              <NavLink to="/inventory" activeClassName="active">
+              <NavLink
+                to="/inventory"
+                activeClassName="active"
+                onClick={props.close}
+              >
                 Inventory
               </NavLink>
             </li>
             <li>
-              <NavLink to="/finance" activeClassName="active">
+              <NavLink
+                to="/finance"
+                activeClassName="active"
+                onClick={props.close}
+              >
                 Finance
               </NavLink>
             </li>
             <li>
-              <NavLink to="/about" activeClassName="active">
+              <NavLink
+                to="/about"
+                activeClassName="active"
+                onClick={props.close}
+              >
                 About us
               </NavLink>
             </li>
             <li>
-              <NavLink to="/blog" activeClassName="active">
+              <NavLink
+                to="/blog"
+                activeClassName="active"
+                onClick={props.close}
+              >
                 Blog
               </NavLink>
             </li>

@@ -1,0 +1,43 @@
+@mixin flex-display {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.footer {
+  .contactinfo-container {
+    @include flex-display;
+    flex-direction: column;
+    background-color: white;
+    padding: 2em 1em;
+    .soMe {
+      display: grid;
+      grid-gap: 30px;
+      width: 100%;
+      .soMe-icons {
+        @include flex-display;
+        img {
+          width: 30px;
+        }
+        #fb {
+          width: 18px;
+        }
+      }
+      .phone,
+      .address {
+        display: flex;
+        justify-content: center;
+        img {
+          height: 20px;
+          width: 15px;
+        }
+        p {
+          padding-left: 1em;
+        }
+      }
+    }
+    iframe {
+      height: 60%;
+      width: 100%;
+    }
+  }
+}
