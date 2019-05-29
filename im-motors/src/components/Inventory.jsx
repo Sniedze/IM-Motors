@@ -27,7 +27,6 @@ export default class Inventory extends Component {
     }).then(res => {
       res.json().then(result => {
         this.setState({ data: result });
-        console.log(this.state.data);
       });
     });
   }

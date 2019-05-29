@@ -2,9 +2,6 @@ import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 //import Inventory from "../../Inventory";
 export default class SubmitButton extends Component {
-  /* constructor(props) {
-    super(props);
-  } */
   state = {
     redirect: ""
   };
@@ -12,12 +9,30 @@ export default class SubmitButton extends Component {
     if (this.props.make) {
       this.setState({ redirect: true });
     } else {
-      return null;
+      this.setState({ error: "Select make as a minimum." });
     }
   };
   render() {
     if (this.state.redirect) {
-      return <Redirect push to={`/inventory?=${this.props.make}`} />;
+      //let searchQueries = this.props.filter(prop => {});
+      if (this.props.make) {
+        return (
+          <Redirect
+            push
+            to={{
+              pathname: "/inventory",
+              search: `?=${this.props.make}`,
+              state: {
+                make: this.props.make,
+                model: this.props.model,
+                year: this.props.year
+              }
+            }}
+          />
+        );
+      }
+
+      //return <Redirect push to={`/inventory?=${this.props.make}`} />;
     }
     /*     let route = (
       <Switch>
