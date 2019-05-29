@@ -41,7 +41,9 @@ export default class SlideShow extends React.Component {
           clickFunction={this.previousSlide}
           glyph="&#9664;"
         />
-
+        {this.props.slides[this.state.currentImageIndex] === null && (
+          <span className="errorMessage">{this.props.errors.employer}</span>
+        )}
         <img
           className="image-slide"
           src={this.props.slides[this.state.currentImageIndex]}
