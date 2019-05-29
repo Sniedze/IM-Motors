@@ -18,6 +18,8 @@ export default class ReviewPosts extends Component {
         {item.stars > 2 && <h4>{item.person}</h4>}
         {item.stars > 2 && <span>{this.createStarImages(item.stars)}</span>}
         {item.stars > 2 && <p>{item.feedback}</p>}
+
+        {item.stars > 2 && <hr />}
       </div>
     ));
   }

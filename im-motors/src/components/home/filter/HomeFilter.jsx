@@ -26,6 +26,8 @@ export default class HomeFilter extends Component {
       e.json().then(result => this.setState({ data: result }))
     );
   }
+ 
+
   handleChange = event => {
     this.setState({ [event.target.name]: event.target.value });
     if (event.target.name === "Manufacturer") {
@@ -67,50 +69,60 @@ export default class HomeFilter extends Component {
 
     return (
       <div className="filterContainer">
-        <select
-          name="Manufacturer"
-          defaultValue={this.state.make}
-          className="hFilterDropdown make"
-          onChange={this.handleChange}
-        >
-          <option value={null} label="-Make-" />
-          {makeOptions}
-        </select>
+        <h2>Search a car by make</h2>
+        <div className="main-container">
+          <div className="selects-wrapper">
+            <select
+              id="make"
+              name="Manufacturer"
+              defaultValue={this.state.make}
+              className="hFilterDropdown make"
+              onChange={this.handleChange}
+            >
+              <option value={null} label="-Make-" />
+              {makeOptions}
+            </select>
 
-        <select
-          name="Model"
-          defaultValue={this.state.models}
-          onChange={this.handleChange}
-        >
-          <option value={null} label="-Model-" />
-          {this.state.models && //only if state is set (models exist)
-            this.state.models.map(item => (
-              <option key={item.Model} value={item.Model}>
-                {item.Model}
-              </option>
-            ))}
-        </select>
-        <select
-          name="Year"
-          defaultValue={this.state.year}
-          onChange={this.handleChange}
-        >
-          <option value={null} label="-Year-" />
-          {this.state.years && //only if state is set (years exist)
-            this.state.years.map(
-              item =>
-                item && ( // only if item has value (is true), to fix the empty year due to; return null (see setYears())
-                  <option key={item} value={item}>
-                    {item}
+            <select
+              name="Model"
+              id="model"
+              defaultValue={this.state.models}
+              onChange={this.handleChange}
+            >
+              <option value={null} label="-Model-" />
+              {this.state.models && //only if state is set (models exist)
+                this.state.models.map(item => (
+                  <option key={item.Model} value={item.Model}>
+                    {item.Model}
                   </option>
-                )
-            )}
-        </select>
-        <SubmitBtn
-          make={this.state.Manufacturer}
-          model={this.state.Model}
-          year={this.state.Year}
-        />
+                ))}
+            </select>
+            <select
+              name="Year"
+              id="year"
+              defaultValue={this.state.year}
+              onChange={this.handleChange}
+            >
+              <option value={null} label="-Year-" />
+              {this.state.years && //only if state is set (years exist)
+                this.state.years.map(
+                  item =>
+                    item && ( // only if item has value (is true), to fix the empty year due to; return null (see setYears())
+                      <option key={item} value={item}>
+                        {item}
+                      </option>
+                    )
+                )}
+            </select>
+          </div>
+          <div className="submit-btn">
+            <SubmitBtn
+              make={this.state.Manufacturer}
+              model={this.state.Model}
+              year={this.state.Year}
+            />
+          </div>
+        </div>
       </div>
     );
   }

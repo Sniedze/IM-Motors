@@ -19,7 +19,7 @@ export default class App extends Component {
       return { sideDrawerOpen: !prevState.sideDrawerOpen };
     });
   };
-  backDropHandler = () => {
+  closeHandler = () => {
     this.setState({
       sideDrawerOpen: false
     });
@@ -27,12 +27,15 @@ export default class App extends Component {
   render() {
     let backdrop;
     if (this.state.sideDrawerOpen) {
-      backdrop = <BackDrop handleBackdrop={this.backDropHandler} />;
+      backdrop = <BackDrop handleBackdrop={this.closeHandler} />;
     }
     return (
       <HashRouter>
         <Header handleSlide={this.toggleClickHandler} />
-        <SideDrawer show={this.state.sideDrawerOpen} />
+        <SideDrawer
+          show={this.state.sideDrawerOpen}
+          close={this.closeHandler}
+        />
         {backdrop}
 
         <Switch>

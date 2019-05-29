@@ -30,8 +30,10 @@ export default class Reviews extends Component {
   render() {
     return (
       <div className="reviews">
-        <h2>Customers about IM Motors:</h2>
-        <ReviewPosts posts={this.state.data} />
+        <div className="reviews-container">
+          <h2>Customers about IM Motors:</h2>
+          <ReviewPosts posts={this.state.data} />
+        </div>
         <ReviewInput />
       </div>
     );
