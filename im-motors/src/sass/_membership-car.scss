@@ -4,16 +4,34 @@
   img {
     width: 190px;
     height: 185px;
+    margin-top: 5em;
+    position: absolute;
+    right: 0;
+    top: 9em;
   }
   h2 {
     font-size: 1.2rem;
+    margin-top: 0.5em;
+    color: white;
   }
   ul {
-    padding-left: 1.2em;
-    margin-top: 1.5em;
+    padding-left: 0;
     li {
       list-style: none;
       font-size: 0.7rem;
+      color: white;
     }
+  }
+  .clickable-area {
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 200px;
+    height: 110px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-left: -6em;
+    margin-top: 2em;
+    cursor: pointer;
   }
 }

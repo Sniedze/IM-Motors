@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import CloseButton from "./close-button";
 const slideDrawer = props => {
-  console.log("myprops", props);
+  // console.log("myprops", props);
   let drawerClasses = "side-drawer";
   if (props.show) {
     drawerClasses = "side-drawer open";
