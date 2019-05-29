@@ -1,17 +1,26 @@
 .reviews {
-  display: grid;
+  //display: grid;
   justify-content: center;
   grid-gap: 30px;
   background-color: white;
   padding: 2em;
+  width: 85vw;
   h2 {
     font-size: 1.3rem;
     text-align: center;
   }
 
   .reviews-container {
+    margin: 0 auto 30px auto;
+    background-color: #cecece;
+    height: 300px;
+    overflow-y: scroll;
+    padding: 1.2em;
+    line-height: 0;
+    
     .review-posts {
       border-bottom: 2px solid darkgray;
+
       h4 {
         font-size: 1rem;
         margin-bottom: 8px;
@@ -23,21 +32,12 @@
         }
       }
     }
-    height: 42vh;
-    background-color: #cecece;
-    height: 300px;
-    overflow-y: scroll;
-    padding: 1.2em;
-    line-height: 0;
   }
   .review-input {
     background-color: #cecece;
 
     padding: 1em;
-    #rate-input {
-      background-color: transparent;
-      border: 2px white solid;
-    }
+    
     .name,
     .stars {
       display: inline-block;
