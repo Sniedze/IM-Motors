@@ -29,15 +29,29 @@ export default class Inventory extends Component {
     const make = urlParams.get("make");
     const model = urlParams.get("model");
     const year = urlParams.get("year");
+    const type = urlParams.get("type");
+
     let searchQuery = "";
-    if (year) {
-      searchQuery = `?q={"Manufacturer":"${make}", "Model": "${model}", "Year":"${year}"}`;
-    }
-    if (model) {
-      searchQuery = `?q={"Manufacturer":"${make}", "Model": "${model}"}`;
-    }
     if (make) {
+      //make is the minimum requirement for
       searchQuery = `?q={"Manufacturer":"${make}"}`;
+      if (model) {
+        searchQuery = `?q={"Manufacturer":"${make}", "Model": "${model}"}`;
+      }
+      if (year) {
+        searchQuery = `?q={"Manufacturer":"${make}", "Model": "${model}", "Year":"${year}"}`;
+      }
+    }
+    if (type) {
+      console.log(type);
+      if (type === "Family") {
+        searchQuery = `?q={"IsFamilyCar": true}`;
+      }
+      if (type === "Under5000") {
+        searchQuery = `?q={"Price":{"$lt":5000}}`;
+      } else {
+        searchQuery = `?q={"Type":"${type}"}`;
+      }
     }
     fetch(this.state.endpoint + searchQuery, this.state.fetchSettings).then(
       res => {
@@ -62,7 +76,9 @@ export default class Inventory extends Component {
             alt="Profile"
           />
           <p>Price: ${item.Price}</p>
-          <p className="member-price">Member`s price: <span> ${item.MemberPrice}</span></p>
+          <p className="member-price">
+            Member`s price: <span> ${item.MemberPrice}</span>
+          </p>
           <p>Mileage: {item.Mileage} mi</p>
         </Link>
       </div>
