@@ -9,6 +9,7 @@ export default class Header extends Component {
         <Logo />
         <Menu />
         <ToggleButton click={this.props.handleSlide} />
+        <h1>We sell safe cars</h1>
       </header>
     );
   }

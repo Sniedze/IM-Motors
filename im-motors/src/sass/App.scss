@@ -19,53 +19,10 @@ $redcolor: #e52528;
 }
 
 body {
+ 
   line-height: 0;
   background-color: #cecece !important;
-  header {
-    .logoImage {
-      width: 110px;
-      padding: 1rem;
-    }
-    .active {
-      border-bottom: red 3px solid;
-    }
-
-    nav {
-      margin: 0 auto;
-      display: none;
-      @media only screen and (min-width: 400px) {
-        //   position: absolute;
-        //   left: 20%;
-        //   top: 0;
-        display: block;
-      }
-
-      ul {
-        font-size: 25pt;
-        @media only screen and (max-width: 370px) {
-          padding: 5px;
-        }
-        li {
-          list-style: none;
-          cursor: pointer;
-          display: inline-block;
-          padding: 25px;
-          @media only screen and (max-width: 370px) {
-            font-size: 17pt;
-          }
-
-          a {
-            text-decoration: none;
-            color: black;
-          }
-          a:hover {
-            color: #999b98;
-            text-decoration: none;
-          }
-        }
-      }
-    }
-  }
+  
   .close-button span {
     color: white;
     z-index: 300;
