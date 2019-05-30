@@ -19,6 +19,7 @@ $redcolor: #e52528;
 }
 
 body {
+  line-height: 0;
   background-color: #cecece !important;
   header {
     .logoImage {
@@ -36,7 +37,7 @@ body {
         //   position: absolute;
         //   left: 20%;
         //   top: 0;
-        display: flex;
+        display: block;
       }
 
       ul {

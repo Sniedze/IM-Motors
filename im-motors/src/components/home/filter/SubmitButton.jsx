@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
-//import Inventory from "../../Inventory";
 export default class SubmitButton extends Component {
   state = {
     redirect: ""
