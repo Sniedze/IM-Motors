@@ -3,7 +3,6 @@ import React, { Component } from "react";
 import Footer from "./Footer.jsx";
 import UserContact from "./contactForm.jsx";
 import "bootstrap/dist/css/bootstrap.min.css";
-import ContacInfo from "./contactInfo";
 
 export default class AboutUs extends Component {
   render() {

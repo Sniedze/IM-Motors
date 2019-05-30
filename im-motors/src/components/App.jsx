@@ -9,6 +9,7 @@ import MembershipForm from "./home/membershipForm";
 import SideDrawer from "./BurgerMenu/slideDrawer";
 import BackDrop from "./BurgerMenu/backDrop";
 import Header from "./Header.jsx";
+import TeenagerOffersPage from "./home/Special-offers.jsx";
 
 export default class App extends Component {
   state = {
@@ -45,6 +46,7 @@ export default class App extends Component {
           <Route path="/about" component={AboutUs} /> /}
           <Route path="/blog" component={Blog} />
           <Route path="/membership" component={MembershipForm} />
+          <Route path="/teenagers-offers" component={TeenagerOffersPage} />
         </Switch>
       </HashRouter>
     );
