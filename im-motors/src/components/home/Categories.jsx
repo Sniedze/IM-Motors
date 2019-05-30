@@ -25,6 +25,7 @@ export default class Categories extends Component {
     return (
       <div className="catContainer">
         <h2>Vehicles by Category</h2>
+        <div className="category-buttons">
         <div id="Family" onClick={this.handleCLick}>
           <img src={FamilyCarIcon} alt="Family Car" />
           <h3>Family Cars</h3>
@@ -41,6 +42,7 @@ export default class Categories extends Component {
           <img src={SmallCarIcon} alt="Small car" />
           <h3>Under $5000</h3>
         </div>
+      </div>
       </div>
     );
   }
