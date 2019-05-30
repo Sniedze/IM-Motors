@@ -4,6 +4,7 @@ export default class Categories extends Component {
     return (
       <div className="catContainer">
         <h1>Vehicles by Category</h1>
+        <img src="../assets/" />
       </div>
     );
   }
