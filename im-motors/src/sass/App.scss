@@ -19,10 +19,12 @@ $redcolor: #e52528;
 }
 
 body {
- 
   line-height: 0;
   background-color: #cecece !important;
-  
+  h2 {
+    font-size: 19pt;
+    text-align: center;
+  }
   .close-button span {
     color: white;
     z-index: 300;

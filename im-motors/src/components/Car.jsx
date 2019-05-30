@@ -76,10 +76,10 @@ export default class Car extends Component {
   render() {
     return (
       <div className="one-car">
-        <h3>
+        <h2>
           {this.state.data.Year} {this.state.data.Manufacturer}{" "}
           {this.state.data.Model} {this.state.data.Engine}
-        </h3>
+        </h2>
 
         <SlideShow slides={this.state.images} keys={this.state} />
 

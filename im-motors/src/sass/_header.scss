@@ -1,18 +1,18 @@
 header {
   position: fixed;
   width: 100vw;
-  padding: 0.7em;
+  padding: 0.5em;
   border-bottom: 2px solid darkgray;
   background-color: $graycolor;
   z-index: 500;
-  
+
   .logoImage {
-    width: 60px;
+    width: 50px;
     display: inline-block;
   }
 
-  h1 {
-    font-size: 15pt;
+  h5 {
+    font-size: 14pt;
     font-weight: 400;
     display: inline-block;
     position: absolute;
@@ -38,10 +38,8 @@ header {
       list-style: none;
       @media only screen and (max-width: 370px) {
         padding: 5px;
-        
       }
       li {
-        
         cursor: pointer;
         display: inline-block;
         padding: 0 1em;

@@ -12,24 +12,27 @@
   ul {
     display: unset;
     list-style: none;
-    li{
-      padding: 0 1em;
+    li {
+      padding: 0.8em 1.3em;
       a {
         text-decoration: none;
         color: white;
         font-family: $fontfamily;
+        font-size: 1.7em;
       }
     }
   }
   .close-button {
-    color: white;
     position: absolute;
-    right: 1rem;
+    right: 0.5rem;
     top: 1rem;
     background-color: transparent;
     border: none;
+
     span {
       color: white;
+      width: 30px;
+      font-size: 1.9em;
     }
   }
 }
