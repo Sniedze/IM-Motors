@@ -1,0 +1,17 @@
+.offres-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 12em;
+  background-color: white;
+  .offers {
+    background-color: #fccc5c;
+    text-align: center;
+    padding: 1em;
+    width: 100%;
+    margin: 24px auto;
+    border-radius: 10px;
+    h2 {
+      font-size: 1.5em;
+    }
+  }
+}

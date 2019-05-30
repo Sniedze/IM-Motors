@@ -4,7 +4,7 @@
     height: auto;
     position: absolute;
     right: 0;
-    top: 14em;
+    top: 15em;
   }
   h2 {
     font-size: 1.2rem;
@@ -12,7 +12,8 @@
     color: white;
   }
   ul {
-    padding-left: 5px;
+    padding: 2px 0 0 11px;
+
     li {
       list-style: none;
       font-size: 0.9rem;
@@ -21,12 +22,9 @@
   }
   .clickable-area {
     background-color: rgba(0, 0, 0, 0.4);
-    width: 55vw;
-    height: 150px;
+    width: 62vw;
+    height: 130px;
     border-radius: 10px;
-    //display: flex;
-    align-items: center;
-    //flex-direction: column;
 
     margin: 10px auto;
     cursor: pointer;
