@@ -1,8 +1,11 @@
 .offres-container {
   display: flex;
   justify-content: center;
-  margin-bottom: 1em;
+  margin-top: 1em;
   background-color: white;
+  a {
+    color: black;
+  }
   .offers {
     background-color: #fccc5c;
     text-align: center;

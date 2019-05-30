@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 // import Footer from "./Footer.jsx";
 import { Link, Route, Switch } from "react-router-dom";
+import CarInfo from "../Car";
+
 class TeenagerOffersPage extends Component {
   state = {
     data: []
@@ -49,7 +51,15 @@ class TeenagerOffersPage extends Component {
     ));
     // console.log(offersList);
     // console.log(offersValue);
-    return <div className="special-offers-container">{offersList}</div>;
+    let inventoryNav = (
+      <Switch>
+        <Route path="/inventory/:carId" component={CarInfo} />
+        <>
+          <div className="carList">{offersList}</div>
+        </>
+      </Switch>
+    );
+    return <div className="special-offers-container">{inventoryNav}</div>;
   }
 }
 
