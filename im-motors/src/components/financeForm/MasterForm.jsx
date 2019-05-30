@@ -115,7 +115,7 @@ export default class MasterForm extends Component {
     this.setState({
       employmentRegion: val
     });
-  };  
+  };
 
   selectEmploymentCountry = val => {
     this.setState({
@@ -341,10 +341,11 @@ export default class MasterForm extends Component {
             errors={this.state.errors}
           />
 
-          <input className=" submit-btn " type="submit" value="Submit" ></input>
+          <div className="submit-button-container">
+            <input className="submit-button" type="submit" value="Submit" />
+          </div>
         </form>
       </React.Fragment>
     );
   }
 }
-

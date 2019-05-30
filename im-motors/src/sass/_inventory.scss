@@ -1,9 +1,10 @@
 .carList {
+  padding-top:80px;
   .car {
     background-color: white;
     text-align: center;
-    padding: 10px;
-    margin: 35px;
+    padding: 20px;
+    margin: 25px;
     box-shadow: 0 0 5px 5px darkgrey;
     &:hover {
       text-decoration: none;
@@ -17,7 +18,7 @@
         text-align: center;
       }
       img {
-        width: 70vw;
+        width: 100%;
       }
       p {
         text-align: left;

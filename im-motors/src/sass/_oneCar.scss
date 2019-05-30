@@ -1,8 +1,9 @@
 .one-car {
+  padding: 100px 10px 10px 10px;
   h4 {
     text-align: center;
   }
-  padding: 10px;
+  
   .carousel {
     position: relative;
     img {
@@ -12,16 +13,17 @@
       margin: 0 auto;
     }
     .arrow {
-      width: 35px;
-      height: 35px;
+      width: 25px;
+      height: auto;
       position: absolute;
-      top: 42%
+      top: 42%;
+      z-index: 500;
     }
-    .back-arrow{
-      left: 8%
+    .back-arrow {
+      left: -2%;
     }
-    .forward-arrow{
-      right: 8%
+    .forward-arrow {
+      right: -2%;
     }
   }
   .kbb {

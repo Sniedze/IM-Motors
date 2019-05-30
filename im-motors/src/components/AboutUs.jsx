@@ -8,7 +8,7 @@ import ContacInfo from "./contactInfo";
 export default class AboutUs extends Component {
   render() {
     return (
-      <div className="body">
+      <div className="about-us-page">
         <p>
           Here are some text which describe company's mission.Contrary to
           popular belief, Lorem Ipsum is not simply random text. It has roots in
@@ -17,7 +17,6 @@ export default class AboutUs extends Component {
         </p>
 
         <UserContact />
-
         <Footer />
       </div>
     );

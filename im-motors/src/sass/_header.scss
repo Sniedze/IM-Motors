@@ -1,0 +1,64 @@
+header {
+  position: fixed;
+  width: 100vw;
+  padding: 0.7em;
+  border-bottom: 2px solid darkgray;
+  background-color: $graycolor;
+  z-index: 500;
+  
+  .logoImage {
+    width: 60px;
+    display: inline-block;
+  }
+
+  h1 {
+    font-size: 15pt;
+    font-weight: 400;
+    display: inline-block;
+    position: absolute;
+    bottom: 5%;
+    right: 25%;
+  }
+  .active {
+    border-bottom: red 3px solid;
+  }
+
+  nav {
+    margin: 0 auto;
+    display: none;
+    @media only screen and (min-width: 400px) {
+      //   position: absolute;
+      //   left: 20%;
+      //   top: 0;
+      display: block;
+    }
+
+    ul {
+      font-size: 25pt;
+      list-style: none;
+      @media only screen and (max-width: 370px) {
+        padding: 5px;
+        
+      }
+      li {
+        
+        cursor: pointer;
+        display: inline-block;
+        padding: 0 1em;
+        @media only screen and (max-width: 370px) {
+          font-size: 17pt;
+        }
+
+        a {
+          text-decoration: none;
+          color: black;
+          font-family: $fontfamily;
+        }
+        a:hover {
+          color: #999b98;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}

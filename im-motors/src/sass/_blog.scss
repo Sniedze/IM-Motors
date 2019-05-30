@@ -1,13 +1,24 @@
 .blog {
+  padding: 110px 15px 15px 15px;
+  margin-bottom: 30px;
   .one-article {
     text-align: center;
-    padding: 10px;
+    background-color: white;
+    padding: 15px;
+    margin-bottom: 30px;
+    img {
+      width: 80%;
+    }
+    p {
+      text-align: left;
+    }
   }
   .article {
     background-color: white;
+    width: 100%;
     text-align: center;
     padding: 10px;
-    margin: 35px;
+    margin-bottom: 35px;
     box-shadow: 0 0 5px 5px darkgrey;
     text-align: center;
     padding: 10px;
