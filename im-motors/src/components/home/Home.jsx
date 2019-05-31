@@ -5,7 +5,8 @@ import Reviews from "../reviews/Reviews";
 import HomeFilter from "./filter/HomeFilter";
 import Categories from "./Categories";
 import TeenagerOffers from "./TeenagerOffers";
-
+import LandingPFooter from "./landingPFooter";
+import Footer from "../Footer";
 export default class Home extends Component {
   render() {
     return (
@@ -15,6 +16,8 @@ export default class Home extends Component {
         <Categories />
         <HomeFilter />
         <Reviews />
+        <LandingPFooter />
+        <Footer />
       </div>
     );
   }

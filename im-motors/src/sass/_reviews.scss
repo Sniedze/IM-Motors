@@ -4,8 +4,6 @@
   grid-gap: 30px;
   background-color: white;
   padding: 2em;
-  
-  
 
   .reviews-container {
     margin: 0 auto 30px auto;
@@ -14,7 +12,7 @@
     overflow-y: scroll;
     padding: 1.2em;
     line-height: 0;
-    
+
     .review-posts {
       border-bottom: 2px solid darkgray;
 
@@ -34,7 +32,7 @@
     background-color: #cecece;
 
     padding: 1em;
-    
+
     .name,
     .stars {
       display: inline-block;
@@ -51,6 +49,9 @@
       width: 30vw;
       select {
         width: 30vw;
+        border-radius: 0;
+        border: 2px white solid;
+        background-color: transparent;
       }
     }
     .feedback {

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import FamilyCarIcon from "../../assets/family-car-icon.png";
+import FamilyCarIcon from "../../assets/familycar-new.png";
 import SUVCarIcon from "../../assets/suv-car-icon.png";
 import PickUpCarIcon from "../../assets/pickup-car-icon.png";
 import SmallCarIcon from "../../assets/small-car-icon.png";
@@ -26,23 +26,23 @@ export default class Categories extends Component {
       <div className="catContainer">
         <h2>Vehicles by Category</h2>
         <div className="category-buttons">
-        <div id="Family" onClick={this.handleCLick}>
-          <img src={FamilyCarIcon} alt="Family Car" />
-          <h3>Family Cars</h3>
+          <div id="Family" onClick={this.handleCLick}>
+            <img id="family" src={FamilyCarIcon} alt="Family Car" />
+            <h3>Family Cars</h3>
+          </div>
+          <div id="SUV" onClick={this.handleCLick}>
+            <img src={SUVCarIcon} alt="SUV" />
+            <h3>SUVs</h3>
+          </div>
+          <div id="Pickup" onClick={this.handleCLick}>
+            <img src={PickUpCarIcon} alt="Pick-up" />
+            <h3>Pick-Ups</h3>
+          </div>
+          <div id="Under5000" onClick={this.handleCLick}>
+            <img src={SmallCarIcon} alt="Small car" />
+            <h3>Under $5000</h3>
+          </div>
         </div>
-        <div id="SUV" onClick={this.handleCLick}>
-          <img src={SUVCarIcon} alt="SUV" />
-          <h3>SUVs</h3>
-        </div>
-        <div id="Pickup" onClick={this.handleCLick}>
-          <img src={PickUpCarIcon} alt="Pick-up" />
-          <h3>Pick-Ups</h3>
-        </div>
-        <div id="Under5000" onClick={this.handleCLick}>
-          <img src={SmallCarIcon} alt="Small car" />
-          <h3>Under $5000</h3>
-        </div>
-      </div>
       </div>
     );
   }
