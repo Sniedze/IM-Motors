@@ -30,5 +30,10 @@
   }
   p {
     text-align: left;
+    &.member-price {
+      span {
+        color: #E52528;
+      }
+    }
   }
 }

@@ -87,7 +87,7 @@ export default class Car extends Component {
         <p>Mileage: {this.state.data.Mileage} mi</p>
         <p>Price: ${this.state.data.Price}</p>
         <p className="member-price">
-          Member`s Price: ${this.state.data.MemberPrice}
+          Member`s Price: <span>${this.state.data.MemberPrice}</span>
         </p>
         <p>Mileage: {this.state.data.Mileage} mi</p>
         <img className="kbb" src={KBB} alt="Kelly Blue Book icon" />
