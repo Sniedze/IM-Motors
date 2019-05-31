@@ -1,9 +1,9 @@
 .one-car {
   padding: 100px 10px 10px 10px;
-  
-  
+
   .carousel {
     position: relative;
+    margin-bottom: 20px;
     img {
       display: block;
       width: 80vw;
@@ -15,7 +15,6 @@
       height: auto;
       position: absolute;
       top: 42%;
-     
     }
     .back-arrow {
       left: -2%;
@@ -31,5 +30,10 @@
   }
   p {
     text-align: left;
+    &.member-price {
+      span {
+        color: #E52528;
+      }
+    }
   }
 }
