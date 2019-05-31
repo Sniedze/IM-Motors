@@ -15,6 +15,17 @@ $fontfamily: "Kanit", sans-serif;
     padding: 1em;
     box-shadow: 1px 1px 20px darkgray;
     margin: 1em;
+    .submit-button-container {
+      width: 250px;
+      margin: 5px auto;
+      button.submit-button {
+        width: 250px;
+        align-items: center;
+        height: 40px;
+        background-color: #fccc5c;
+        border-radius: 5px;
+      }
+    }
   }
   .all-contact-wrapper {
     display: grid;

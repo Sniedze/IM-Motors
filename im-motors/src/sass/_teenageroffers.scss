@@ -13,8 +13,15 @@
     width: 100%;
     margin: 24px auto;
     border-radius: 10px;
+    position: relative;
     h2 {
-      font-size: 1.5em;
+      padding-bottom: 15px;
+    }
+    .arrow {
+      width: 30px;
+      position: absolute;
+      bottom: 5%;
+      right: 0.3%;
     }
   }
 }

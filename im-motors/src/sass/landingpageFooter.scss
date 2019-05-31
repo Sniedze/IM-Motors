@@ -24,7 +24,7 @@
       //padding: 0.6em;
       .soMe-icons {
         @include flex-display;
-        
+
         img {
           width: 30px;
         }
@@ -32,21 +32,25 @@
           width: 18px;
         }
       }
-      .phone-address{
+      .phone-address {
         margin-top: 15px;
         margin-left: 10px;
-      .phone,
-      .address {
-        display: flex;
-        
-        img {
-          height: 20px;
-          width: 15px;
-        }
-        p {
-          padding-left: 6px;
+        .phone,
+        .address {
+          display: flex;
+
+          img {
+            height: 20px;
+            width: 15px;
+          }
+          p {
+            padding-left: 6px;
+          }
         }
       }
-    }}
+    }
+  }
+  iframe {
+    width: 100vw;
   }
 }

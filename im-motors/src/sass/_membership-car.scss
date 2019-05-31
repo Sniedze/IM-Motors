@@ -8,28 +8,32 @@
     right: 0;
     top: 13em;
   }
-  h2 {
-    text-decoration: underline;
-    color: #fccc5c;
-  }
-  ul {
-    padding: 10px;
-    text-align: center;
-    li {
-      list-style: none;
-      font-size: 1rem;
-      color: white;
-    }
-  }
+
   .clickable-area {
     position: relative;
     background-color: rgba(0, 0, 0, 0.4);
     width: 75vw;
     border-radius: 10px;
-    //display: flex;
-
-    //flex-direction: column;
     margin: 10px auto;
     cursor: pointer;
+    h2 {
+      
+      color: #fccc5c;
+    }
+    ul {
+      padding: 10px;
+      text-align: center;
+      li {
+        list-style: none;
+        font-size: 1rem;
+        color: white;
+        text-align: left;
+      }
+    }
+    .arrow {
+      width: 30px;
+      position: absolute;
+      top: 66%;
+    }
   }
 }

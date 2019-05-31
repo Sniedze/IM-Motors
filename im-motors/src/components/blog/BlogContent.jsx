@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link, Route, Switch } from "react-router-dom";
 import Article from "./Article.jsx";
+import Arrow from "../../assets/arrow.png";
 
 export default class BlogContent extends Component {
   render() {
@@ -17,6 +18,7 @@ export default class BlogContent extends Component {
             />
             <p className="short-description">{item.ShortDescription}</p>
             <p className="date">{item.CreationDate.slice(0, 10)}</p>
+            <img className="arrow" src={Arrow} alt="arrow" />
           </React.Fragment>
         </Link>
       </div>

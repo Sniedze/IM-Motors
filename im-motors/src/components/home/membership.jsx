@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import CarImage from "../../assets/car-side.png";
+import Arrow from "../../assets/arrow.png";
 class Membership extends Component {
   state = {};
   render() {
@@ -14,6 +15,7 @@ class Membership extends Component {
               <li>- Get free cinema tickets</li>
               <li>- Collect loyalty points</li>
             </ul>
+            <img className="arrow" src={Arrow} alt="arrow" />
           </section>
         </Link>
         <img src={CarImage} alt="car" />

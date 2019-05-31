@@ -21,9 +21,19 @@ $redcolor: #e52528;
 body {
   line-height: 0;
   background-color: #cecece !important;
+  p, li {
+    font-family: "Kanit", sans-serif;
+  }
   h2 {
     font-size: 19pt;
     text-align: center;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5, label {
+    font-family: "Questrial", sans-serif;
   }
   .close-button span {
     color: white;

@@ -36,7 +36,6 @@ class UserContact extends Component {
                 id="firstname"
                 className="form-control"
                 onChange={this.handleChange}
-                placeholder="My first name"
               />
             </div>
             <div className=" form-group">
@@ -46,7 +45,6 @@ class UserContact extends Component {
                 id="lastname"
                 className="form-control"
                 onChange={this.handleChange}
-                placeholder="Last name"
               />
             </div>
             <div className="form-group">
@@ -56,7 +54,6 @@ class UserContact extends Component {
                 id="email"
                 className="form-control"
                 onChange={this.handleChange}
-                placeholder="Email address"
               />
             </div>
             <div className="form-group">
@@ -66,11 +63,11 @@ class UserContact extends Component {
                 id="message"
                 className="form-control"
                 onChange={this.handleChange}
-                placeholder="I'm writing to you because ..."
               />
             </div>
-
-            <button className="btn btn-primary">Submit</button>
+            <div className="submit-button-container">
+              <button className="submit-button">Submit</button>
+            </div>
           </form>
         </div>
       </div>

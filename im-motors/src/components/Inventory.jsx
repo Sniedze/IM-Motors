@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Footer from "./Footer.jsx";
 import { Link, Route, Switch } from "react-router-dom";
 import CarInfo from "./Car.jsx";
+import Arrow from "../assets/arrow.png";
 
 //import SortButtons from "./sortInventory";
 
@@ -66,10 +67,10 @@ export default class Inventory extends Component {
     let carsLinks = this.state.data.map(item => (
       <div className="car" key={item._id}>
         <Link to={`/inventory/${item._id}`}>
-          <h4>
+          <h2>
             {item.Year} {item.Manufacturer} {item.Model}
             {""} {item.Engine}
-          </h4>
+          </h2>
           <img
             key={item.comment}
             src={`https://immotors-65ac.restdb.io/media/${item.MainImage}`}
@@ -80,6 +81,7 @@ export default class Inventory extends Component {
             Member`s price: <span> ${item.MemberPrice}</span>
           </p>
           <p>Mileage: {item.Mileage} mi</p>
+          <img className="arrow" src={Arrow} alt="arrow" />
         </Link>
       </div>
     ));

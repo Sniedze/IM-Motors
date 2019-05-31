@@ -1,6 +1,7 @@
 .carList {
   padding-top:80px;
   .car {
+    position: relative;
     background-color: white;
     text-align: center;
     padding: 20px;
@@ -25,6 +26,12 @@
             color: #E52528;
           }
         }
+      }
+      .arrow{
+        width: 30px;
+        position: absolute;
+        bottom: 5%;
+        right: 2%;
       }
     }
   }
