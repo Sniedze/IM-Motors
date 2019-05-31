@@ -50,7 +50,7 @@ export default class SubmitButton extends Component {
 
     return (
       <button id="hFilterSubmit" onClick={this.handleSubmit}>
-        Go!
+        Search
       </button>
     );
   }

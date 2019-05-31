@@ -3,38 +3,50 @@
   align-items: center;
   justify-content: space-around;
 }
-.l-footer {
-  background-color: #fff;
-  #car-back {
-    width: 60%;
-  }
-  .soMe {
-    display: grid;
-    grid-gap: 30px;
-    width: 100%;
+@mixin display-grid {
+  display: -ms-grid;
+  display: grid;
+}
 
-    .soMe-icons {
-      @include flex-display;
-      background-color: #cecece;
-      padding: 1em;
-      img {
-        width: 30px;
-      }
-      #fb {
-        width: 18px;
-      }
-    }
-    .phone,
-    .address {
-      display: flex;
-      justify-content: center;
-      img {
-        height: 20px;
-        width: 15px;
-      }
-      p {
-        padding-left: 1em;
+.landing-page-footer {
+  background-color: #fff;
+
+  .soMe {
+    @include display-grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    .l-footer {
+      #car-back {
+        width: 100%;
       }
     }
+    .contactinfo-container {
+      //padding: 0.6em;
+      .soMe-icons {
+        @include flex-display;
+        
+        img {
+          width: 30px;
+        }
+        #fb {
+          width: 18px;
+        }
+      }
+      .phone-address{
+        margin-top: 15px;
+        margin-left: 10px;
+      .phone,
+      .address {
+        display: flex;
+        
+        img {
+          height: 20px;
+          width: 15px;
+        }
+        p {
+          padding-left: 6px;
+        }
+      }
+    }}
   }
 }

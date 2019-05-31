@@ -5,10 +5,10 @@ class TeenagerOffers extends Component {
   state = {};
   render() {
     return (
-      <div className="offres-container">
+      <div className="offers-container">
         <Link to="teenagers-offers">
           <div className="offers">
-            <h2>Teenager special Offers</h2>
+            <h2>Special Offers for Teenagers</h2>
           </div>
         </Link>
       </div>
