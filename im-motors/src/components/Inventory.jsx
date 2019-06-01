@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Footer from "./Footer.jsx";
-import { Link, Route, Switch } from "react-router-dom";
+import { Link, Route, Switch, Redirect } from "react-router-dom";
 import CarInfo from "./Car.jsx";
 import Arrow from "../assets/arrow.png";
 
@@ -68,14 +68,25 @@ export default class Inventory extends Component {
     );
   }
   priceSort(direction) {
-    let hint;
-    if (direction === "Asc") {
-      hint = '&h={"$orderby": {"Price": 1}}';
-    }
-    if (direction === "Desc") {
-      hint = '&h={"$orderby": {"Price": -1}}';
-    }
+    let hint = `&h={"$orderby": {"Price": ${direction}}}`;
     this.fetchWithQuery(this.state.searchQuery, hint);
+    /*  console.log(this.props.location);
+    this.props.history.replace({
+      key: "1",
+      pathname: `/inventory`,
+      search: `${this.props.location.search}&byPrice=${direction}`
+    }); */
+    /*     return (
+      <Redirect
+        push
+        to={{
+          pathname:
+            this.props.location.pathname +
+            this.props.location.search +
+            `&byPrice=${direction}`
+        }}
+      />
+    ); */
   }
 
   render() {
@@ -105,8 +116,8 @@ export default class Inventory extends Component {
         <Route path="/inventory/:carId" component={CarInfo} />
         <div className="carList">
           <h3>By Price</h3>
-          <button onClick={() => this.priceSort("Asc")}>Ascending</button>
-          <button onClick={() => this.priceSort("Desc")}>Descending</button>
+          <button onClick={() => this.priceSort(1)}>Ascending</button>
+          <button onClick={() => this.priceSort(-1)}>Descending</button>
           {/* <SortByPriceButtons currentInventory={this.state.data} /> */}
           {carsLinks}
         </div>
