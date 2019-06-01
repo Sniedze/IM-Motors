@@ -44,11 +44,9 @@ export default class Inventory extends Component {
       }
     }
     if (type) {
-      console.log(type);
       if (type === "Family") {
         searchQuery = `?q={"IsFamilyCar": true}`;
-      }
-      if (type === "Under5000") {
+      } else if (type === "Under5000") {
         searchQuery = `?q={"Price":{"$lt":5000}}`;
       } else {
         searchQuery = `?q={"Type":"${type}"}`;
