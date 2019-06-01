@@ -1,5 +1,5 @@
 .carList {
-  padding-top:80px;
+  padding-top: 80px;
   .car {
     position: relative;
     background-color: white;
@@ -15,7 +15,7 @@
       &:hover {
         text-decoration: none;
       }
-      
+
       img {
         width: 100%;
       }
@@ -23,11 +23,11 @@
         text-align: left;
         &.member-price {
           span {
-            color: #E52528;
+            color: #e52528;
           }
         }
       }
-      .arrow{
+      .arrow {
         width: 30px;
         position: absolute;
         bottom: 5%;

@@ -4,13 +4,15 @@ import { Link, Route, Switch } from "react-router-dom";
 import CarInfo from "./Car.jsx";
 import Arrow from "../assets/arrow.png";
 
-//import SortButtons from "./sortInventory";
+//import SortByPriceButtons from "./sortByPrice";
+//import { url } from "inspector";
 
 export default class Inventory extends Component {
   constructor() {
     super();
     this.state = {
       endpoint: "https://immotors-65ac.restdb.io/rest/cars",
+      searchQuery: "",
       fetchSettings: {
         async: true,
         crossDomain: true,
@@ -31,8 +33,9 @@ export default class Inventory extends Component {
     const model = urlParams.get("model");
     const year = urlParams.get("year");
     const type = urlParams.get("type");
-
-    let searchQuery = "";
+    const byPrice = urlParams.get("byPrice");
+    let searchQuery = "?q={}";
+    let hint = `&h={"$orderby": {"Price": ${byPrice}}}`;
     if (make) {
       //make is the minimum requirement for
       searchQuery = `?q={"Manufacturer":"${make}"}`;
@@ -52,13 +55,27 @@ export default class Inventory extends Component {
         searchQuery = `?q={"Type":"${type}"}`;
       }
     }
-    fetch(this.state.endpoint + searchQuery, this.state.fetchSettings).then(
+    this.setState({ searchQuery: searchQuery });
+    this.fetchWithQuery(searchQuery, hint);
+  }
+  fetchWithQuery(query, hint) {
+    fetch(this.state.endpoint + query + hint, this.state.fetchSettings).then(
       res => {
         res.json().then(result => {
           this.setState({ data: result });
         });
       }
     );
+  }
+  priceSort(direction) {
+    let hint;
+    if (direction === "Asc") {
+      hint = '&h={"$orderby": {"Price": 1}}';
+    }
+    if (direction === "Desc") {
+      hint = '&h={"$orderby": {"Price": -1}}';
+    }
+    this.fetchWithQuery(this.state.searchQuery, hint);
   }
 
   render() {
@@ -86,15 +103,18 @@ export default class Inventory extends Component {
     let inventoryNav = (
       <Switch>
         <Route path="/inventory/:carId" component={CarInfo} />
-        <>
-          <div className="carList">{carsLinks}</div>
-        </>
+        <div className="carList">
+          <h3>By Price</h3>
+          <button onClick={() => this.priceSort("Asc")}>Ascending</button>
+          <button onClick={() => this.priceSort("Desc")}>Descending</button>
+          {/* <SortByPriceButtons currentInventory={this.state.data} /> */}
+          {carsLinks}
+        </div>
       </Switch>
     );
 
     return (
       <>
-        {/* <SortButtons fetched={this.state.data} /> */}
         {inventoryNav}
         <Footer />
       </>
