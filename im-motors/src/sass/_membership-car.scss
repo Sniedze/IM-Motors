@@ -1,12 +1,55 @@
+@mixin tablet {
+  @media only screen and (min-width: 570px) {
+    @content;
+  }
+}
+@mixin small-tablet {
+  @media only screen and (min-width: 400px) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media only screen and (min-width: 900px) {
+    @content;
+  }
+}
+@mixin display-grid {
+  display: -ms-grid;
+  display: grid;
+}
+
 .membership-container {
   padding-top: 100px;
   padding-bottom: 150px;
+  @include small-tablet {
+    padding-top: 30px;
+  }
+  @include tablet {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    @include display-grid;
+    grid-gap: 15px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+
   img {
     width: 60vw;
     height: auto;
     position: absolute;
     right: 0;
     top: 13em;
+    @include small-tablet {
+      top: 170px;
+      width: 50vw;
+    }
+    @include tablet {
+      width: 50vw;
+      height: auto;
+      position: relative;
+      top: 0;
+    }
+    
   }
 
   .clickable-area {
@@ -15,9 +58,16 @@
     width: 75vw;
     border-radius: 10px;
     margin: 10px auto;
+    @include small-tablet {
+      width: 65vw;
+      margin: 0 5vw;
+    }
+    @include tablet {
+      width: 45vw;
+      margin: 0 5vw;
+    }
     cursor: pointer;
     h2 {
-      
       color: #fccc5c;
     }
     ul {
