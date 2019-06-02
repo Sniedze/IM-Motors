@@ -1,4 +1,5 @@
 .membership-form{
+    padding: 110px 15px 15px 15px;
   .membership-form-container {
     width: 90vw;
     margin: 0 auto;
@@ -28,7 +29,7 @@
       .submit-button-container {
         width: 250px;
         margin: 5px auto;
-        input.submit-button {
+        button.submit-button {
           width: 250px;
           align-items: center;
           height: 40px;
