@@ -5,7 +5,7 @@ class MembershipForm extends Component {
   state = {};
   render() {
     return (
-      <div>
+      <div className="membership-form">
         <h2> Just a few steps to get all benefits</h2>
         <UserContact />
       </div>

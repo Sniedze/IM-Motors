@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link, Route, Switch } from "react-router-dom";
 import Article from "./Article.jsx";
-import Arrow from "../../assets/arrow.png";
+import Arrow from "../../assets/forward-arrow.png";
 
 export default class BlogContent extends Component {
   render() {

@@ -11,7 +11,6 @@ export default class ResidenceInfo extends Component {
           <label>Street No.</label>
           <span className="required">*</span>
           <input
-            placeholder="Enter Street Number"
             onChange={this.props.handleChange}
             defaultValue={this.props.streetNumber}
             name="streetNumber"
@@ -28,7 +27,6 @@ export default class ResidenceInfo extends Component {
           <label>Street Name</label>
           <span className="required">*</span>
           <input
-            placeholder="Enter Street Name"
             onChange={this.props.handleChange}
             defaultValue={this.props.streetName}
             name="streetName"
@@ -45,7 +43,6 @@ export default class ResidenceInfo extends Component {
           <input
             defaultValue={this.props.apartament}
             onChange={this.props.handleChange}
-            placeholder="Enter Apartament Number"
             name="apartament"
           />
         </div>
@@ -54,7 +51,6 @@ export default class ResidenceInfo extends Component {
           <label>City</label>
           <span className="required">*</span>
           <input
-            placeholder="Enter the City"
             onChange={this.props.handleChange}
             defaultValue={this.props.city}
             name="city"
@@ -99,7 +95,6 @@ export default class ResidenceInfo extends Component {
           <label>Zip</label>
           <span className="required">*</span>
           <input
-            placeholder="Enter the Zip"
             onChange={this.props.handleChange}
             defaultValue={this.props.zip}
             name="zip"
@@ -113,7 +108,8 @@ export default class ResidenceInfo extends Component {
         <div className=" input-field time">
           <label>Time at Residence</label>
           <span className="required">*</span>
-          <select className="residence-years"
+          <select
+            className="residence-years"
             onChange={this.props.handleChange}
             defaultValue={this.props.years}
             name="years"
@@ -145,7 +141,7 @@ export default class ResidenceInfo extends Component {
             <span className="errorMessage">{this.props.errors.years}</span>
           )}
           <select
-          className="residence-months"
+            className="residence-months"
             onChange={this.props.handleChange}
             defaultValue={this.props.months}
             name="months"
@@ -189,7 +185,6 @@ export default class ResidenceInfo extends Component {
           <label>Monthly payment $</label>
           <span className="required">*</span>
           <input
-            placeholder="If none, enter 0"
             onChange={this.props.handleChange}
             defaultValue={this.props.payment}
             name="payment"

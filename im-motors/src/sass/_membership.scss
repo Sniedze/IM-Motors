@@ -1,0 +1,42 @@
+.membership-form{
+  .membership-form-container {
+    width: 90vw;
+    margin: 0 auto;
+
+    form {
+      padding: 1em;
+      box-shadow: 1px 1px 20px darkgray;
+      background-color: white;
+      margin-top: 20px;
+      .input-field {
+        margin: 0 auto 10px auto;
+        width: 220px;
+
+        input {
+          background-color: white;
+          display: block;
+          width: 320px;
+          height: 25px;
+          border: 1px solid grey;
+        }
+
+        label {
+          color: black;
+          margin-bottom: 0;
+        }
+      }
+      .submit-button-container {
+        width: 250px;
+        margin: 5px auto;
+        input.submit-button {
+          width: 250px;
+          align-items: center;
+          height: 40px;
+          background-color: #fccc5c;
+          border-radius: 5px;
+        }
+      }
+    }
+    
+  }}
+

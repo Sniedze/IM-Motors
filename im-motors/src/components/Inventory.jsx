@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Footer from "./Footer.jsx";
 import { Link, Route, Switch } from "react-router-dom";
 import CarInfo from "./Car.jsx";
-import Arrow from "../assets/arrow.png";
+import Arrow from "../assets/forward-arrow.png";
 
 //import SortButtons from "./sortInventory";
 

@@ -26,50 +26,48 @@ class UserContact extends Component {
 
   render() {
     return (
-      <div>
-        <div className="form-container ">
-          <form onSubmit={this.handleSubmit}>
-            <div className=" form-group">
-              <label htmlFor="firstname">First name</label>
-              <input
-                type="text"
-                id="firstname"
-                className="form-control"
-                onChange={this.handleChange}
-              />
-            </div>
-            <div className=" form-group">
-              <label htmlFor="lastname">Last name</label>
-              <input
-                type="text"
-                id="lastname"
-                className="form-control"
-                onChange={this.handleChange}
-              />
-            </div>
-            <div className="form-group">
-              <label htmlFor="email">Email</label>
-              <input
-                type="text"
-                id="email"
-                className="form-control"
-                onChange={this.handleChange}
-              />
-            </div>
-            <div className="form-group">
-              <label htmlFor="message">Your message</label>
-              <textarea
-                type="text"
-                id="message"
-                className="form-control"
-                onChange={this.handleChange}
-              />
-            </div>
-            <div className="submit-button-container">
-              <button className="submit-button">Submit</button>
-            </div>
-          </form>
-        </div>
+      <div className="form-container membership-form-container">
+        <form onSubmit={this.handleSubmit}>
+          <div className=" form-group input-field">
+            <label htmlFor="firstname">First name</label>
+            <input
+              type="text"
+              id="firstname"
+              className="form-control"
+              onChange={this.handleChange}
+            />
+          </div>
+          <div className=" form-group">
+            <label htmlFor="lastname">Last name</label>
+            <input
+              type="text"
+              id="lastname"
+              className="form-control"
+              onChange={this.handleChange}
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="email">Email</label>
+            <input
+              type="text"
+              id="email"
+              className="form-control"
+              onChange={this.handleChange}
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="message">Your message</label>
+            <textarea
+              type="text"
+              id="message"
+              className="form-control"
+              onChange={this.handleChange}
+            />
+          </div>
+          <div className="submit-button-container">
+            <button className="submit-button">Submit</button>
+          </div>
+        </form>
       </div>
     );
   }
