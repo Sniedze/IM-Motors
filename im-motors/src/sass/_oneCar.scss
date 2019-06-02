@@ -32,8 +32,14 @@
     text-align: left;
     &.member-price {
       span {
-        color: #E52528;
+        color: #e52528;
       }
     }
+  }
+  .booking-btn {
+    background-color: #fccc5c;
+    border: none;
+    border-radius: 10px;
+    height: 2.5em;
   }
 }

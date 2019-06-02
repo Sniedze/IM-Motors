@@ -66,11 +66,11 @@ class UserContact extends Component {
                 id="message"
                 className="form-control"
                 onChange={this.handleChange}
-                placeholder="I'm writing to you because ..."
+                placeholder="Leave us a message"
               />
             </div>
 
-            <button className="btn btn-primary">Submit</button>
+            <button className="btn submit-button">Submit</button>
           </form>
         </div>
       </div>
