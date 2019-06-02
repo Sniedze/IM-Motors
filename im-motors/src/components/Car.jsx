@@ -103,7 +103,7 @@ export default class Car extends Component {
         <p className="member-price">
           Member`s Price: <span>${this.state.data.MemberPrice}</span>
         </p>
-        <p>Mileage: {this.state.data.Mileage} mi</p>
+
         <img className="kbb" src={KBB} alt="Kelly Blue Book icon" />
         <p className="kbb-price">${this.state.data.KBB}</p>
         <BookingButton handleModal={this.handleModalBtn} />
