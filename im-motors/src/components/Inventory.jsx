@@ -4,15 +4,13 @@ import { Link, Route, Switch, Redirect } from "react-router-dom";
 import CarInfo from "./Car.jsx";
 import Arrow from "../assets/arrow.png";
 
-//import SortByPriceButtons from "./sortByPrice";
-//import { url } from "inspector";
-
 export default class Inventory extends Component {
   constructor() {
     super();
     this.state = {
       endpoint: "https://immotors-65ac.restdb.io/rest/cars",
       searchQuery: "",
+      hint: "",
       fetchSettings: {
         async: true,
         crossDomain: true,
@@ -62,7 +60,10 @@ export default class Inventory extends Component {
     fetch(this.state.endpoint + query + hint, this.state.fetchSettings).then(
       res => {
         res.json().then(result => {
-          this.setState({ data: result });
+          const uniqueMakerList = Array.from(
+            new Set(result.map(item => item.Manufacturer))
+          );
+          this.setState({ data: result, allMakers: uniqueMakerList });
         });
       }
     );
@@ -70,26 +71,35 @@ export default class Inventory extends Component {
   priceSort(direction) {
     let hint = `&h={"$orderby": {"Price": ${direction}}}`;
     this.fetchWithQuery(this.state.searchQuery, hint);
-    /*  console.log(this.props.location);
-    this.props.history.replace({
-      key: "1",
-      pathname: `/inventory`,
-      search: `${this.props.location.search}&byPrice=${direction}`
-    }); */
-    /*     return (
-      <Redirect
-        push
-        to={{
-          pathname:
-            this.props.location.pathname +
-            this.props.location.search +
-            `&byPrice=${direction}`
-        }}
-      />
-    ); */
+    this.setState({ hint: hint });
   }
+  checkboxHandle = event => {
+    if (event.target.checked) {
+      let searchQuery = `?q={"Manufacturer":"${event.target.value}"}`;
 
+      //this.setState({ searchQuery: searchQuery });
+      this.fetchWithQuery(searchQuery, this.state.hint);
+    }
+  };
   render() {
+    let makerOption = "";
+    if (this.state.allMakers) {
+      makerOption = this.state.allMakers.map(make =>
+        //<Link to={{}}/>
+        ({
+          /* <form onChange={this.checkboxHandle}>
+          <input
+            type="checkbox"
+            key={make}
+            value={make}
+            name={make}
+            id={make}
+          />
+          <label htmlFor={make}>{make}</label>
+        </form> */
+        })
+      );
+    }
     let carsLinks = this.state.data.map(item => (
       <div className="car" key={item._id}>
         <Link to={`/inventory/${item._id}`}>
@@ -115,10 +125,14 @@ export default class Inventory extends Component {
       <Switch>
         <Route path="/inventory/:carId" component={CarInfo} />
         <div className="carList">
-          <h3>By Price</h3>
-          <button onClick={() => this.priceSort(1)}>Ascending</button>
-          <button onClick={() => this.priceSort(-1)}>Descending</button>
-          {/* <SortByPriceButtons currentInventory={this.state.data} /> */}
+          <h3>Sort by Price</h3>
+          <button id="priceAsc" onClick={() => this.priceSort(1)}>
+            Ascending
+          </button>
+          <button id="priceDesc" onClick={() => this.priceSort(-1)}>
+            Descending
+          </button>
+          {/* makerOption */}
           {carsLinks}
         </div>
       </Switch>

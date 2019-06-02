@@ -16,6 +16,7 @@ export default class HomeFilter extends Component {
         }
       },
       data: [],
+      manufacturers: "",
       models: "",
       years: ""
     };
@@ -58,7 +59,6 @@ export default class HomeFilter extends Component {
     const uniqueMakerList = Array.from(
       new Set(this.state.data.map(item => item.Manufacturer))
     );
-
     //map out make options for dropdown menu
     const makeOptions = uniqueMakerList.map(item => (
       <option key={item} value={item}>
@@ -119,6 +119,7 @@ export default class HomeFilter extends Component {
               make={this.state.Manufacturer}
               model={this.state.Model}
               year={this.state.Year}
+              makerList={uniqueMakerList}
             />
           </div>
         </div>
