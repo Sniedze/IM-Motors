@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import CarImage from "../../assets/car-side.png";
-import Arrow from "../../assets/arrow.png";
+import Arrow from "../../assets/forward-arrow.png";
 class Membership extends Component {
   state = {};
   render() {
