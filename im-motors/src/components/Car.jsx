@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import KBB from "../assets/kbb.png";
 import SlideShow from "./SlideShow";
-
+import BookingButton from "./Booking/BookingButton";
+import BookingModal from "./Booking/BookingModal";
+import UserContact from "./contactForm";
 export default class Car extends Component {
   constructor(props) {
     super(props);
@@ -11,9 +13,21 @@ export default class Car extends Component {
       src2: null,
       src3: null,
       src4: null,
-      images: []
+      images: [],
+      bookingModalOpen: false
     };
   }
+  handleModalBtn = () => {
+    this.setState(prevState => {
+      console.log("works");
+      return { bookingModalOpen: !prevState.bookingModalOpen };
+    });
+  };
+  closeModalHandler = () => {
+    this.setState({
+      bookingModalOpen: false
+    });
+  };
   createImageArray = () => {
     let imagesArray = [
       this.state.src1,
@@ -92,6 +106,15 @@ export default class Car extends Component {
         <p>Mileage: {this.state.data.Mileage} mi</p>
         <img className="kbb" src={KBB} alt="Kelly Blue Book icon" />
         <p className="kbb-price">${this.state.data.KBB}</p>
+        <BookingButton handleModal={this.handleModalBtn} />
+        <BookingModal
+          showModal={this.state.bookingModalOpen}
+          closeModal={this.closeModalHandler}
+        />
+        <div className="contactUs">
+          <h2>Contact us regarding this vehicle:</h2>
+          <UserContact />
+        </div>
       </div>
     );
   }

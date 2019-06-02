@@ -1,0 +1,38 @@
+.booking-container {
+  width: 70vw;
+  height: 55vh;
+  background-color: #fff;
+  position: fixed;
+  top: 18em;
+  left: 15%;
+  transform: scale(0.1);
+  opacity: 0;
+  transition: transform 0.2s ease-out, opacity 0.2s;
+  padding: 2em 1em;
+  span {
+    color: rgba(255, 0, 0, 0.534);
+    font-size: 15pt;
+    margin-right: 10vw;
+  }
+  .closebtn {
+    span {
+      color: black;
+      position: absolute;
+      right: -1em;
+      top: 0.5em;
+    }
+  }
+  button {
+    text-align: center;
+    vertical-align: center;
+    height: 30px;
+    width: 97%;
+    margin: 0 auto;
+    background-color: #fccc5c;
+    border-radius: 5px;
+  }
+}
+.open-modal {
+  transform: scale(1);
+  opacity: 1;
+}
