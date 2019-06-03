@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import FamilyCarIcon from "../../assets/familycar-new.png";
-import SUVCarIcon from "../../assets/suv-car-icon.png";
-import PickUpCarIcon from "../../assets/pickup-car-icon.png";
-import SmallCarIcon from "../../assets/small-car-icon.png";
+import FamilyCarIcon from "../../assets/minivan.png";
+import SUVCarIcon from "../../assets/suv-graphic.png";
+import PickUpCarIcon from "../../assets/pickup.png";
+import SmallCarIcon from "../../assets/underprice-graphic.png";
 import { Redirect } from "react-router-dom";
 export default class Categories extends Component {
   state = { redirect: "" };

@@ -1,12 +1,26 @@
-.membership-form{
-    padding: 110px 15px 15px 15px;
+@mixin tablet {
+  @media only screen and (min-width: 570px) {
+    @content;
+  }
+}
+@mixin small-tablet {
+  @media only screen and (min-width: 400px) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media only screen and (min-width: 900px) {
+    @content;
+  }
+}
+.membership-form {
+  padding: 110px 15px 15px 15px;
   .membership-form-container {
     width: 90vw;
     margin: 0 auto;
 
     form {
       padding: 1em;
-      box-shadow: 1px 1px 20px darkgray;
       background-color: white;
       margin-top: 20px;
       .input-field {
@@ -38,6 +52,40 @@
         }
       }
     }
-    
-  }}
+  }
+  #li-wrapper {
+    padding: 2em;
+    li {
+      list-style: none;
+      text-align: center;
+    }
+  }
+}
 
+.feedback-modal {
+  background-color: white;
+  border: 2px solid #fccc5c;
+  width: 60%;
+  height: 100%;
+  margin: 2em auto;
+  transform: scale(0);
+  opacity: 0;
+  transition: all 0.2s ease-out;
+  position: absolute;
+  #close {
+    text-align: center;
+    margin: 5em auto;
+    border: 1px white solid;
+    border-radius: 10px;
+    width: 40%;
+  }
+}
+.feedback-open {
+  transform: scale(1);
+  opacity: 1;
+  padding: 1em;
+  position: fixed;
+  right: 0;
+  left: 0;
+  height: 41vh;
+}

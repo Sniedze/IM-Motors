@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
-//import "./bootstrap/dist/css/bootstrap.min.css";
+// import "./bootstrap/dist/css/bootstrap.min.css";
 
-class UserContact extends Component {
+class MembershipContactForm extends Component {
   state = {
     firstname: null,
     lastname: null,
@@ -17,7 +17,12 @@ class UserContact extends Component {
   handleSubmit = e => {
     const user = this.state;
     axios
-      .post(`http://5ccaeb4c54c8540014835107.mockapi.io/postmessage`, { user })
+      .post(
+        `http://5ccaeb4c54c8540014835107.mockapi.io/membership-contact-form `,
+        {
+          user
+        }
+      )
       .then(res => {
         console.log(res.data);
       });
@@ -70,7 +75,12 @@ class UserContact extends Component {
             />
           </div>
           <div className="submit-button-container">
-            <button className="submit-button">Submit</button>
+            <button
+              className="submit-button"
+              onClick={this.props.submitBtnHandler}
+            >
+              Submit
+            </button>
           </div>
         </form>
       </div>
@@ -78,4 +88,4 @@ class UserContact extends Component {
   }
 }
 
-export default UserContact;
+export default MembershipContactForm;

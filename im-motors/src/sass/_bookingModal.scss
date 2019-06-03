@@ -1,7 +1,7 @@
 .booking-container {
   width: 70vw;
   height: 55vh;
-  background-color: #fff;
+  background-color: #cecece;
   position: fixed;
   top: 18em;
   left: 15%;
@@ -22,7 +22,7 @@
       top: 0.5em;
     }
   }
-  button {
+  #submit-booking {
     text-align: center;
     vertical-align: center;
     height: 30px;

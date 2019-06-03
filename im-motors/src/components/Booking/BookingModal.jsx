@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import DatePicker from "react-datepicker";
 import axios from "axios";
-//import "react-datepicker/dist/react-datepicker.css";
+import "react-datepicker/dist/react-datepicker.css";
 class BookingTestDrive extends Component {
   state = {
     name: null,
@@ -82,7 +82,9 @@ class BookingTestDrive extends Component {
               onChange={this.handleDateChange}
             />
           </div>
-          <button type="submit">Book my Drive Test</button>
+          <button id="submit-booking" type="submit">
+            Book my Drive Test
+          </button>
         </form>
       </div>
     );

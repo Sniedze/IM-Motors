@@ -11,6 +11,7 @@
 @import "footer";
 @import "bookingModal";
 @import "contactForm";
+@import "membership";
 
 $graycolor: #cecece;
 $redcolor: #e52528;
@@ -24,32 +25,31 @@ $redcolor: #e52528;
     @content;
   }
 }
-html{
+html {
   width: 100%;
-body {
-  
-  background-color: #cecece !important;
-  p,
-  li {
-    font-family: "Kanit", sans-serif;
+  body {
+    background-color: #cecece !important;
+    p,
+    li {
+      font-family: "Kanit", sans-serif;
+    }
+    h2 {
+      font-size: 19pt;
+      text-align: center;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    label {
+      font-family: "Questrial", sans-serif;
+    }
+    .close-button span {
+      color: white;
+      z-index: 300;
+      position: absolute;
+      right: 2rem;
+    }
   }
-  h2 {
-    font-size: 19pt;
-    text-align: center;
-  }
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  label {
-    font-family: "Questrial", sans-serif;
-  }
-  .close-button span {
-    color: white;
-    z-index: 300;
-    position: absolute;
-    right: 2rem;
-  }
-}
 }
