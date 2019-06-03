@@ -5,7 +5,7 @@ import ToggleButton from "./BurgerMenu/TogglerMenuButton";
 export default class Header extends Component {
   render() {
     return (
-      <header>
+      <header className="header">
         <Logo />
         <Menu />
         <ToggleButton click={this.props.handleSlide} />

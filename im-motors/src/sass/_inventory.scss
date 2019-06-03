@@ -1,3 +1,9 @@
+@mixin desktop {
+  @media only screen and (min-width: 900px) {
+    @content;
+  }
+}
+
 .carList {
   padding-top: 80px;
   .car {

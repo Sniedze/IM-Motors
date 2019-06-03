@@ -1,14 +1,56 @@
-header {
+@mixin tablet {
+  @media only screen and (min-width: 570px) {
+    @content;
+  }
+}
+@mixin small-tablet {
+  @media only screen and (min-width: 400px) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media only screen and (min-width: 900px) {
+    @content;
+  }
+}
+@mixin display-grid {
+  display: -ms-grid;
+  display: grid;
+}
+
+.header {
   position: fixed;
   width: 100vw;
   padding: 0.5em;
   border-bottom: 2px solid darkgray;
   background-color: $graycolor;
   z-index: 500;
-
-  .logoImage {
-    width: 50px;
-    display: inline-block;
+  @include tablet {
+    position: relative;
+    @include display-grid;
+    grid-template-columns: repeat(2, auto);
+  }
+  @include small-tablet {
+    position: relative;
+  }
+  @include desktop {
+    width: 100vw;
+  }
+  a {
+    @include desktop {
+      grid-column: 1;
+    }
+    .logoImage {
+      width: 50px;
+      display: inline-block;
+      @include tablet {
+        width: 80px;
+        display: inline-block;
+      }
+      @include desktop {
+        width: 100px;
+      }
+    }
   }
 
   h5 {
@@ -18,6 +60,13 @@ header {
     bottom: 5%;
     right: 30%;
     font-family: "Kanit", sans-serif;
+    @include tablet {
+      top: 80%;
+      right: 35%;
+    }
+    @include desktop {
+      display: none;
+    }
   }
   .active {
     border-bottom: red 3px solid;
@@ -26,25 +75,36 @@ header {
   nav {
     margin: 0 auto;
     display: none;
-    @media only screen and (min-width: 576px) {
-      //   position: absolute;
-      //   left: 20%;
-      //   top: 0;
-      display: block;
+    width: 100%;
+    grid-column: 2;
+    @include tablet {
+      display: inline-block;
+      margin-top: 50px;
+    }
+    @include desktop {
+      margin-top: 50px;
     }
 
     ul {
-      font-size: 25pt;
       list-style: none;
-      @media only screen and (max-width: 370px) {
-        padding: 5px;
+      padding-left: 0;
+      @include desktop {
+        font-size: 3vw;
+        padding-left: 1em;
+        margin-bottom: 0;
       }
+
       li {
         cursor: pointer;
         display: inline-block;
         padding: 0 1em;
-        @media only screen and (max-width: 370px) {
-          font-size: 17pt;
+        @include tablet {
+          font-size: 15pt;
+          padding: 0 0.4em;
+        }
+        @include desktop {
+          font-size: 3vw;
+          padding-left: 1em;
         }
 
         a {
