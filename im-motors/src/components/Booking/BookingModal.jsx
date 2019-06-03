@@ -14,13 +14,11 @@ class BookingTestDrive extends Component {
     this.setState({
       [e.target.id]: e.target.value
     });
-    console.log("works this");
   };
   handleDateChange = date => {
     this.setState({
       startDate: date
     });
-    console.log("hi");
   };
   handleBookingTest = e => {
     const user = this.state;
