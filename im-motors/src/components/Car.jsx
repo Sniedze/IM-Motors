@@ -113,7 +113,7 @@ export default class Car extends Component {
         />
         <div className="contactUs">
           <h2>Contact us regarding this vehicle:</h2>
-          <UserContact />
+          <UserContact make={this.state.data.Manufacturer} model={this.state.data.Model} year={this.state.data.Year} engine={this.state.data.Engine} />
         </div>
       </div>
     );

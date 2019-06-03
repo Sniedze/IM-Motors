@@ -119,7 +119,7 @@ export default class Inventory extends Component {
           <button onClick={() => this.priceSort(1)}>Ascending</button>
           <button onClick={() => this.priceSort(-1)}>Descending</button>
           {/* <SortByPriceButtons currentInventory={this.state.data} /> */}
-          {carsLinks}
+         <div className="car-posts"> {carsLinks}</div>
         </div>
       </Switch>
     );

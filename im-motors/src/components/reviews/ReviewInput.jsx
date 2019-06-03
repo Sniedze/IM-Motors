@@ -67,7 +67,7 @@ export default class ReviewInput extends Component {
             </select>
           </div>
           <div className="feedback ">
-            <label>Your Feedback</label>
+            <label>Feedback</label>
             <textarea
               onChange={this.handleChange}
               defaultValue={this.props.feedback}
@@ -76,8 +76,9 @@ export default class ReviewInput extends Component {
             />
           </div>
 
-          
-          <input type="submit" value="Submit" className="submit-button" />
+          <div className="submit-input-container">
+            <input type="submit" value="Submit" className="submit-button" />
+          </div>
         </form>
       </div>
     );

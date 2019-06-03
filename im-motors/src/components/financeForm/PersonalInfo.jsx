@@ -7,6 +7,7 @@ export default class PersonalInfo extends Component {
     return (
       <div className="personal-info">
         <h3>Personal Information</h3>
+        <div className="form-fields">
         <div className="input-field name">
           <label>Full Name</label>
           <span className="required">*</span>
@@ -23,7 +24,7 @@ export default class PersonalInfo extends Component {
           )}
         </div>
         <div className="input-field ssn">
-          <label>Social Security Number</label>
+          <label>SSN</label>
           <span className="required">*</span>
           <input
             type="number"
@@ -134,6 +135,7 @@ export default class PersonalInfo extends Component {
             name="region"
           />
         </div>
+      </div>
       </div>
     );
   }
