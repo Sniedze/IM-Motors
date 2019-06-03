@@ -28,6 +28,7 @@ class UserContact extends Component {
     return (
       <div className="form-container membership-form-container">
         <form onSubmit={this.handleSubmit}>
+         
           <div className=" form-group ">
             <label htmlFor="firstname">First name</label>
             <input

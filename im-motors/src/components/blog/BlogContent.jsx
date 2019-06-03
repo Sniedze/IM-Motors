@@ -27,7 +27,7 @@ export default class BlogContent extends Component {
     return (
       <Switch>
         <Route path="/blog/:articleId" component={Article} />
-        <React.Fragment>{articleLinks}</React.Fragment>
+        <div className="blog-posts">{articleLinks}</div>
       </Switch>
     );
   }

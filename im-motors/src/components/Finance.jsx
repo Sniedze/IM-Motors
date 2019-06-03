@@ -6,7 +6,9 @@ export default class Finance extends Component {
   render() {
     return (
       <div className="finance-page">
-        <p>Here are some text which describe company's mission</p>
+        <p>
+          Fill this finance form to get financing of the car of your choice.
+        </p>
         <MasterForm />
         <Footer />
       </div>

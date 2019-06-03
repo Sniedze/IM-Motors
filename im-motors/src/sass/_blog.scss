@@ -1,52 +1,119 @@
-.blog {
-  padding: 110px 15px 15px 15px;
-  margin-bottom: 30px;
-  .one-article {
-    text-align: center;
-    background-color: white;
-    padding: 15px;
-    margin-bottom: 30px;
-    img {
-      width: 80%;
-    }
-    p {
-      text-align: left;
-    }
+@mixin tablet {
+  @media only screen and (min-width: 570px) {
+    @content;
   }
-  .article {
-    position: relative;
-    background-color: white;
-    width: 100%;
-    text-align: center;
-    padding: 10px;
-    margin-bottom: 35px;
-    box-shadow: 0 0 5px 5px darkgrey;
-    text-align: center;
-    padding: 10px;
-    &:hover {
-      text-decoration: none;
+}
+@mixin small-tablet {
+  @media only screen and (min-width: 400px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media only screen and (min-width: 900px) {
+    @content;
+  }
+}
+@mixin big-desktop {
+  @media only screen and (min-width: 1300px) {
+    @content;
+  }
+}
+@mixin display-grid {
+  display: -ms-grid;
+  display: grid;
+}
+
+.blog {
+  width: 100vw;
+  padding-top: 30px;
+
+  .blog-posts {
+   
+    margin: 0 auto;
+    padding: 15px;
+
+    @include tablet {
+      @include display-grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 5px;
     }
-    a {
-      color: #000000;
+    @include desktop {
+      @include display-grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @include big-desktop {
+      @include display-grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .article {
+      position: relative;
+      background-color: white;
+      width: 90%;
+      text-align: center;
+      padding: 10px;
+      margin: 35px auto;
+      text-align: center;
+
       &:hover {
         text-decoration: none;
       }
-      h2 {
-        text-align: center;
-        font-size: 19pt;
+      a {
+        color: #000000;
+        &:hover {
+          text-decoration: none;
+        }
+        h2 {
+          text-align: center;
+          font-size: 19pt;
+        }
+        img {
+          width: 70%;
+        }
+        p {
+          text-align: left;
+        }
+        .arrow {
+          width: 30px;
+          position: absolute;
+          bottom: 5%;
+          right: 2%;
+        }
       }
-      img {
-        width: 70vw;
+    }
+  }
+  .one-article {
+    width: 100vw;
+    margin: 30px auto;
+    text-align: center;
+    background-color: white;
+    padding: 30px;
+    @include tablet {
+      width: 80%;
+    }
+    @include desktop {
+      width: 70%;
+    }
+    @include big-desktop {
+      width: 60%;
+      
+    }
+
+    img {
+      width: 80%;
+      height: auto;
+      @include desktop {
+        width: 400px;
       }
-      p {
-        text-align: left;
-      }
-      .arrow{
-        width: 30px;
-        position: absolute;
-        bottom: 5%;
-        right: 2%;
-      }
+    }
+
+    p {
+      text-align: left;
+      @include small-tablet {
+        padding: 7%;
+}
+      
     }
   }
 }

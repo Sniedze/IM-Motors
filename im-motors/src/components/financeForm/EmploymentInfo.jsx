@@ -14,33 +14,34 @@ export default class EmploymentInfo extends Component {
     return (
       <div className="employment-info">
         <h3>Employment Information</h3>
-        <div className=" input-field employment-choice">
-          <label>Are you employed?</label>
-          <select
-            onChange={this.props.handleChange}
-            defaultValue={this.props.employmentChoice}
-            name="choice"
-            noValidate
-            onInput={this.HandleEmploymentInput}
-          >
-            <option value="" label="--" />
-            <option key="yes" value="Yes" label="Yes" />
-            <option key="no" value="No" label="No" />
-          </select>
-        </div>
-        <div className=" input-field explanation">
-          <label>Explain income (eg Retired or Alimony)</label>
+        <div className="form-fields">
+          <div className=" input-field employment-choice">
+            <label>Are you employed?</label>
+            <select
+              onChange={this.props.handleChange}
+              defaultValue={this.props.employmentChoice}
+              name="choice"
+              noValidate
+              onInput={this.HandleEmploymentInput}
+            >
+              <option value="" label="--" />
+              <option key="yes" value="Yes" label="Yes" />
+              <option key="no" value="No" label="No" />
+            </select>
+          </div>
+          <div className=" input-field explanation">
+            <label>Type of income</label>
 
-          <input
-            onChange={this.props.handleChange}
-            defaultValue={this.props.explanation}
-            name="explanation"
-            type="text"
-            noValidate
-            required
-          />
-        </div>
-        <div className="employed">
+            <input
+              onChange={this.props.handleChange}
+              defaultValue={this.props.explanation}
+              name="explanation"
+              type="text"
+              noValidate
+              required
+            />
+          </div>
+
           <div className=" input-field employment-status">
             <label>Employment status</label>
             <select
@@ -193,7 +194,7 @@ export default class EmploymentInfo extends Component {
                 {this.props.errors.employmentYears}
               </span>
             )}
-           
+
             <select
               className="employment-months"
               onChange={this.props.handleChange}
@@ -237,7 +238,7 @@ export default class EmploymentInfo extends Component {
             )}
           </div>
           <div className=" input-field income">
-            <label>Income $ (Gross, before taxes)</label>
+            <label>Income $ </label>
             <span className="required">*</span>
             <input
               onChange={this.props.handleChange}
@@ -298,16 +299,17 @@ export default class EmploymentInfo extends Component {
               required
             />
           </div>
-        </div>
-        <div className=" input-field additional-income">
-          <label>Input additional gross monthly income $</label>
-          <input
-            onChange={this.props.handleChange}
-            defaultValue={this.props.additionalIncome}
-            name="supervisor"
-            noValidate
-            required
-          />
+
+          <div className=" input-field additional-income">
+            <label>Additional income $</label>
+            <input
+              onChange={this.props.handleChange}
+              defaultValue={this.props.additionalIncome}
+              name="supervisor"
+              noValidate
+              required
+            />
+          </div>
         </div>
       </div>
     );

@@ -1,23 +1,59 @@
+@mixin tablet {
+  @media only screen and (min-width: 570px) {
+    @content;
+  }
+}
+@mixin small-tablet {
+  @media only screen and (min-width: 400px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media only screen and (min-width: 900px) {
+    @content;
+  }
+}
+@mixin big-desktop {
+  @media only screen and (min-width: 1300px) {
+    @content;
+  }
+}
+@mixin display-grid {
+  display: -ms-grid;
+  display: grid;
+}
+
 @mixin flex-display {
   display: flex;
   align-items: center;
   justify-content: space-around;
 }
 .footer {
+  width: 100vw;
   .contactinfo-container {
     @include flex-display;
     flex-direction: column;
     background-color: white;
     padding: 2em 1em;
+    @include desktop {
+      padding: 0 0;
+    }
     .soMe {
-      display: grid;
-      grid-gap: 30px;
       width: 100%;
       padding: 0 1em;
+      @include desktop {
+        @include display-grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 30px;
+      }
       .soMe-icons {
         @include flex-display;
         background-color: #cecece;
         padding: 1em;
+        @include desktop {
+          background-color: white;
+        }
         img {
           width: 30px;
         }
@@ -25,22 +61,28 @@
           width: 18px;
         }
       }
-      .phone,
-      .address {
-        display: flex;
-        justify-content: center;
-        img {
-          height: 20px;
-          width: 15px;
-        }
-        p {
-          padding-left: 1em;
+      .phone-address {
+        width: 100%;
+        .phone,
+        .address {
+          display: flex;
+          justify-content: center;
+          img {
+            height: 20px;
+            width: 15px;
+          }
+          p {
+            padding-left: 1em;
+          }
         }
       }
     }
     iframe {
       height: 60%;
       width: 100%;
+      @include desktop {
+        height: 250px;
+      }
     }
   }
 }

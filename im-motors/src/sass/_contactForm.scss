@@ -1,13 +1,60 @@
-.form-container {
+@mixin tablet {
+  @media only screen and (min-width: 570px) {
+    @content;
+  }
+}
+@mixin small-tablet {
+  @media only screen and (min-width: 400px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media only screen and (min-width: 900px) {
+    @content;
+  }
+}
+.membership-form-container {
+  width: 100%;
+  @include desktop {
+    margin-top: 50px;
+  }
+
   background-color: #fff;
   padding: 1em;
-  .submit-button {
-    text-align: center;
-    vertical-align: center;
-    height: 30px;
-    width: 97%;
-    margin: 0 auto;
-    background-color: #fccc5c;
-    border-radius: 5px;
+  @include desktop {
+    width: 100%;
+    margin: 30px auto;
+    form {
+      @include desktop {
+        margin-top: 30px;
+        width: 70%;
+            margin: 0 auto;
+        .form-group {
+         
+          input,
+          textarea {
+          }
+        }
+        .submit-button-container {
+          width: 30vw;
+          margin: 0 auto;
+          @include desktop {
+            width: 20vw;
+            margin: 50px auto;
+          }
+          .submit-button {
+            text-align: center;
+            vertical-align: center;
+            height: 30px;
+            width: 97%;
+            margin: 0 auto;
+            background-color: #fccc5c;
+            border-radius: 5px;
+            
+          }
+        }
+      }
+    }
   }
 }

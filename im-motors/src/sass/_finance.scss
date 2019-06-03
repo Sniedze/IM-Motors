@@ -1,75 +1,163 @@
+@mixin tablet {
+  @media only screen and (min-width: 570px) {
+    @content;
+  }
+}
+@mixin small-tablet {
+  @media only screen and (min-width: 400px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media only screen and (min-width: 900px) {
+    @content;
+  }
+}
+@mixin big-desktop {
+  @media only screen and (min-width: 1300px) {
+    @content;
+  }
+}
+@mixin display-grid {
+  display: -ms-grid;
+  display: grid;
+}
+
 .finance-page {
-  padding: 110px 15px 15px 15px;
-  h3 {
-    font-size: 6vw;
-    text-align: center;
+  width: 100vw;
+  padding-top: 110px;
+  margin-top: 20px auto;
+  @include tablet {
+    padding-top: 15px;
+    margin: 0 auto;
   }
 
   p {
     text-align: left;
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 20px;;
+    font-size: 16pt;
   }
   form {
-    width: 90vw;
+    width: 90%;
     margin: 0 auto;
+    @include tablet {
+      width: 80%;
+      margin: 15px auto;
+    }
+    @include desktop {
+      width: 95%;
+    }
+    @include big-desktop {
+      width: 85%;
+    }
 
     .personal-info,
     .residence-info,
     .employment-info {
+      width: 100%;
       padding: 1em;
       box-shadow: 1px 1px 20px darkgray;
       background-color: white;
-      margin-top: 20px;
-      .input-field {
-        margin: 0 auto 10px auto;
+      margin: 20px auto;
+      @include desktop {
+      }
 
-        .employment-years,
-        .employment-months,
-        .residence-years,
-        .residence-months {
-          width: 48%;
-          display: inline-block;
+      h3 {
+        font-size: 5vw;
+        text-align: center;
+        @include tablet {
+          font-size: 4vw;
         }
-        .employment-months,
-        .residence-months {
-          margin-left: 10px;
+        @include desktop {
+          font-size: 2.3vw;
         }
-        input,
-        select {
-          background-color: white;
-          display: block;
-          width: 100%;
-          height: 35px;
-          border: 1px solid #ced4da;
-          border-radius: 0.25rem;
-          transition: border-color 0.15s ease-in-out,
-            box-shadow 0.15s ease-in-out;
+        @include desktop {
+          font-size: 1.7vw;
+          height: auto;
         }
-        select {
-          height: 35px;
+      }
+      .form-fields {
+        @include desktop {
+          width: 95%;
+          @include display-grid;
+          grid-gap: 15px;
+          grid-template-columns: repeat(auto-fill, minmax(11em, 1fr));
         }
+        .input-field {
+          margin: 0 auto 10px auto;
+          @include tablet {
+            width: 80%;
+          }
+          @include desktop {
+            width: 90%;
+            @include display-grid;
+            grid-template-rows: repeat(2, 1fr);
+          }
+          .employment-years,
+          .employment-months,
+          .residence-years,
+          .residence-months {
+            width: 48%;
+            display: inline-block;
+            @include desktop {
+              width: 4.8em;
+            }
+          }
 
-        label {
-          color: black;
-          margin-bottom: 0;
-        }
+          .employment-months,
+          .residence-months {
+            margin-left: 10px;
+          }
+          input,
+          select {
+            background-color: white;
+            display: block;
+            width: 100%;
+            height: 35px;
+            border: 1px solid #ced4da;
+            border-radius: 0.25rem;
+            transition: border-color 0.15s ease-in-out,
+              box-shadow 0.15s ease-in-out;
+          }
+          select {
+            height: 35px;
+          }
 
-        .required {
-          color: rgba(255, 0, 0, 0.534);
-          font-size: 15pt;
-          margin-right: 20vw;
-        }
+          label {
+            color: black;
+            margin-bottom: 0;
+            @include desktop {
+              grid-row: 1;
+            }
+          }
 
-        span.errorMessage {
-          color: red;
-        }
-        .error {
-          border: 5px solid red;
+          .required {
+            color: rgba(255, 0, 0, 0.534);
+            font-size: 15pt;
+            margin-right: 20vw;
+            @include desktop {
+              margin-right: 0vw;
+              grid-row: 1;
+              text-align: left;
+            }
+          }
+
+          span.errorMessage {
+            color: red;
+          }
+          .error {
+            border: 5px solid red;
+          }
         }
       }
     }
     .submit-button-container {
       width: 250px;
       margin: 5px auto;
+      grid-column: 1/4;
       input.submit-button {
         width: 250px;
         align-items: center;

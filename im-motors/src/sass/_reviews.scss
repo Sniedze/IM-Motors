@@ -1,3 +1,8 @@
+@mixin displyFlex {
+  display: flex;
+  justify-content: space-around;
+}
+
 .reviews {
   //display: grid;
   justify-content: center;
@@ -33,16 +38,17 @@
 
     padding: 1em;
 
-    .name,
-    .stars {
-      display: inline-block;
+    .name {
       width: 40vw;
-      margin: 3px;
+      position: relative;
+
       label {
         margin-bottom: 0;
       }
       input {
-        width: 40vw;
+        width: 60vw;
+        position: absolute;
+        right: 0;
       }
     }
     .stars {

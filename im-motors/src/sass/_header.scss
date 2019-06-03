@@ -13,6 +13,11 @@
     @content;
   }
 }
+@mixin big-desktop {
+  @media only screen and (min-width: 900px) {
+    @content;
+  }
+}
 @mixin display-grid {
   display: -ms-grid;
   display: grid;
@@ -37,9 +42,12 @@
     width: 100vw;
   }
   a {
-    @include desktop {
+    @include tablet {
       grid-column: 1;
+      margin-left: 1.4vw;
+      margin-top: 5%;
     }
+
     .logoImage {
       width: 50px;
       display: inline-block;
@@ -91,7 +99,7 @@
       @include desktop {
         font-size: 3vw;
         padding-left: 1em;
-        margin-bottom: 0;
+        margin-bottom: 0 auto;
       }
 
       li {
@@ -105,6 +113,12 @@
         @include desktop {
           font-size: 3vw;
           padding-left: 1em;
+        }
+        @include desktop {
+          font-size: 3vw;
+        }
+        @include big-desktop {
+          font-size: 1.8vw;
         }
 
         a {
