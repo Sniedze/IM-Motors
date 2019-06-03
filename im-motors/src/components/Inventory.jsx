@@ -35,13 +35,13 @@ export default class Inventory extends Component {
     let searchQuery = "?q={}";
     let hint = `&h={"$orderby": {"Price": ${byPrice}}}`;
     if (make) {
-      //make is the minimum requirement for
+      //make is the minimum requirement for the home filter
       searchQuery = `?q={"Manufacturer":"${make}"}`;
-      if (model) {
-        searchQuery = `?q={"Manufacturer":"${make}", "Model": "${model}"}`;
-      }
       if (year) {
         searchQuery = `?q={"Manufacturer":"${make}", "Model": "${model}", "Year":"${year}"}`;
+      }
+      if (model) {
+        searchQuery = `?q={"Manufacturer":"${make}", "Model": "${model}"}`;
       }
     }
     if (type) {
@@ -57,49 +57,34 @@ export default class Inventory extends Component {
     this.fetchWithQuery(searchQuery, hint);
   }
   fetchWithQuery(query, hint) {
-    fetch(this.state.endpoint + query + hint, this.state.fetchSettings).then(
-      res => {
-        res.json().then(result => {
-          const uniqueMakerList = Array.from(
-            new Set(result.map(item => item.Manufacturer))
-          );
-          this.setState({ data: result, allMakers: uniqueMakerList });
-        });
-      }
-    );
+    let fetchCall = "";
+    if (query || hint) {
+      fetchCall = fetch(
+        this.state.endpoint + query + hint,
+        this.state.fetchSettings
+      );
+    } else {
+      fetchCall = fetch(this.state.endpoint, this.state.fetchSettings);
+    }
+    fetchCall.then(res => {
+      res.json().then(result => {
+        this.setState({ data: result });
+      });
+    });
   }
   priceSort(direction) {
     let hint = `&h={"$orderby": {"Price": ${direction}}}`;
     this.fetchWithQuery(this.state.searchQuery, hint);
     this.setState({ hint: hint });
   }
-  checkboxHandle = event => {
-    if (event.target.checked) {
-      let searchQuery = `?q={"Manufacturer":"${event.target.value}"}`;
-
-      //this.setState({ searchQuery: searchQuery });
-      this.fetchWithQuery(searchQuery, this.state.hint);
-    }
+  clearHandle = () => {
+    this.fetchWithQuery();
+    this.props.history.replace({
+      pathname: "/inventory",
+      search: ""
+    });
   };
   render() {
-    let makerOption = "";
-    if (this.state.allMakers) {
-      makerOption = this.state.allMakers.map(make =>
-        //<Link to={{}}/>
-        ({
-          /* <form onChange={this.checkboxHandle}>
-          <input
-            type="checkbox"
-            key={make}
-            value={make}
-            name={make}
-            id={make}
-          />
-          <label htmlFor={make}>{make}</label>
-        </form> */
-        })
-      );
-    }
     let carsLinks = this.state.data.map(item => (
       <div className="car" key={item._id}>
         <Link to={`/inventory/${item._id}`}>
@@ -132,7 +117,7 @@ export default class Inventory extends Component {
           <button id="priceDesc" onClick={() => this.priceSort(-1)}>
             Descending
           </button>
-          {/* makerOption */}
+          <button onClick={this.clearHandle}>Clear Filter</button>
           {carsLinks}
         </div>
       </Switch>
