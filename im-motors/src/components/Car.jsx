@@ -19,7 +19,7 @@ export default class Car extends Component {
   }
   handleModalBtn = () => {
     this.setState(prevState => {
-      console.log("works");
+      // console.log("works");
       return { bookingModalOpen: !prevState.bookingModalOpen };
     });
   };

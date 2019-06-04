@@ -24,160 +24,158 @@ $fontfamily: "Kanit", sans-serif;
     display: grid;
   }
 
-  .about-us-page {
-    width: 100vw;
-    padding-top: 110px;
-    @include small-tablet {
-      padding-top: 10px;
+  width: 100vw;
+  padding-top: 110px;
+  @include small-tablet {
+    padding-top: 10px;
+  }
+  @include desktop {
+    margin: 0 auto;
+    padding: 5vw;
+    @include display-grid;
+    grid-template-columns: 40% 57%;
+    grid-template-rows: auto;
+    grid-gap: 3vw;
+    grid-template-areas:
+      "text text"
+      "contacts form"
+      "map map";
+  }
+  p {
+    width: 90%;
+    padding: 0 1em;
+    font-size: 16pt;
+    grid-area: text;
+    margin: 0 auto;
+  }
+
+  .form-container {
+    width: 90%;
+    padding: 1em;
+    box-shadow: 1px 1px 20px darkgray;
+    // margin: 1em;
+    margin: 20px auto;
+
+    @include tablet {
+      width: 70%;
     }
     @include desktop {
-      margin: 0 auto;
-      padding: 5vw;
-      @include display-grid;
-      grid-template-columns: 40% 57%;
-      grid-template-rows: auto;
-      grid-gap: 3vw;
-      grid-template-areas:
-        "text text"
-        "contacts form"
-        "map map";
+      width: 100%;
+      margin: 30px 0;
+      grid-area: form;
     }
-    p {
-      width: 90%;
-      padding: 0 1em;
-      font-size: 16pt;
-      grid-area: text;
-      margin: 0 auto;
+    .submit-button-container {
+      width: 250px;
+      margin: 5px auto;
+      button.submit-button {
+        width: 250px;
+        align-items: center;
+        height: 40px;
+        background-color: #fccc5c;
+        border-radius: 5px;
+      }
+    }
+  }
+
+  .contact-info-wrapper {
+    width: 90%;
+    grid-area: contacts;
+    box-shadow: 1px 1px 20px darkgray;
+    margin: 20px auto;
+    padding: 1em;
+    @include small-tablet {
+      width: 100%;
+      display: block;
+      text-align: center;
     }
 
-    .form-container {
-      width: 90%;
-      padding: 1em;
-      box-shadow: 1px 1px 20px darkgray;
-      // margin: 1em;
-      margin: 20px auto;
+    @include desktop {
+      width: 100%;
+      margin: 30px 0;
+    }
+    .contact-info {
+      width: 100%;
+      margin: 4px auto;
 
       @include tablet {
-        width: 70%;
+        width: auto;
+        grid-column: 2;
       }
       @include desktop {
-        width: 100%;
-        margin: 30px 0;
-        grid-area: form;
+        width: 90%;
+        margin-top: 80px;
       }
-      .submit-button-container {
-        width: 250px;
-        margin: 5px auto;
-        button.submit-button {
-          width: 250px;
-          align-items: center;
-          height: 40px;
-          background-color: #fccc5c;
-          border-radius: 5px;
-        }
-      }
-    }
-
-    .contact-info-wrapper {
-      width: 90%;
-      grid-area: contacts;
-      box-shadow: 1px 1px 20px darkgray;
-      margin: 20px auto;
-      padding: 1em;
-      @include small-tablet {
+      .fa,
+      .fas {
         width: 100%;
-        display: block;
-        text-align: center;
-      }
-
-      @include desktop {
-        width: 100%;
-        margin: 30px 0;
-      }
-      .contact-info {
-        width: 100%;
-        margin: 4px auto;
-
-        @include tablet {
-          width: auto;
-          grid-column: 2;
-        }
+        color: navy;
         @include desktop {
           width: 90%;
-          margin-top: 80px;
-        }
-        .fa,
-        .fas {
-          width: 100%;
-          color: navy;
-          @include desktop {
-            width: 90%;
-          }
-        }
-        .social-wrapper {
-          width: 80%;
-          @include small-tablet {
-            margin: 0 auto;
-          }
-          .social {
-            width: 2em;
-            height: 2em;
-            display: inline-block;
-            padding: 30px;
-          }
-          #fb {
-            background: url(../assets/fb.png) no-repeat;
-            background-position: center;
-            background-size: 32%;
-          }
-          #tweeter {
-            background: url(../assets/tweeterblue.png) no-repeat;
-            background-position: center;
-            background-size: 60%;
-          }
-
-          #email {
-            background: url(../assets/blueemail.png) no-repeat;
-            background-position: center;
-            background-size: 60%;
-          }
         }
       }
-      .working-hours {
-        width: 100%;
-        @include tablet {
-          grid-column: 1;
+      .social-wrapper {
+        width: 80%;
+        @include small-tablet {
+          margin: 0 auto;
         }
-        @include desktop {
-          padding: 25px;
+        .social {
+          width: 2em;
+          height: 2em;
+          display: inline-block;
+          padding: 30px;
         }
-        h4 {
-          font-size: 1.6em;
+        #fb {
+          background: url(../assets/fb.png) no-repeat;
+          background-position: center;
+          background-size: 32%;
         }
-        ul {
-          padding-left: 1em;
-          li {
-            list-style: none;
-            font-size: 1.3em;
-            @include tablet {
-              font-size: 1em;
-            }
-          }
+        #tweeter {
+          background: url(../assets/tweeterblue.png) no-repeat;
+          background-position: center;
+          background-size: 60%;
+        }
+
+        #email {
+          background: url(../assets/blueemail.png) no-repeat;
+          background-position: center;
+          background-size: 60%;
         }
       }
     }
-
-    iframe {
-      width: 100vw;
+    .working-hours {
+      width: 100%;
+      @include tablet {
+        grid-column: 1;
+      }
       @include desktop {
-        grid-area: map;
-        width: 100%;
-        margin: 0 auto;
+        padding: 25px;
+      }
+      h4 {
+        font-size: 1.6em;
+      }
+      ul {
+        padding-left: 1em;
+        li {
+          list-style: none;
+          font-size: 1.3em;
+          @include tablet {
+            font-size: 1em;
+          }
+        }
       }
     }
   }
-  .contact-info-wrapper,
-  .form-container {
-    background-color: white;
+
+  iframe {
+    width: 100vw;
+    @include desktop {
+      grid-area: map;
+      width: 100%;
+      margin: 0 auto;
+    }
   }
+}
+.contact-info-wrapper,
+.form-container {
+  background-color: white;
 }
