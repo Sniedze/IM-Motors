@@ -26,8 +26,10 @@ $redcolor: #e52528;
   }
 }
 html {
+  padding:0;
   width: 100%;
   body {
+    margin: 0;
     background-color: #cecece !important;
 
     li {

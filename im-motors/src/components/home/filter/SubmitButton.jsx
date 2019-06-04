@@ -13,39 +13,24 @@ export default class SubmitButton extends Component {
   };
   render() {
     if (this.state.redirect) {
-      ///const searchQuery =
+      let search = `?make=${this.props.make}`;
       if (this.props.year) {
-        return (
-          <Redirect
-            push
-            to={{
-              pathname: "/inventory",
-              search: `?make=${this.props.make}&model=${
-                this.props.model
-              }&year=${this.props.year}`
-            }}
-          />
-        );
+        search = `?make=${this.props.make}&model=${this.props.model}&year=${
+          this.props.year
+        }`;
       } else if (this.props.model) {
-        return (
-          <Redirect
-            push
-            to={{
-              pathname: "/inventory",
-              search: `?make=${this.props.make}&model=${this.props.model}`
-            }}
-          />
-        );
-      } else
-        return (
-          <Redirect
-            push
-            to={{
-              pathname: "/inventory",
-              search: `?make=${this.props.make}`
-            }}
-          />
-        );
+        search = `?make=${this.props.make}&model=${this.props.model}`;
+      }
+      return (
+        <Redirect
+          push
+          to={{
+            pathname: "/inventory",
+            search: search,
+            state: { makers: this.props.makerList }
+          }}
+        />
+      );
     }
 
     return (

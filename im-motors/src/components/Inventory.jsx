@@ -4,15 +4,13 @@ import { Link, Route, Switch, Redirect } from "react-router-dom";
 import CarInfo from "./Car.jsx";
 import Arrow from "../assets/forward-arrow.png";
 
-//import SortByPriceButtons from "./sortByPrice";
-//import { url } from "inspector";
-
 export default class Inventory extends Component {
   constructor() {
     super();
     this.state = {
       endpoint: "https://immotors-65ac.restdb.io/rest/cars",
       searchQuery: "",
+      hint: "",
       fetchSettings: {
         async: true,
         crossDomain: true,
@@ -37,13 +35,13 @@ export default class Inventory extends Component {
     let searchQuery = "?q={}";
     let hint = `&h={"$orderby": {"Price": ${byPrice}}}`;
     if (make) {
-      //make is the minimum requirement for
+      //make is the minimum requirement for the home filter
       searchQuery = `?q={"Manufacturer":"${make}"}`;
-      if (model) {
-        searchQuery = `?q={"Manufacturer":"${make}", "Model": "${model}"}`;
-      }
       if (year) {
         searchQuery = `?q={"Manufacturer":"${make}", "Model": "${model}", "Year":"${year}"}`;
+      }
+      if (model) {
+        searchQuery = `?q={"Manufacturer":"${make}", "Model": "${model}"}`;
       }
     }
     if (type) {
@@ -59,36 +57,33 @@ export default class Inventory extends Component {
     this.fetchWithQuery(searchQuery, hint);
   }
   fetchWithQuery(query, hint) {
-    fetch(this.state.endpoint + query + hint, this.state.fetchSettings).then(
-      res => {
-        res.json().then(result => {
-          this.setState({ data: result });
-        });
-      }
-    );
+    let fetchCall = "";
+    if (query || hint) {
+      fetchCall = fetch(
+        this.state.endpoint + query + hint,
+        this.state.fetchSettings
+      );
+    } else {
+      fetchCall = fetch(this.state.endpoint, this.state.fetchSettings);
+    }
+    fetchCall.then(res => {
+      res.json().then(result => {
+        this.setState({ data: result });
+      });
+    });
   }
   priceSort(direction) {
     let hint = `&h={"$orderby": {"Price": ${direction}}}`;
     this.fetchWithQuery(this.state.searchQuery, hint);
-    /*  console.log(this.props.location);
-    this.props.history.replace({
-      key: "1",
-      pathname: `/inventory`,
-      search: `${this.props.location.search}&byPrice=${direction}`
-    }); */
-    /*     return (
-      <Redirect
-        push
-        to={{
-          pathname:
-            this.props.location.pathname +
-            this.props.location.search +
-            `&byPrice=${direction}`
-        }}
-      />
-    ); */
+    this.setState({ hint: hint });
   }
-
+  clearHandle = () => {
+    this.fetchWithQuery();
+    this.props.history.replace({
+      pathname: "/inventory",
+      search: ""
+    });
+  };
   render() {
     let carsLinks = this.state.data.map(item => (
       <div className="car" key={item._id}>
@@ -115,11 +110,15 @@ export default class Inventory extends Component {
       <Switch>
         <Route path="/inventory/:carId" component={CarInfo} />
         <div className="carList">
-          <h3>By Price</h3>
-          <button onClick={() => this.priceSort(1)}>Ascending</button>
-          <button onClick={() => this.priceSort(-1)}>Descending</button>
-          {/* <SortByPriceButtons currentInventory={this.state.data} /> */}
-         <div className="car-posts"> {carsLinks}</div>
+          <h3>Sort by Price</h3>
+          <button id="priceAsc" onClick={() => this.priceSort(1)}>
+            Ascending
+          </button>
+          <button id="priceDesc" onClick={() => this.priceSort(-1)}>
+            Descending
+          </button>
+          <button onClick={this.clearHandle}>Clear Filter</button>
+          <div className="car-posts"> {carsLinks}</div>
         </div>
       </Switch>
     );

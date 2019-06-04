@@ -14,78 +14,165 @@ $fontfamily: "Kanit", sans-serif;
     padding-top: 30px;
   }
   padding-top: 100px;
-  p {
-    padding: 0 1em;
-    font-size: 16pt;
+  @mixin big-desktop {
+    @media only screen and (min-width: 1300px) {
+      @content;
+    }
+  }
+  @mixin display-grid {
+    display: -ms-grid;
+    display: grid;
   }
 
-  .form-container {
-    padding: 1em;
-    box-shadow: 1px 1px 20px darkgray;
-    // margin: 1em;
-    .submit-button-container {
-      width: 250px;
-      margin: 5px auto;
-      button.submit-button {
+  .about-us-page {
+    width: 100vw;
+    padding-top: 110px;
+    @include small-tablet {
+      padding-top: 10px;
+    }
+    @include desktop {
+      margin: 0 auto;
+      padding: 5vw;
+      @include display-grid;
+      grid-template-columns: 40% 57%;
+      grid-template-rows: auto;
+      grid-gap: 3vw;
+      grid-template-areas:
+        "text text"
+        "contacts form"
+        "map map";
+    }
+    p {
+      width: 90%;
+      padding: 0 1em;
+      font-size: 16pt;
+      grid-area: text;
+      margin: 0 auto;
+    }
+
+    .form-container {
+      width: 90%;
+      padding: 1em;
+      box-shadow: 1px 1px 20px darkgray;
+      // margin: 1em;
+      margin: 20px auto;
+
+      @include tablet {
+        width: 70%;
+      }
+      @include desktop {
+        width: 100%;
+        margin: 30px 0;
+        grid-area: form;
+      }
+      .submit-button-container {
         width: 250px;
-        align-items: center;
-        height: 40px;
-        background-color: #fccc5c;
-        border-radius: 5px;
+        margin: 5px auto;
+        button.submit-button {
+          width: 250px;
+          align-items: center;
+          height: 40px;
+          background-color: #fccc5c;
+          border-radius: 5px;
+        }
       }
-    }
-  }
-  .all-contact-wrapper {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 3%;
-  }
-  .contact-info-wrapper {
-    box-shadow: 1px 1px 20px darkgray;
-    margin-right: 2em;
-    display: grid;
-    padding: 1em;
-    .contact-info {
-      .fa,
-      .fas {
-        color: navy;
-      }
-    }
-  }
-  .social-wrapper {
-    //@include displyFlex;
-    width: 40%;
-    .social {
-      width: 2em;
-      height: 2em;
-      // border: 1px solid red;
-    }
-    #fb {
-      background: url(../assets/fb.png) no-repeat;
-      background-position: center;
-      background-size: 32%;
-    }
-    #tweeter {
-      background: url(../assets/tweeterblue.png) no-repeat;
-      background-position: center;
-      background-size: 60%;
     }
 
-    #email {
-      background: url(../assets/blueemail.png) no-repeat;
-      background-position: center;
-      background-size: 60%;
+    .contact-info-wrapper {
+      width: 90%;
+      grid-area: contacts;
+      box-shadow: 1px 1px 20px darkgray;
+      margin: 20px auto;
+      padding: 1em;
+      @include small-tablet {
+        width: 100%;
+        display: block;
+        text-align: center;
+      }
+
+      @include desktop {
+        width: 100%;
+        margin: 30px 0;
+      }
+      .contact-info {
+        width: 100%;
+        margin: 4px auto;
+
+        @include tablet {
+          width: auto;
+          grid-column: 2;
+        }
+        @include desktop {
+          width: 90%;
+          margin-top: 80px;
+        }
+        .fa,
+        .fas {
+          width: 100%;
+          color: navy;
+          @include desktop {
+            width: 90%;
+          }
+        }
+        .social-wrapper {
+          width: 80%;
+          @include small-tablet {
+            margin: 0 auto;
+          }
+          .social {
+            width: 2em;
+            height: 2em;
+            display: inline-block;
+            padding: 30px;
+          }
+          #fb {
+            background: url(../assets/fb.png) no-repeat;
+            background-position: center;
+            background-size: 32%;
+          }
+          #tweeter {
+            background: url(../assets/tweeterblue.png) no-repeat;
+            background-position: center;
+            background-size: 60%;
+          }
+
+          #email {
+            background: url(../assets/blueemail.png) no-repeat;
+            background-position: center;
+            background-size: 60%;
+          }
+        }
+      }
+      .working-hours {
+        width: 100%;
+        @include tablet {
+          grid-column: 1;
+        }
+        @include desktop {
+          padding: 25px;
+        }
+        h4 {
+          font-size: 1.6em;
+        }
+        ul {
+          padding-left: 1em;
+          li {
+            list-style: none;
+            font-size: 1.3em;
+            @include tablet {
+              font-size: 1em;
+            }
+          }
+        }
+      }
     }
-  }
-  .working-hours {
-    h4 {
-      font-size: 1.5em;
-    }
-    ul {
-      font-size: 60%;
-      padding-left: 1em;
-      li {
-        list-style: none;
+
+    iframe {
+      width: 100vw;
+      @include desktop {
+        grid-area: map;
+        width: 100%;
+        margin: 0 auto;
       }
     }
   }

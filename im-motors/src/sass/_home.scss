@@ -34,20 +34,62 @@ $fontfamily: "Kanit", sans-serif;
   display: -ms-grid;
   display: grid;
 }
+<<<<<<< HEAD
 .home-wrapper {
   .home {
+=======
+
+.home {
+  @include desktop {
+    padding-bottom: 30px;
+    @include display-grid;
+    grid-gap: 25px;
+    grid-template-rows: repeat(4, auto);
+    grid-template-columns: (1fr 3fr);
+    background-color: #fff;
+  }
+
+  .membership-container {
+    padding-top: 100px;
+    padding-bottom: 150px;
+    @include small-tablet {
+      padding-top: 30px;
+    }
+    @include tablet {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      width: 100vw;
+      margin: 0 auto;
+      @include display-grid;
+      grid-gap: 15px;
+      grid-template-columns: repeat(2, 1fr);
+    }
+>>>>>>> ac2f7d72dfdcde2758b8b0f39343962383b32ada
     @include desktop {
       @include display-grid;
       grid-gap: 15px;
+<<<<<<< HEAD
       grid-template-rows: repeat(4, auto);
       grid-template-columns: (1fr 3fr);
       background-color: #fff;
+=======
+      grid-column: 2/3;
+      grid-row: 1/2;
+      padding-top: 0;
+      background-color: #cecece;
+      margin: 20px 0 0 auto;
+      width: 900px;
+    }
+    @include big-desktop{
+
+>>>>>>> ac2f7d72dfdcde2758b8b0f39343962383b32ada
     }
 
     .membership-container {
       padding-top: 100px;
       padding-bottom: 150px;
       @include small-tablet {
+<<<<<<< HEAD
         padding-top: 30px;
       }
       @include tablet {
@@ -57,6 +99,15 @@ $fontfamily: "Kanit", sans-serif;
         @include display-grid;
         grid-gap: 15px;
         grid-template-columns: repeat(2, 1fr);
+=======
+        top: 170px;
+        width: 100%;
+      }
+      @include tablet {
+        height: auto;
+        position: relative;
+        top: 0;
+>>>>>>> ac2f7d72dfdcde2758b8b0f39343962383b32ada
       }
       @include desktop {
         display: block;
@@ -211,6 +262,7 @@ $fontfamily: "Kanit", sans-serif;
           }
         }
       }
+<<<<<<< HEAD
       #family {
         padding-bottom: 4px;
       }
@@ -226,6 +278,39 @@ $fontfamily: "Kanit", sans-serif;
         grid-row: 4/5;
         width: 600px;
         margin: 0 auto 2em auto;
+=======
+    }
+  }
+  .reviews {
+    justify-content: center;
+    grid-gap: 30px;
+    background-color: white;
+    padding: 2em;
+
+    @include desktop {
+      width: 100%;
+      grid-column: 1;
+      grid-row: 1/4;
+      padding: 20px 0.3em;
+      margin-left: 20px;
+    }
+
+    .reviews-container {
+      margin: 0 auto 30px auto;
+      background-color: #cecece;
+      height: 50vh;
+      overflow-y: scroll;
+      padding: 1.2em;
+      line-height: 0;
+      @include tablet {
+        width: 85%;
+      }
+      @include desktop {
+        padding: 0.5em;
+        width: 100%;
+        line-height: 1.3em;
+        height: 80vh;
+>>>>>>> ac2f7d72dfdcde2758b8b0f39343962383b32ada
       }
       h2 {
         color: white;
@@ -269,6 +354,7 @@ $fontfamily: "Kanit", sans-serif;
         }
       }
     }
+<<<<<<< HEAD
     .reviews {
       justify-content: center;
       grid-gap: 30px;
@@ -288,6 +374,31 @@ $fontfamily: "Kanit", sans-serif;
         overflow-y: scroll;
         padding: 1.2em;
         line-height: 0;
+=======
+    .review-input {
+      background-color: #cecece;
+
+      padding: 1em;
+      @include small-tablet {
+        padding: 0 20%;
+      }
+      @include tablet {
+        width: 85%;
+        margin: 0 auto;
+      }
+      @include desktop {
+        padding: 0 5px;
+        width: 100%;
+      }
+
+      .name,
+      .stars {
+        display: inline-block;
+        margin-bottom: 15px;
+        width: 100%;
+        position: relative;
+
+>>>>>>> ac2f7d72dfdcde2758b8b0f39343962383b32ada
         @include desktop {
           padding: 0.5em;
           margin: 0 auto 30px auto;
@@ -413,19 +524,51 @@ $fontfamily: "Kanit", sans-serif;
       }
     }
 
+<<<<<<< HEAD
     .landing-page-footer {
       background-color: #fff;
       @include desktop {
         grid-column: 1;
         grid-row: 4;
+=======
+  .landing-page-footer {
+    background-color: #fff;
+    @include desktop {
+      grid-column: 1;
+      grid-row: 4;
+      width: 100%;
+    }
+    .soMe {
+      @include display-grid;
+      grid-template-columns: repeat(2, 1fr);
+      @include tablet {
+>>>>>>> ac2f7d72dfdcde2758b8b0f39343962383b32ada
         width: 100%;
       }
+<<<<<<< HEAD
       .soMe {
         @include display-grid;
         @include desktop {
           width: 100%;
           display: block;
           grid-template-columns: repeat(2, 1fr);
+=======
+
+      .l-footer {
+        @include desktop {
+          //width: 80%;
+        }
+      }
+      .contactinfo-container {
+        @include tablet {
+          width: 60%;
+          margin: 0 auto;
+        }
+        @include desktop {
+          width: 100%;
+          margin: 0 auto;
+          margin-left: 20px;
+>>>>>>> ac2f7d72dfdcde2758b8b0f39343962383b32ada
         }
 
         .l-footer {
@@ -433,6 +576,7 @@ $fontfamily: "Kanit", sans-serif;
             //width: 80%;
           }
         }
+<<<<<<< HEAD
         .contactinfo-container {
           @include desktop {
             width: 87%;
@@ -445,6 +589,16 @@ $fontfamily: "Kanit", sans-serif;
           }
           padding: 0.6em;
           .soMe-icons {
+=======
+        .phone-address {
+          margin-top: 15px;
+          margin-left: 10px;
+          @include tablet {
+            width: 100%;
+          }
+          .phone,
+          .address {
+>>>>>>> ac2f7d72dfdcde2758b8b0f39343962383b32ada
             display: flex;
             align-items: center;
             justify-content: space-around;
