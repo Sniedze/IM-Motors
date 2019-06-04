@@ -32,12 +32,14 @@
     padding-top: 15px;
     margin: 0 auto;
   }
-
+  h2 {
+    text-align: left;
+    margin-left: 1em;
+  }
   p {
     text-align: left;
-    width: 90%;
-    margin: 0 auto;
-    margin-bottom: 20px;;
+    margin-left: 1em;
+    margin: 20px;
     font-size: 16pt;
   }
   form {
@@ -72,11 +74,9 @@
           font-size: 4vw;
         }
         @include desktop {
-          font-size: 2.3vw;
-        }
-        @include desktop {
-          font-size: 1.7vw;
-          height: auto;
+          font-size: 2vw;
+          text-align: left;
+          margin-bottom: 1em;
         }
       }
       .form-fields {

@@ -4,17 +4,25 @@ $fontfamily: "Kanit", sans-serif;
   display: flex;
   justify-content: space-around;
 }
-
+@mixin desktop {
+  @media only screen and (min-width: 900px) {
+    @content;
+  }
+}
 .about-us-page {
-  padding-top: 110px;
+  @include desktop {
+    padding-top: 30px;
+  }
+  padding-top: 100px;
   p {
     padding: 0 1em;
+    font-size: 16pt;
   }
 
   .form-container {
     padding: 1em;
     box-shadow: 1px 1px 20px darkgray;
-    margin: 1em;
+    // margin: 1em;
     .submit-button-container {
       width: 250px;
       margin: 5px auto;

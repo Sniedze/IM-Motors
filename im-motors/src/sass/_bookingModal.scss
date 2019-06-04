@@ -1,7 +1,28 @@
+@mixin tablet {
+  @media only screen and (min-width: 570px) {
+    @content;
+  }
+}
+@mixin small-tablet {
+  @media only screen and (min-width: 400px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media only screen and (min-width: 900px) {
+    @content;
+  }
+}
 .booking-container {
+  @include desktop {
+    height: 65vh;
+    top: 12em;
+  }
   width: 70vw;
   height: 55vh;
-  background-color: #cecece;
+  background-color: white;
+  border: 1px solid #cecece;
   position: fixed;
   top: 18em;
   left: 15%;
@@ -16,20 +37,29 @@
   }
   .closebtn {
     span {
+      @include desktop {
+        right: -4em;
+      }
       color: black;
       position: absolute;
       right: -1em;
       top: 0.5em;
     }
   }
-  #submit-booking {
+  .submit-booking-btn {
     text-align: center;
-    vertical-align: center;
-    height: 30px;
-    width: 97%;
-    margin: 0 auto;
-    background-color: #fccc5c;
-    border-radius: 5px;
+    #submit-booking {
+      @include desktop {
+        width: 33%;
+      }
+      text-align: center;
+      vertical-align: center;
+      height: 35px;
+      width: 70%;
+      margin: 0 auto;
+      background-color: #fccc5c;
+      border-radius: 5px;
+    }
   }
 }
 .open-modal {
