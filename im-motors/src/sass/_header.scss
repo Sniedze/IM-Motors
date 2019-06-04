@@ -14,7 +14,7 @@
   }
 }
 @mixin big-desktop {
-  @media only screen and (min-width: 900px) {
+  @media only screen and (min-width: 1300px) {
     @content;
   }
 }
@@ -96,10 +96,8 @@
     ul {
       list-style: none;
       padding-left: 0;
-      @include desktop {
-        font-size: 3vw;
-        padding-left: 1em;
-        margin-bottom: 0 auto;
+      @include tablet {
+        margin: 0 auto;
       }
 
       li {
@@ -110,15 +108,12 @@
           font-size: 15pt;
           padding: 0 0.4em;
         }
+
         @include desktop {
-          font-size: 3vw;
-          padding-left: 1em;
-        }
-        @include desktop {
-          font-size: 3vw;
+          font-size: 2.8vw;
         }
         @include big-desktop {
-          font-size: 1.8vw;
+          font-size: 1.5vw;
         }
 
         a {
