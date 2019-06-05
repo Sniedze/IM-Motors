@@ -10,7 +10,7 @@ import SideDrawer from "./BurgerMenu/slideDrawer";
 import BackDrop from "./BurgerMenu/backDrop";
 import Header from "./Header.jsx";
 import TeenagerOffersPage from "./home/Special-offers.jsx";
-
+import Player from "./video/video";
 export default class App extends Component {
   state = {
     sideDrawerOpen: false
@@ -47,6 +47,7 @@ export default class App extends Component {
           <Route path="/blog" component={Blog} />
           <Route path="/membership" component={MembershipForm} />
           <Route path="/teenagers-offers" component={TeenagerOffersPage} />
+          <Route path="/video" component={Player} />
         </Switch>
       </HashRouter>
     );

@@ -5,6 +5,8 @@ import HomeFilter from "./filter/HomeFilter";
 import Categories from "./Categories";
 import TeenagerOffers from "./TeenagerOffers";
 import LandingPFooter from "./landingPFooter";
+import VideoLink from "../video/videoLink";
+import "../../../node_modules/video-react/dist/video-react.css";
 
 export default class Home extends Component {
   render() {
@@ -12,6 +14,7 @@ export default class Home extends Component {
       <div className="home-wrapper">
         <div className="home">
           <Membership />
+          <VideoLink />
           <TeenagerOffers />
           <Categories />
           <HomeFilter />

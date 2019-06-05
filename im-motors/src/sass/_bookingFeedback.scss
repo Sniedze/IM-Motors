@@ -1,0 +1,61 @@
+@mixin tablet {
+  @media only screen and (min-width: 570px) {
+    @content;
+  }
+}
+@mixin small-tablet {
+  @media only screen and (min-width: 400px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media only screen and (min-width: 900px) {
+    @content;
+  }
+}
+
+.b-feedback-modal {
+  background-color: white;
+  border: 2px solid #fccc5c;
+  width: 100%;
+  height: 100%;
+  margin: 2em auto;
+  transform: scale(0);
+  opacity: 0;
+  transition: all 0.2s ease-out;
+  position: absolute;
+  @include desktop {
+    width: 60%;
+  }
+  #close {
+    text-align: center;
+    margin: 5em auto;
+    border: 1px white solid;
+    border-radius: 10px;
+    width: 40%;
+    cursor: pointer;
+  }
+}
+.b-feedback-open {
+  transform: scale(1);
+  opacity: 1;
+  padding: 2em;
+  position: fixed;
+  right: 0;
+  left: 0;
+  height: 41vh;
+  top: -4vh;
+
+  @include desktop {
+    height: 51vh;
+    p {
+      text-align: center;
+      font-size: 1.4em;
+    }
+    h1 {
+      text-align: center;
+      font-size: 1.7em;
+    }
+  }
+}

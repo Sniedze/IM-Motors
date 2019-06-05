@@ -6,6 +6,8 @@ class FeedBackModal extends Component {
     if (this.props.showFeedback) {
       feedbackClasses = "feedback-modal feedback-open";
     }
+    console.log(this.props);
+
     return (
       <div className={feedbackClasses}>
         <h2>Congratulations!</h2>

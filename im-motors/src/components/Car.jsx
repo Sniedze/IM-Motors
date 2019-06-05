@@ -18,6 +18,7 @@ export default class Car extends Component {
       bookingModalOpen: false
     };
   }
+
   handleModalBtn = () => {
     this.setState(prevState => {
       // console.log("works");
@@ -110,22 +111,26 @@ export default class Car extends Component {
         <p className="member-price">
           Member`s Price: <span>${this.state.data.MemberPrice}</span>
         </p>
-
-        <img className="kbb" src={KBB} alt="Kelly Blue Book icon" />
-        <p className="kbb-price">${this.state.data.KBB}</p>
-        <BookingButton handleModal={this.handleModalBtn} />
-        <h3 id="promo">
+        <p id="promo">
           Make your purchase by
           <span>
             {" "}
             <strong>{d}</strong>
           </span>{" "}
           and get extra ...
-        </h3>
+        </p>
+        <div className="kellyblue-booking-wrapper">
+          <div className="kelly-container">
+            <img className="kbb" src={KBB} alt="Kelly Blue Book icon" />
+            <p className="kbb-price">${this.state.data.KBB}</p>
+          </div>
+          <BookingButton handleModal={this.handleModalBtn} />
+        </div>
         <BookingModal
           showModal={this.state.bookingModalOpen}
           closeModal={this.closeModalHandler}
         />
+
         <div className="contactUs">
           <h2>Contact us regarding this vehicle:</h2>
           <UserContact

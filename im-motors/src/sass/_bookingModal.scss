@@ -14,10 +14,11 @@
     @content;
   }
 }
+
 .booking-container {
   @include desktop {
     height: 65vh;
-    top: 12em;
+    top: 8em;
   }
   width: 70vw;
   height: 55vh;

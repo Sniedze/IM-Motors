@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 // import "./bootstrap/dist/css/bootstrap.min.css";
-
+import FeedBackModal from "./FeedbackModal";
 class MembershipContactForm extends Component {
   state = {
     firstname: null,
@@ -32,6 +32,7 @@ class MembershipContactForm extends Component {
       response.json();
     });
     event.target.reset();
+    this.props.submitBtnHandler();
   };
 
   render() {
@@ -80,14 +81,10 @@ class MembershipContactForm extends Component {
             />
           </div>
           <div className="submit-button-container">
-            <button
-              className="submit-button"
-              onClick={this.props.submitBtnHandler}
-            >
-              Submit
-            </button>
+            <button className="submit-button">Submit</button>
           </div>
         </form>
+        <FeedBackModal username={this.state.firstname} />
       </div>
     );
   }

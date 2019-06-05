@@ -1,13 +1,22 @@
 import React, { Component } from "react";
-import axios from "axios";
 //import "./bootstrap/dist/css/bootstrap.min.css";
-
+import ContactFeedback from "./ContactFeedback";
 class UserContact extends Component {
   state = {
     firstname: null,
     lastname: null,
     email: null,
-    message: null
+    message: null,
+    contactfeedbackMessage: false
+  };
+
+  handleContactFeedbackModal = () => {
+    this.setState(prevState => {
+      return { contactfeedbackMessage: !prevState.contactfeedbackMessage };
+    });
+  };
+  handleCloseFeedback = () => {
+    this.setState({ contactfeedbackMessage: false });
   };
   handleChange = e => {
     this.setState({
@@ -33,12 +42,12 @@ class UserContact extends Component {
       response.json();
     });
     event.target.reset();
+    this.handleContactFeedbackModal();
   };
 
   render() {
     return (
       <div className="form-container membership-form-container">
-        <h3>Contact Us</h3>
         <form onSubmit={this.handleSubmit}>
           <div className=" form-group ">
             <label htmlFor="firstname">First name</label>
@@ -85,6 +94,10 @@ class UserContact extends Component {
             <button className="submit-button">Submit</button>
           </div>
         </form>
+        <ContactFeedback
+          showContactFeedback={this.state.contactfeedbackMessage}
+          closefeedback={this.handleCloseFeedback}
+        />
       </div>
     );
   }

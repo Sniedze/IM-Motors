@@ -1,13 +1,25 @@
 import React, { Component } from "react";
 import DatePicker from "react-datepicker";
 import axios from "axios";
+import BookingFeedback from "./BookingFeedback";
+
 import "react-datepicker/dist/react-datepicker.css";
 class BookingTestDrive extends Component {
   state = {
     name: null,
     email: null,
     phone: null,
-    startDate: new Date()
+    startDate: new Date(),
+    bookingfeedbackMessage: false
+  };
+
+  handleBookingFeedbackModal = () => {
+    this.setState(prevState => {
+      return { bookingfeedbackMessage: !prevState.bookingfeedbackMessage };
+    });
+  };
+  handleCloseFeedback = () => {
+    this.setState({ bookingfeedbackMessage: false });
   };
 
   handleChange = e => {
@@ -28,6 +40,7 @@ class BookingTestDrive extends Component {
         console.log(res.data);
       });
     e.target.reset();
+    this.handleBookingFeedbackModal();
   };
   render() {
     let modalClasses = "booking-container";
@@ -88,6 +101,12 @@ class BookingTestDrive extends Component {
             </button>
           </div>
         </form>
+        <div id="b-feedback">
+          <BookingFeedback
+            showBookingFeedback={this.state.bookingfeedbackMessage}
+            closefeedback={this.handleCloseFeedback}
+          />
+        </div>
       </div>
     );
   }

@@ -88,25 +88,6 @@
       }
     }
   }
-  .booking-btn-wrapper {
-    position: absolute;
-
-    @include tablet {
-      top: 48em;
-      right: 10em;
-    }
-
-    @include desktop {
-      top: 50em;
-      right: 22em;
-    }
-    .booking-btn {
-      background-color: #fccc5c;
-      border: none;
-      border-radius: 10px;
-      height: 2.5em;
-    }
-  }
 
   .contactUs {
     margin-top: 3em;
@@ -126,10 +107,29 @@
     }
   }
   #promo {
-    text-align: center;
+    text-align: left;
     font-size: 1em;
     span {
       color: #e52528;
     }
+  }
+  .kellyblue-booking-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .booking-btn {
+      background-color: #fccc5c;
+      border: none;
+      border-radius: 10px;
+      height: 2.5em;
+      font-family: "PT Sans", sans-serif;
+    }
+  }
+  .submit-button {
+    width: 250px;
+    align-items: center;
+    height: 40px;
+    background-color: #fccc5c;
+    border-radius: 5px;
   }
 }
