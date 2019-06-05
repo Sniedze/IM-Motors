@@ -35,24 +35,30 @@
   .car-posts {
     @include tablet {
       @include display-grid;
-      grid-template-columns: repeat(2, 1fr );
+      grid-template-columns: repeat(2, 1fr);
     }
     @include desktop {
       @include display-grid;
-      grid-template-columns: repeat(3, 1fr );
+      grid-template-columns: repeat(3, 1fr);
+      padding: 5vw;
     }
     @include big-desktop {
       @include display-grid;
-      grid-template-columns: repeat(4, 1fr );
-      grid-gap: 30px;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 1vw;
+      
     }
     .car {
+      box-shadow: 1px 1px 20px darkgray;
       position: relative;
       background-color: white;
       text-align: center;
       padding: 20px;
       margin: 25px;
-      box-shadow: 0 0 5px 5px darkgrey;
+      @include big-desktop {
+        margin: 0;
+      }
+
       &:hover {
         text-decoration: none;
       }
