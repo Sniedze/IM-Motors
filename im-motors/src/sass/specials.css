@@ -1,0 +1,73 @@
+/* @mixin flex-display {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+@mixin tablet {
+  @media only screen and (min-width: 570px) {
+    @content;
+  }
+}
+@mixin small-tablet {
+  @media only screen and (min-width: 400px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media only screen and (min-width: 900px) {
+    @content;
+  }
+}
+@mixin big-desktop {
+  @media only screen and (min-width: 1300px) {
+    @content;
+  }
+}
+@mixin display-grid {
+  display: -ms-grid;
+  display: grid;
+} */
+
+@media only screen and (min-width: 900px) {
+  .carList .car-posts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* @include big-desktop {
+        @include display-grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 30px;
+      } */
+.car {
+  position: relative;
+  background-color: white;
+  text-align: center;
+  padding: 20px;
+  margin: 25px;
+  box-shadow: 0 0 5px 5px darkgrey;
+}
+
+.car a {
+  color: #000000;
+}
+
+.car img {
+  width: 100%;
+}
+.car p {
+  text-align: left;
+}
+.car p .member-price span {
+  color: #e52528;
+}
+
+.car a .arrow {
+  width: 30px;
+  position: absolute;
+  bottom: 5%;
+  right: 2%;
+}
