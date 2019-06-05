@@ -14,21 +14,31 @@ class UserContact extends Component {
       [e.target.id]: e.target.value
     });
   };
-  handleSubmit = e => {
-    const user = this.state;
-    axios
-      .post(`http://5ccaeb4c54c8540014835107.mockapi.io/postmessage`, { user })
-      .then(res => {
-        console.log(res.data);
-      });
-    e.target.reset();
+  handleSubmit = event => {
+    event.preventDefault();
+    const data = this.state;
+
+    fetch("https://immotors-65ac.restdb.io/rest/regular-contact-form", {
+      async: true,
+      crossDomain: true,
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+        "x-apikey": "5ce2d6b1780a473c8df5c9ef",
+        "cache-control": "no-cache"
+      },
+      processData: false,
+      body: JSON.stringify(data)
+    }).then(response => {
+      response.json();
+    });
+    event.target.reset();
   };
 
   render() {
     return (
       <div className="form-container membership-form-container">
         <form onSubmit={this.handleSubmit}>
-         
           <div className=" form-group ">
             <label htmlFor="firstname">First name</label>
             <span className="required">*</span>
