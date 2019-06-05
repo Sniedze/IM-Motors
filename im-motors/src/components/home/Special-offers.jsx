@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import Footer from "../Footer";
+import "../../sass/specials.css";
 import { Link, Route, Switch } from "react-router-dom";
 import CarInfo from "../Car";
-import "../../sass/specials.scss";
+// import "../../sass/specials.scss";
 class TeenagerOffersPage extends Component {
   state = {
     data: []

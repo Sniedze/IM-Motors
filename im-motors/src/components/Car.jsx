@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import moment from "moment";
 import KBB from "../assets/kbb.png";
 import SlideShow from "./SlideShow";
 import BookingButton from "./Booking/BookingButton";
@@ -88,6 +89,12 @@ export default class Car extends Component {
   };
 
   render() {
+    // Dynamic date for promotions
+    let d = new Date();
+    d = moment(d)
+      .add(6, "day")
+      .format("DD-MM-YYYY");
+
     return (
       <div className="one-car">
         <h2>
@@ -106,9 +113,15 @@ export default class Car extends Component {
 
         <img className="kbb" src={KBB} alt="Kelly Blue Book icon" />
         <p className="kbb-price">${this.state.data.KBB}</p>
-        <div className="booking-btn-wrapper">
-          <BookingButton handleModal={this.handleModalBtn} />
-        </div>
+        <BookingButton handleModal={this.handleModalBtn} />
+        <h3 id="promo">
+          Make your purchase by
+          <span>
+            {" "}
+            <strong>{d}</strong>
+          </span>{" "}
+          and get extra ...
+        </h3>
         <BookingModal
           showModal={this.state.bookingModalOpen}
           closeModal={this.closeModalHandler}
