@@ -41,7 +41,7 @@
     }
     .soMe {
       width: 100%;
-      padding: 0 1em;
+      padding: 1em;
       @include desktop {
         @include display-grid;
         grid-template-columns: repeat(2, 1fr);

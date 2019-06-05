@@ -27,8 +27,8 @@ class UserContact extends Component {
   render() {
     return (
       <div className="form-container membership-form-container">
+        <h3>Contact Us</h3>
         <form onSubmit={this.handleSubmit}>
-         
           <div className=" form-group ">
             <label htmlFor="firstname">First name</label>
             <span className="required">*</span>

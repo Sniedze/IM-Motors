@@ -48,7 +48,7 @@
     padding: 5%;
   }
   h2 {
-    margin-top: 70px;
+    margin-top: 40px;
   }
   .carousel {
     position: relative;
@@ -88,13 +88,29 @@
       }
     }
   }
-  .booking-btn {
-    background-color: #fccc5c;
-    border: none;
-    border-radius: 10px;
-    height: 2.5em;
+  .booking-btn-wrapper {
+    position: absolute;
+
+    @include tablet {
+      top: 48em;
+      right: 10em;
+    }
+
+    @include desktop {
+      top: 50em;
+      right: 22em;
+    }
+    .booking-btn {
+      background-color: #fccc5c;
+      border: none;
+      border-radius: 10px;
+      height: 2.5em;
+    }
   }
+
   .contactUs {
+    margin-top: 3em;
+    border: 1px solid #cecece;
     .form {
       .submit-button-container {
         width: 250px;

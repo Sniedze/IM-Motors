@@ -22,20 +22,22 @@
 
   background-color: #fff;
   padding: 1em;
+  h3 {
+    text-align: center;
+  }
   @include desktop {
-    width: 100%;
+    width: 95%;
     margin: 30px auto;
     form {
       @include desktop {
         margin-top: 30px;
         width: 70%;
-            margin: 0 auto;
-        .form-group {
-         
-          input,
-          textarea {
-          }
-        }
+        margin: 0 auto;
+        // .form-group {
+        //   input,
+        //   textarea {
+        //   }
+        // }
         .submit-button-container {
           width: 30vw;
           margin: 0 auto;
@@ -51,7 +53,6 @@
             margin: 0 auto;
             background-color: #fccc5c;
             border-radius: 5px;
-            
           }
         }
       }

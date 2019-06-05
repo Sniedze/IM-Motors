@@ -106,14 +106,21 @@ export default class Car extends Component {
 
         <img className="kbb" src={KBB} alt="Kelly Blue Book icon" />
         <p className="kbb-price">${this.state.data.KBB}</p>
-        <BookingButton handleModal={this.handleModalBtn} />
+        <div className="booking-btn-wrapper">
+          <BookingButton handleModal={this.handleModalBtn} />
+        </div>
         <BookingModal
           showModal={this.state.bookingModalOpen}
           closeModal={this.closeModalHandler}
         />
         <div className="contactUs">
           <h2>Contact us regarding this vehicle:</h2>
-          <UserContact make={this.state.data.Manufacturer} model={this.state.data.Model} year={this.state.data.Year} engine={this.state.data.Engine} />
+          <UserContact
+            make={this.state.data.Manufacturer}
+            model={this.state.data.Model}
+            year={this.state.data.Year}
+            engine={this.state.data.Engine}
+          />
         </div>
       </div>
     );

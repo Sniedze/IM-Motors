@@ -9,12 +9,6 @@ $graycolor: #cecece;
 $redcolor: #e52528;
 $fontfamily: "Kanit", sans-serif;
 
-@mixin flex-display {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-}
-
 @mixin tablet {
   @media only screen and (min-width: 570px) {
     @content;
@@ -40,6 +34,10 @@ $fontfamily: "Kanit", sans-serif;
   display: -ms-grid;
   display: grid;
 }
+<<<<<<< HEAD
+.home-wrapper {
+  .home {
+=======
 
 .home {
   @include desktop {
@@ -66,10 +64,15 @@ $fontfamily: "Kanit", sans-serif;
       grid-gap: 15px;
       grid-template-columns: repeat(2, 1fr);
     }
+>>>>>>> ac2f7d72dfdcde2758b8b0f39343962383b32ada
     @include desktop {
-      display: block;
-      height: 450px;
+      @include display-grid;
       grid-gap: 15px;
+<<<<<<< HEAD
+      grid-template-rows: repeat(4, auto);
+      grid-template-columns: (1fr 3fr);
+      background-color: #fff;
+=======
       grid-column: 2/3;
       grid-row: 1/2;
       padding-top: 0;
@@ -79,14 +82,24 @@ $fontfamily: "Kanit", sans-serif;
     }
     @include big-desktop{
 
+>>>>>>> ac2f7d72dfdcde2758b8b0f39343962383b32ada
     }
-    img {
-      width: 60vw;
-      height: auto;
-      position: absolute;
-      right: 0;
-      top: 13em;
+
+    .membership-container {
+      padding-top: 100px;
+      padding-bottom: 150px;
       @include small-tablet {
+<<<<<<< HEAD
+        padding-top: 30px;
+      }
+      @include tablet {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        width: 100vw;
+        @include display-grid;
+        grid-gap: 15px;
+        grid-template-columns: repeat(2, 1fr);
+=======
         top: 170px;
         width: 100%;
       }
@@ -94,189 +107,178 @@ $fontfamily: "Kanit", sans-serif;
         height: auto;
         position: relative;
         top: 0;
+>>>>>>> ac2f7d72dfdcde2758b8b0f39343962383b32ada
       }
       @include desktop {
+        display: block;
+        height: 450px;
+        grid-gap: 15px;
+        grid-column: 2/3;
+        grid-row: 1/2;
+        padding-top: 0;
+        background-color: #cecece;
+        margin-top: 20px;
+        width: 100%;
+      }
+      img {
+        width: 60vw;
+        height: auto;
         position: absolute;
-        top: 220px;
         right: 0;
-        width: 400px;
-      }
-    }
-
-    .clickable-area {
-      position: relative;
-      background-color: rgba(0, 0, 0, 0.4);
-      width: 75vw;
-      border-radius: 10px;
-      margin: 10px auto;
-      @include small-tablet {
-        width: 65vw;
-        margin: 0 5vw;
-      }
-      @include tablet {
-        width: 46vw;
-        margin: 0 5vw;
-      }
-      @include desktop {
-        position: relative;
-        width: 45vw;
-        margin: 15px 15px 0 15px;
-        margin-right: auto;
-      }
-      cursor: pointer;
-      h2 {
-        color: #fccc5c;
+        top: 13em;
+        @include small-tablet {
+          top: 170px;
+          width: 50vw;
+        }
+        @include tablet {
+          width: 50vw;
+          height: auto;
+          position: relative;
+          top: 0;
+        }
         @include desktop {
-          font-size: 2rem;
+          position: absolute;
+          top: 220px;
+          right: 0;
+          width: 400px;
         }
       }
-      ul {
-        padding: 10px;
-        text-align: center;
-        li {
-          list-style: none;
-          font-size: 1rem;
-          color: white;
-          text-align: left;
+
+      .clickable-area {
+        position: relative;
+        background-color: rgba(0, 0, 0, 0.4);
+        width: 75vw;
+        border-radius: 10px;
+        margin: 10px auto;
+        @include small-tablet {
+          width: 65vw;
+          margin: 0 5vw;
+        }
+        @include tablet {
+          width: 46vw;
+          margin: 0 5vw;
+        }
+        @include desktop {
+          position: relative;
+          width: 45vw;
+          margin: 15px 15px 0 15px;
+          margin-right: auto;
+        }
+        cursor: pointer;
+        h2 {
+          color: #fccc5c;
           @include desktop {
-            list-style: none;
-            font-size: 1.5rem;
-            color: white;
-            text-align: left;
+            font-size: 2rem;
           }
         }
-      }
-      .arrow {
-        width: 30px;
-        position: absolute;
-        top: 66%;
+        ul {
+          padding: 10px;
+          text-align: center;
+          li {
+            list-style: none;
+            font-size: 1rem;
+            color: white;
+            text-align: left;
+            @include desktop {
+              list-style: none;
+              font-size: 1.5rem;
+              color: white;
+              text-align: left;
+            }
+          }
+        }
+        .arrow {
+          width: 30px;
+          position: absolute;
+          top: 66%;
+        }
       }
     }
-  }
 
-  .offers-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 1em;
-    background-color: white;
-    width: 100vw;
-    @include desktop {
-      grid-column: 2/3;
-      grid-row: 2/3;
-      width: 600px;
-      margin: 0 auto;
-    }
-    a {
-      color: black;
-    }
-    .offers {
-      background-color: #fccc5c;
-      text-align: center;
-      padding: 1em;
-      width: 100%;
-      margin: 24px auto;
-      border-radius: 10px;
-      position: relative;
+    .offers-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 1em;
+      background-color: white;
+      width: 100vw;
       @include desktop {
         grid-column: 2/3;
         grid-row: 2/3;
         width: 600px;
         margin: 0 auto;
       }
-      h2 {
-        padding-bottom: 15px;
+      a {
+        color: black;
       }
-      .arrow {
-        width: 30px;
-        position: absolute;
-        bottom: 5%;
-        right: 0.3%;
-      }
-    }
-  }
-  .catContainer {
-    background-color: white;
-    padding: 20px;
-    @include desktop {
-      grid-column: 2/3;
-      grid-row: 3/4;
-      width: 100%;
-    }
-    h2 {
-      padding-bottom: 20px;
-    }
-    .category-buttons {
-      text-align: center;
-      margin: 0 auto;
-      @include display-grid;
-      grid-gap: 15px;
-      grid-template-columns: repeat(2, 1fr);
-      h3 {
-        font-size: 1em;
-      }
-      img {
-        height: 50px;
+      .offers {
+        background-color: #fccc5c;
+        text-align: center;
+        padding: 1em;
+        width: 100%;
+        margin: 24px auto;
+        border-radius: 10px;
+        position: relative;
         @include desktop {
-          height: 70px;
+          grid-column: 2/3;
+          grid-row: 2/3;
+          width: 600px;
+          margin: 0 auto;
+        }
+        h2 {
+          padding-bottom: 15px;
+        }
+        .arrow {
+          width: 30px;
+          position: absolute;
+          bottom: 5%;
+          right: 0.3%;
         }
       }
     }
-    #family {
-      padding-bottom: 4px;
-    }
-  }
-
-  .filterContainer {
-    background-image: url(../assets/bgforsearch.png);
-    height: 32vh;
-    background-size: 100%;
-    background-repeat: no-repeat;
-    @include desktop {
-      grid-column: 2/3;
-      grid-row: 4/5;
-      width: 600px;
-      margin: 0 auto;
-    }
-    h2 {
-      color: white;
-      padding-top: 1em;
-    }
-    .selects-wrapper {
-      margin-top: 1.5em;
-      display: flex;
-      justify-content: space-around;
-      select {
-        width: 23%;
-        height: 35px;
-        background-color: rgba(0, 0, 0, 0.6);
-        border: none;
-      }
-    }
-    #model,
-    #make,
-    #year {
-      color: white;
-      margin-left: 0 auto;
-      font-family: "PT Sans", sans-serif;
-      font-size: 15px;
-    }
-    .main-container {
+    .catContainer {
+      background-color: white;
+      padding: 20px;
       @include desktop {
-        margin-top: 70px;
+        grid-column: 2/3;
+        grid-row: 3/4;
+        width: 100%;
       }
-      .submit-btn {
-        padding-top: 1em;
+      h2 {
+        padding-bottom: 20px;
+      }
+      .category-buttons {
         text-align: center;
-        button {
-          width: 87%;
-          background-color: #fccc5c;
-          border-radius: 5px;
-          border: none;
+        margin: 0 auto;
+        @include display-grid;
+        grid-gap: 15px;
+        grid-template-columns: repeat(2, 1fr);
+        h3 {
+          font-size: 1em;
+        }
+        img {
+          height: 50px;
           @include desktop {
-            width: 200px;
+            height: 70px;
           }
         }
       }
+<<<<<<< HEAD
+      #family {
+        padding-bottom: 4px;
+      }
+    }
+
+    .filterContainer {
+      background-image: url(../assets/bgforsearch.png);
+      height: 32vh;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      @include desktop {
+        grid-column: 2/3;
+        grid-row: 4/5;
+        width: 600px;
+        margin: 0 auto 2em auto;
+=======
     }
   }
   .reviews {
@@ -308,23 +310,71 @@ $fontfamily: "Kanit", sans-serif;
         width: 100%;
         line-height: 1.3em;
         height: 80vh;
+>>>>>>> ac2f7d72dfdcde2758b8b0f39343962383b32ada
       }
-
-      .review-posts {
-        border-bottom: 2px solid darkgray;
-
-        h4 {
-          font-size: 1rem;
-          margin-bottom: 8px;
+      h2 {
+        color: white;
+        padding-top: 1em;
+      }
+      .selects-wrapper {
+        margin-top: 1.5em;
+        display: flex;
+        justify-content: space-around;
+        select {
+          width: 23%;
+          height: 35px;
+          background-color: rgba(0, 0, 0, 0.6);
+          border: none;
         }
-
-        span {
-          img {
-            margin-bottom: 15px;
+      }
+      #model,
+      #make,
+      #year {
+        color: white;
+        margin-left: 0 auto;
+        font-family: "PT Sans", sans-serif;
+        font-size: 15px;
+      }
+      .main-container {
+        @include desktop {
+          margin-top: 60px;
+        }
+        .submit-btn {
+          padding-top: 1em;
+          text-align: center;
+          button {
+            width: 87%;
+            background-color: #fccc5c;
+            border-radius: 5px;
+            border: none;
+            @include desktop {
+              width: 200px;
+            }
           }
         }
       }
     }
+<<<<<<< HEAD
+    .reviews {
+      justify-content: center;
+      grid-gap: 30px;
+      background-color: white;
+      padding: 2em;
+      @include desktop {
+        grid-column: 1;
+        grid-row: 1/4;
+        width: 25vw;
+        padding: 1.3em;
+      }
+
+      .reviews-container {
+        margin: 0 auto 30px auto;
+        background-color: #cecece;
+        height: 50vh;
+        overflow-y: scroll;
+        padding: 1.2em;
+        line-height: 0;
+=======
     .review-input {
       background-color: #cecece;
 
@@ -348,92 +398,139 @@ $fontfamily: "Kanit", sans-serif;
         width: 100%;
         position: relative;
 
+>>>>>>> ac2f7d72dfdcde2758b8b0f39343962383b32ada
         @include desktop {
-          display: block;
-          margin-bottom: 5px;
+          padding: 0.5em;
+          margin: 0 auto 30px auto;
+          line-height: 1.3em;
+          height: 80vh;
         }
 
-        label {
-          margin-bottom: 0;
-          text-align: right;
-        }
-        input {
-          width: 150px;
-          position: absolute;
-          right: 0;
-          border: none;
-          @include small-tablet {
-            width: 70%;
-          }
-          @include desktop {
-            width: 100%;
-            position: relative;
-          }
-        }
-      }
-      .stars {
-        width: 100%;
-        @include desktop {
-          width: 100%;
-        }
-        select {
-          width: 148px;
-          border-radius: 0;
-          border: 2px white solid;
-          background-color: transparent;
-          position: absolute;
-          right: 0;
-          @include small-tablet {
-            width: 70%;
-          }
-          @include desktop {
-            width: 100%;
-            position: relative;
-          }
-        }
-      }
-      .feedback {
-        position: relative;
-        width: 100%;
+        .review-posts {
+          border-bottom: 2px solid darkgray;
 
-        textarea {
-          width: 150px;
-          height: 35px;
-          position: absolute;
-          right: 0;
-          border: none;
-          @include small-tablet {
-            width: 70%;
+          h4 {
+            font-size: 1rem;
+            margin-bottom: 8px;
           }
-          @include desktop {
-            width: 100%;
-            position: relative;
+
+          span {
+            img {
+              margin-bottom: 15px;
+            }
           }
         }
       }
-      .submit-input-container {
-        width: 200px;
-        margin: 15px auto;
+      .review-input {
+        background-color: #cecece;
+
+        padding: 1em;
         @include small-tablet {
-          width: 280px;
-          margin: 15px auto;
+          padding: 0 20%;
         }
         @include desktop {
+          padding: 0 5px;
+        }
+
+        .name,
+        .stars {
+          display: inline-block;
+          margin-bottom: 15px;
           width: 100%;
           position: relative;
+          @include desktop {
+            display: block;
+            margin-bottom: 5px;
+          }
+
+          label {
+            margin-bottom: 0;
+            text-align: right;
+          }
+          input {
+            width: 150px;
+            position: absolute;
+            right: 0;
+            border: none;
+            @include small-tablet {
+              width: 70%;
+            }
+            @include desktop {
+              width: 100%;
+              position: relative;
+            }
+          }
         }
-        .submit-button {
-          text-align: center;
-          height: 30px;
-          width: 97%;
+        .stars {
+          width: 100%;
+          @include desktop {
+            width: 100%;
+          }
+          select {
+            width: 148px;
+            border-radius: 0;
+            border: 2px white solid;
+            background-color: transparent;
+            position: absolute;
+            right: 0;
+            @include small-tablet {
+              width: 70%;
+            }
+            @include desktop {
+              width: 100%;
+              position: relative;
+            }
+          }
+        }
+        .feedback {
+          position: relative;
+          width: 100%;
+
+          textarea {
+            width: 150px;
+            height: 35px;
+            position: absolute;
+            right: 0;
+            border: none;
+            @include small-tablet {
+              width: 70%;
+            }
+            @include desktop {
+              width: 100%;
+              position: relative;
+            }
+          }
+        }
+        .submit-input-container {
+          width: 200px;
           margin: 15px auto;
-          background-color: #fccc5c;
-          border-radius: 5px;
+          @include small-tablet {
+            width: 280px;
+            margin: 15px auto;
+          }
+          @include desktop {
+            width: 100%;
+            position: relative;
+          }
+          .submit-button {
+            text-align: center;
+            height: 30px;
+            width: 97%;
+            margin: 15px auto;
+            background-color: #fccc5c;
+            border-radius: 5px;
+          }
         }
       }
     }
-  }
 
+<<<<<<< HEAD
+    .landing-page-footer {
+      background-color: #fff;
+      @include desktop {
+        grid-column: 1;
+        grid-row: 4;
+=======
   .landing-page-footer {
     background-color: #fff;
     @include desktop {
@@ -445,9 +542,17 @@ $fontfamily: "Kanit", sans-serif;
       @include display-grid;
       grid-template-columns: repeat(2, 1fr);
       @include tablet {
+>>>>>>> ac2f7d72dfdcde2758b8b0f39343962383b32ada
         width: 100%;
-        display: block;
       }
+<<<<<<< HEAD
+      .soMe {
+        @include display-grid;
+        @include desktop {
+          width: 100%;
+          display: block;
+          grid-template-columns: repeat(2, 1fr);
+=======
 
       .l-footer {
         @include desktop {
@@ -463,18 +568,28 @@ $fontfamily: "Kanit", sans-serif;
           width: 100%;
           margin: 0 auto;
           margin-left: 20px;
+>>>>>>> ac2f7d72dfdcde2758b8b0f39343962383b32ada
         }
-        padding: 0.6em;
-        .soMe-icons {
-          @include flex-display;
 
-          img {
-            width: 30px;
-          }
-          #fb {
-            width: 18px;
+        .l-footer {
+          @include desktop {
+            //width: 80%;
           }
         }
+<<<<<<< HEAD
+        .contactinfo-container {
+          @include desktop {
+            width: 87%;
+            margin: 0 auto;
+            height: 32vh;
+            border: 1px solid #cecece;
+            padding-top: 1em;
+            display: grid;
+            align-items: center;
+          }
+          padding: 0.6em;
+          .soMe-icons {
+=======
         .phone-address {
           margin-top: 15px;
           margin-left: 10px;
@@ -483,21 +598,49 @@ $fontfamily: "Kanit", sans-serif;
           }
           .phone,
           .address {
+>>>>>>> ac2f7d72dfdcde2758b8b0f39343962383b32ada
             display: flex;
+            align-items: center;
+            justify-content: space-around;
 
             img {
-              height: 20px;
-              width: 15px;
+              width: 30px;
             }
-            p {
-              padding-left: 6px;
+            #fb {
+              width: 18px;
+            }
+          }
+          .phone-address {
+            margin-top: 32px;
+            margin-left: 10px;
+            display: grid;
+            justify-content: center;
+            .phone,
+            .address {
+              display: flex;
+
+              img {
+                height: 20px;
+                width: 15px;
+              }
+              p {
+                padding-left: 6px;
+              }
             }
           }
         }
       }
+      iframe {
+        width: 100vw;
+      }
     }
-    iframe {
-      width: 100vw;
-    }
+  }
+}
+.copyright {
+  p {
+    text-align: center;
+    font-family: "Questrial", sans-serif;
+    padding: 1em;
+    border-top: #cecece 1px solid;
   }
 }

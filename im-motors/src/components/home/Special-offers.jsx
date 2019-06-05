@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-
+import Footer from "../Footer";
 import { Link, Route, Switch } from "react-router-dom";
 import CarInfo from "../Car";
-
+import "../../sass/specials.scss";
 class TeenagerOffersPage extends Component {
   state = {
     data: []
@@ -54,12 +54,18 @@ class TeenagerOffersPage extends Component {
     let inventoryNav = (
       <Switch>
         <Route path="/inventory/:carId" component={CarInfo} />
-        <>
-          <div className="carList">{offersList}</div>
-        </>
+
+        <div className="carList">
+          <div className="car-post"> {offersList} </div>
+        </div>
       </Switch>
     );
-    return <div className="special-offers-container">{inventoryNav}</div>;
+    return (
+      <div className="special-offers">
+        {inventoryNav}
+        <Footer />
+      </div>
+    );
   }
 }
 

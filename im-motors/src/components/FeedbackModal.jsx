@@ -11,7 +11,7 @@ class FeedBackModal extends Component {
         <h2>Congratulations!</h2>
         <p>
           The cinema tickets and other relavant information about your
-          membership are sent to your Email.Check it out and enjoy.{" "}
+          membership are sent to your Email. Check it out and enjoy.{" "}
         </p>
         <div id="close" onClick={this.props.closefeedback}>
           close

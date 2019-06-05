@@ -10,10 +10,10 @@ export default class AboutUs extends Component {
     return (
       <div className="about-us-page">
         <p>
-          Here are some text which describe company's mission.Contrary to
-          popular belief, Lorem Ipsum is not simply random text. It has roots in
-          a piece of classical Latin literature from 45 BC, making it over 2000
-          years old.
+          IM Motors is a used car dealership and car repair service with more
+          than 10 years’ experience in the market. In IM Motors, our mission is
+          to improve everyday lives of people by providing them with reliable
+          vehicles and high-quality customer service.
         </p>
 
         <UserContact />

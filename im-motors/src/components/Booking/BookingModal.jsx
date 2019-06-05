@@ -82,9 +82,11 @@ class BookingTestDrive extends Component {
               onChange={this.handleDateChange}
             />
           </div>
-          <button id="submit-booking" type="submit">
-            Book my Drive Test
-          </button>
+          <div className="submit-booking-btn">
+            <button id="submit-booking" type="submit">
+              Book my Drive Test
+            </button>
+          </div>
         </form>
       </div>
     );
