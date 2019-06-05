@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "2": "^2.0.0",
+    "add-subtract-date": "^1.0.14",
     "axios": "^0.18.0",
     "bootstrap": "^4.3.1",
     "font-awesome": "^4.7.0",

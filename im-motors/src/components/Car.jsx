@@ -88,6 +88,9 @@ export default class Car extends Component {
   };
 
   render() {
+    let d = new Date();
+    const addSubtractDate = require("add-subtract-date");
+    // console.log(addSubtractDate.add(d, 4, "days"));
     return (
       <div className="one-car">
         <h2>
@@ -113,7 +116,12 @@ export default class Car extends Component {
         />
         <div className="contactUs">
           <h2>Contact us regarding this vehicle:</h2>
-          <UserContact make={this.state.data.Manufacturer} model={this.state.data.Model} year={this.state.data.Year} engine={this.state.data.Engine} />
+          <UserContact
+            make={this.state.data.Manufacturer}
+            model={this.state.data.Model}
+            year={this.state.data.Year}
+            engine={this.state.data.Engine}
+          />
         </div>
       </div>
     );
