@@ -8,10 +8,8 @@ class TeenagerOffers extends Component {
     return (
       <div className="offers-container">
         <Link to="teenagers-offers">
-          <div className="offers">
-            <h2>Special Offers for Teenage Drivers</h2>
-            <img className="arrow" src={Arrow} alt="arrow"/>
-          </div>
+          <h2>Special Offers for Teenage Drivers</h2>
+          <img className="arrow" src={Arrow} alt="arrow" />
         </Link>
       </div>
     );
