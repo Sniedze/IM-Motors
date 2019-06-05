@@ -31,21 +31,28 @@
   background-color: $graycolor;
   z-index: 500;
   @include tablet {
-    position: relative;
+    
     @include display-grid;
     grid-template-columns: repeat(2, auto);
   }
   @include small-tablet {
-    position: relative;
+    
   }
   @include desktop {
     width: 100vw;
+  }
+  @include big-desktop {
+    
   }
   a {
     @include tablet {
       grid-column: 1;
       margin-left: 1.4vw;
       margin-top: 5%;
+    }
+    @include tablet {
+      
+      margin: 25px 0 25px 25px;
     }
 
     .logoImage {
@@ -120,6 +127,10 @@
           text-decoration: none;
           color: black;
           font-family: $fontfamily;
+          @include tablet {
+      margin-left: 10px;
+          }
+      
         }
         a:hover {
           color: #999b98;

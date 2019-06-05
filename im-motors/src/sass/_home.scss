@@ -42,24 +42,31 @@ $fontfamily: "Kanit", sans-serif;
 }
 
 .home {
+ 
+  @include tablet {
+    padding-top: 50px;
+  }
   @include big-desktop {
-    padding-bottom: 0;
+    padding-top: 180px;
     @include display-grid;
-    grid-gap: 35px;
+    grid-gap: 25px;
     grid-template-rows: repeat(5, auto);
     grid-template-columns: repeat(4, 1fr);
     background-color: #fff;
   }
 
   .membership-container {
-    padding-top: 100px;
-    padding-bottom: 150px;
+    padding: 100px 0 150px 0;
+
     @include small-tablet {
-      padding-top: 30px;
+      width: 100vw;
+      margin: 0 auto;
+      @include display-grid;
+      grid-gap: 15px;
+      grid-template-columns: repeat(2, 1fr);
     }
     @include tablet {
-      padding-top: 10px;
-      padding-bottom: 10px;
+      padding: 150px 0 15px 0;
       width: 100vw;
       margin: 0 auto;
       @include display-grid;
@@ -67,15 +74,16 @@ $fontfamily: "Kanit", sans-serif;
       grid-template-columns: repeat(2, 1fr);
     }
     @include big-desktop {
+      padding: 35px 0 15px 0;
       display: block;
-      height: 550px;
+      height: 500px;
       grid-gap: 15px;
       grid-column: 2/5;
       grid-row: 1;
-      padding-top: 0;
       background-color: #cecece;
-      margin: 20px 0 0 auto;
+      margin: 0 auto;
       width: 100%;
+      margin-top: 17px;
     }
 
     img {
@@ -86,71 +94,73 @@ $fontfamily: "Kanit", sans-serif;
       top: 13em;
       @include small-tablet {
         top: 170px;
-        width: 100%;
+        width: 250px;
       }
       @include tablet {
         height: auto;
-        position: relative;
-        top: 0;
+        top: 130px;
       }
       @include big-desktop {
         position: absolute;
-        top: 220px;
+        top: 280px;
         right: 0;
         width: 400px;
       }
     }
-
-    .clickable-area {
-      position: relative;
-      background-color: rgba(0, 0, 0, 0.4);
-      width: 75vw;
-      border-radius: 10px;
-      margin: 10px auto;
-      @include small-tablet {
-        width: 65vw;
-        margin: 0 5vw;
+    a {
+      &:hover {
+        text-decoration: none;
       }
-      @include tablet {
-        width: 46vw;
-        margin: 0 5vw;
-      }
-      @include big-desktop {
+      .clickable-area {
         position: relative;
-        width: 50%;
-        padding: 30px;
-        margin: 45px 0 0 45px;
-        margin-right: auto;
-      }
-      cursor: pointer;
-      h2 {
-        color: #fccc5c;
-        @include desktop {
-          font-size: 2rem;
+        background-color: rgba(0, 0, 0, 0.4);
+        width: 75vw;
+        border-radius: 10px;
+        margin: 10px auto;
+        @include small-tablet {
+          width: 65vw;
+          margin: 0 5vw;
         }
-      }
-      ul {
-        padding: 10px;
-        text-align: center;
-        li {
-          list-style: none;
-          font-size: 1rem;
-          color: white;
-          text-align: left;
+        @include tablet {
+          width: 46vw;
+          margin: 0 5vw;
+        }
+        @include big-desktop {
+          position: relative;
+          width: 50%;
+          padding: 30px;
+          margin: 0 auto 0 45px;
+        }
+        cursor: pointer;
+        h2 {
+          color: #fccc5c;
           @include desktop {
-            list-style: none;
-            font-size: 1.5rem;
-            color: white;
-            text-align: left;
+            font-size: 2rem;
           }
         }
-      }
-      .arrow {
-        width: 30px;
-        position: absolute;
-        top: 66%;
-        @include desktop {
-          width: 50px;
+        ul {
+          padding: 10px;
+          text-align: center;
+          li {
+            list-style: none;
+            font-size: 1rem;
+            color: white;
+            text-align: left;
+            @include desktop {
+              list-style: none;
+              font-size: 1.5rem;
+              color: white;
+              text-align: left;
+            }
+          }
+        }
+        .arrow {
+          width: 30px;
+          position: absolute;
+          top: 66%;
+          @include desktop {
+            width: 50px;
+          }
         }
       }
     }
@@ -169,10 +179,10 @@ $fontfamily: "Kanit", sans-serif;
     @include big-desktop {
       grid-column: 4/5;
       grid-row: 2;
-      width: 15vw;
-      height: 15vw;
-      margin: 0 auto;
-      padding: 7vw 15px;
+      width: 320px;
+      height: 320px;
+      margin: 20px auto;
+      padding: 110px 15px;
     }
     a {
       color: black;
@@ -180,6 +190,8 @@ $fontfamily: "Kanit", sans-serif;
 
     h2 {
       padding-bottom: 15px;
+      @include big-desktop {
+      }
     }
     .arrow {
       width: 30px;
@@ -198,6 +210,7 @@ $fontfamily: "Kanit", sans-serif;
       grid-column: 2/4;
       grid-row: 2;
       width: 100%;
+      margin: 0 auto;
     }
     h2 {
       padding-bottom: 20px;
@@ -214,7 +227,7 @@ $fontfamily: "Kanit", sans-serif;
       img {
         height: 50px;
         @include big-desktop {
-          height: 70px;
+          height: 100px;
         }
       }
     }
@@ -228,7 +241,15 @@ $fontfamily: "Kanit", sans-serif;
     height: 32vh;
     background-size: 100%;
     background-repeat: no-repeat;
+    width: 100vw;
+    @include small-tablet {
+      height: 250px;
+    }
+    @include tablet {
+      height: 28vh;
+    }
     @include big-desktop {
+      height: 400px;
       grid-column: 2/5;
       grid-row: 3;
       width: 100%;
@@ -258,6 +279,10 @@ $fontfamily: "Kanit", sans-serif;
           height: 35px;
           background-color: rgba(0, 0, 0, 0.6);
           border: none;
+
+          @include tablet {
+            height: 45px;
+          }
           @include desktop {
             width: 26%;
             height: 55px;
@@ -270,6 +295,9 @@ $fontfamily: "Kanit", sans-serif;
           margin-left: 0 auto;
           font-family: "PT Sans", sans-serif;
           font-size: 15px;
+          @include tablet {
+            font-size: 20px;
+          }
           @include desktop {
             font-size: 24px;
           }
@@ -284,10 +312,14 @@ $fontfamily: "Kanit", sans-serif;
           background-color: #fccc5c;
           border-radius: 5px;
           border: none;
-          @include desktop {
+          @include tablet {
+            margin-top: 30px;
             width: 300px;
             height: 40px;
             font-size: 24px;
+            @include desktop {
+              margin-top: 0px;
+            }
           }
         }
       }
@@ -296,14 +328,14 @@ $fontfamily: "Kanit", sans-serif;
   .reviews {
     justify-content: center;
     background-color: white;
-    padding: 2em;
+    padding: 1em;
 
     @include big-desktop {
       width: 85%;
       grid-column: 1;
       grid-row: 1/3;
       padding: 20px 0.3em;
-      margin: 0 auto;
+      margin: 0px auto;
     }
 
     .reviews-container {
@@ -313,6 +345,7 @@ $fontfamily: "Kanit", sans-serif;
       overflow-y: scroll;
       padding: 1.2em;
       line-height: 0;
+      width: 100%;
       @include tablet {
         width: 85%;
       }
@@ -320,16 +353,16 @@ $fontfamily: "Kanit", sans-serif;
         padding: 30px;
         width: 100%;
         line-height: 1.3em;
-        height: 550px;
+        height: 500px;
       }
 
       .review-posts {
         border-bottom: 2px solid darkgray;
 
         h4 {
-          font-size: 1rem;
+          font-size: 1.5rem;
           margin-bottom: 8px;
-          @include desktop {
+          @include tablet {
             font-size: 18pt;
           }
         }
@@ -351,6 +384,8 @@ $fontfamily: "Kanit", sans-serif;
       @include tablet {
         width: 85%;
         margin: 0 auto;
+        height: 330px;
+        padding: 20px 20%;
       }
       @include desktop {
         padding: 40px;
@@ -360,7 +395,7 @@ $fontfamily: "Kanit", sans-serif;
       @include big-desktop {
         padding: 30px;
         width: 100%;
-        height: 370px;
+        height: 470px;
       }
 
       .name,
@@ -369,26 +404,35 @@ $fontfamily: "Kanit", sans-serif;
         margin-bottom: 15px;
         width: 100%;
         position: relative;
-
+        @include tablet {
+          margin-bottom: 30px;
+        }
         @include big-desktop {
           display: block;
-          margin-bottom: 5px;
+          margin-bottom: 20px;
         }
 
         label {
+          font-size: 15pt;
           margin-bottom: 0;
           text-align: right;
+
           @include desktop {
             font-size: 18pt;
           }
         }
         input {
-          width: 150px;
+          width: 180px;
+          height: 30px;
           position: absolute;
           right: 0;
           border: none;
           @include small-tablet {
             width: 70%;
+          }
+          @include tablet {
+            width: 70%;
+            height: 40px;
           }
           @include desktop {
             width: 70%;
@@ -399,27 +443,28 @@ $fontfamily: "Kanit", sans-serif;
           @include big-desktop {
             width: 100%;
             position: relative;
-            height: 30px;
+            height: 40px;
           }
         }
       }
       .stars {
         width: 100%;
-
+        height: 30px;
         @include big-desktop {
           width: 100%;
         }
         select {
-          width: 148px;
+          width: 179px;
           border-radius: 0;
           border: 2px white solid;
           background-color: transparent;
           position: absolute;
           right: 0;
+          height: 30px;
           @include small-tablet {
             width: 70%;
           }
-          @include desktop {
+          @include tablet {
             height: 40px;
           }
           @include big-desktop {
@@ -431,14 +476,21 @@ $fontfamily: "Kanit", sans-serif;
       .feedback {
         position: relative;
         width: 100%;
+        @include big-desktop {
+          margin-top: 55px;
+        }
         label {
+          font-size: 15pt;
+          @include tablet {
+            font-size: 14pt;
+          }
           @include desktop {
             font-size: 18pt;
           }
         }
         textarea {
-          width: 150px;
-          height: 35px;
+          width: 179px;
+          height: 45px;
           position: absolute;
           right: 0;
           border: none;
@@ -451,35 +503,49 @@ $fontfamily: "Kanit", sans-serif;
           @include big-desktop {
             width: 100%;
             position: relative;
+            height: 50px;
           }
         }
       }
       .submit-input-container {
         width: 200px;
         margin: 15px auto;
+
         @include small-tablet {
           width: 280px;
           margin: 15px auto;
         }
+
         @include desktop {
           width: 300px;
           position: relative;
           margin: 30px auto;
         }
         @include big-desktop {
-          margin: 5px auto;
+          margin: 17px auto;
+          width: 250px;
         }
         .submit-button {
+          margin-top: 25px;
           text-align: center;
-          height: 30px;
+          height: 50px;
           width: 97%;
           background-color: #fccc5c;
           border-radius: 5px;
-
+          @include tablet {
+            margin-top: 30px;
+            width: 300px;
+            height: 40px;
+            font-size: 24px;
+          }
           @include desktop {
             width: 300px;
             height: 40px;
             font-size: 24px;
+            margin-top: 0px;
+          }
+          @include desktop {
+            width: 250px;
           }
         }
       }
@@ -491,11 +557,12 @@ $fontfamily: "Kanit", sans-serif;
       display: block;
       grid-column: 1;
       grid-row: 3;
+      width: 90%;
     }
   }
 
   .map {
-    width: 0;
+    width: 100vw;
 
     @include desktop {
       width: 90%;
@@ -514,15 +581,13 @@ $fontfamily: "Kanit", sans-serif;
 
   .contactinfo-container {
     padding: 0.6em;
-    @include tablet {
-      padding: 0;
-      width: 100%;
-      margin: 0 auto;
-    }
+    padding: 0;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+
     @include desktop {
       width: 90%;
-      margin: 0 auto;
-      margin-left: 20px;
       grid-column: 3/5;
       grid-row: 4;
       border: 1px solid $graycolor;
@@ -535,6 +600,7 @@ $fontfamily: "Kanit", sans-serif;
     .soMe-icons {
       img {
         width: 30px;
+        margin-right: 20px;
         @include desktop {
           width: 50px;
           margin-right: 20px;
@@ -551,23 +617,20 @@ $fontfamily: "Kanit", sans-serif;
       margin-top: 15px;
       margin-left: 10px;
       @include tablet {
-        //width: 100%;
       }
       .phone,
       .address {
-        //display: flex;
-
         img {
+          display: inline-block;
           height: 20px;
           width: 15px;
           @include desktop {
-            display: inline-block;
           }
         }
         p {
           padding-left: 6px;
+          display: inline-block;
           @include desktop {
-            display: inline-block;
           }
         }
       }
@@ -575,6 +638,7 @@ $fontfamily: "Kanit", sans-serif;
   }
 
   .copyright {
+    font-size: 10pt;
     background-color: white;
     text-align: center;
     font-family: "Questrial", sans-serif;
