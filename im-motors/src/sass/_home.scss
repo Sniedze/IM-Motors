@@ -42,7 +42,7 @@ $fontfamily: "Kanit", sans-serif;
 }
 
 .home {
- 
+ width: 100vw;
   @include tablet {
     padding-top: 50px;
   }
@@ -57,7 +57,7 @@ $fontfamily: "Kanit", sans-serif;
 
   .membership-container {
     padding: 100px 0 150px 0;
-
+width: 100%;
     @include small-tablet {
       width: 100vw;
       margin: 0 auto;
@@ -87,11 +87,11 @@ $fontfamily: "Kanit", sans-serif;
     }
 
     img {
-      width: 60vw;
+      width: 250px;
       height: auto;
       position: absolute;
       right: 0;
-      top: 13em;
+      top: 12em;
       @include small-tablet {
         top: 170px;
         width: 250px;
@@ -103,7 +103,7 @@ $fontfamily: "Kanit", sans-serif;
       @include big-desktop {
         position: absolute;
         top: 280px;
-        right: 0;
+        
         width: 400px;
       }
     }
@@ -136,6 +136,9 @@ $fontfamily: "Kanit", sans-serif;
           color: #fccc5c;
           @include desktop {
             font-size: 2rem;
+          }
+          @include big-desktop {
+            font-size: 3rem;
           }
         }
         ul {
@@ -177,7 +180,7 @@ $fontfamily: "Kanit", sans-serif;
     background-color: #fccc5c;
     width: 100vw;
     @include big-desktop {
-      grid-column: 4/5;
+      grid-column: 2/3;
       grid-row: 2;
       width: 320px;
       height: 320px;
@@ -207,7 +210,7 @@ $fontfamily: "Kanit", sans-serif;
     background-color: white;
     padding: 20px;
     @include big-desktop {
-      grid-column: 2/4;
+      grid-column: 3/5;
       grid-row: 2;
       width: 100%;
       margin: 0 auto;
@@ -379,7 +382,7 @@ $fontfamily: "Kanit", sans-serif;
 
       padding: 1em;
       @include small-tablet {
-        padding: 0 20%;
+        padding: 20px 20%;
       }
       @include tablet {
         width: 85%;
