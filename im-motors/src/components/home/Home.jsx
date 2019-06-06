@@ -18,6 +18,7 @@ export default class Home extends Component {
         <Categories />
         <HomeFilter />
         <Reviews />
+        <VideoLink />
         <img id="car-back" src={carBack} alt="back of the car" />
         <div className="map">
           <iframe
