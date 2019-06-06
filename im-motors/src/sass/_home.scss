@@ -328,7 +328,8 @@ $fontfamily: "Kanit", sans-serif;
       height: 250px;
     }
     @include tablet {
-      height: 41vh;
+      height: 55vh;
+      background-image: url(../assets/bgforsearch.png);
     }
     @include big-desktop {
       height: 400px;
