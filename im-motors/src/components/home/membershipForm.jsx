@@ -18,7 +18,7 @@ class MembershipForm extends Component {
       <div className="membership-form">
         <h2> Just a few steps to get all benefits</h2>
         <div id="li-wrapper">
-          <li>- Discount for the first purchase</li>
+          <li>- 10% Discount for the first purchase</li>
           <li>- Get free cinema tickets</li>
           <li>- Collect loyalty points</li>
         </div>

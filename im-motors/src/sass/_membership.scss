@@ -14,12 +14,16 @@
   }
 }
 .membership-form {
+  
   @include desktop {
-    padding: 50px 15px 15px 15px;
+      padding: 50px 15px 15px 15px;}
     h2 {
       font-size: 2em;
+      @include tablet{
+        margin-top: 130px;
+      }
     }
-  }
+  
   padding: 90px 15px 15px 15px;
   .membership-form-container {
     width: 90vw;
@@ -44,6 +48,7 @@
         label {
           color: black;
           margin-bottom: 0;
+         
         }
       }
       .submit-button-container {

@@ -42,13 +42,17 @@
   }
   @include tablet {
     padding: 15%;
+   
   }
   @include desktop {
     width: 60vw;
     padding: 5%;
   }
   h2 {
-    margin-top: 40px;
+    margin-top: 70px;
+    @include desktop {
+      margin-top: 150px;
+    }
   }
   .carousel {
     position: relative;
