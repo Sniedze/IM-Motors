@@ -9,7 +9,7 @@ class BookingTestDrive extends Component {
     name: null,
     email: null,
     phone: null,
-    startDate: new Date(),
+    testDate: new Date(),
     bookingfeedbackMessage: false
   };
 
@@ -20,6 +20,7 @@ class BookingTestDrive extends Component {
   };
   handleCloseFeedback = () => {
     this.setState({ bookingfeedbackMessage: false });
+    this.props.closeModal();
   };
 
   handleChange = e => {
@@ -29,17 +30,29 @@ class BookingTestDrive extends Component {
   };
   handleDateChange = date => {
     this.setState({
-      startDate: date
+      testDate: date
     });
   };
   handleBookingTest = e => {
-    const user = this.state;
-    axios
-      .post(`http://5ccaeb4c54c8540014835107.mockapi.io/postmessage`, { user })
-      .then(res => {
-        console.log(res.data);
-      });
+    e.preventDefault();
+    const data = this.state;
+
+    fetch("https://immotors-65ac.restdb.io/rest/drivetestbooking ", {
+      async: true,
+      crossDomain: true,
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+        "x-apikey": "5ce2d6b1780a473c8df5c9ef",
+        "cache-control": "no-cache"
+      },
+      processData: false,
+      body: JSON.stringify(data)
+    }).then(response => {
+      response.json();
+    });
     e.target.reset();
+
     this.handleBookingFeedbackModal();
   };
   render() {
@@ -68,11 +81,14 @@ class BookingTestDrive extends Component {
           </div>
           <div className="form-group">
             <label> Email Address </label>
+            <span className="required">*</span>
+
             <input
               className="form-control"
               id="email"
               type="email"
               onChange={this.handleChange}
+              required
             />
           </div>
           <div className="form-group">
@@ -91,7 +107,7 @@ class BookingTestDrive extends Component {
             <DatePicker
               id="date"
               className="form-control"
-              selected={this.state.startDate}
+              selected={this.state.testDate}
               onChange={this.handleDateChange}
             />
           </div>
