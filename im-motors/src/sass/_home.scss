@@ -71,6 +71,7 @@ $fontfamily: "Kanit", sans-serif;
       @include display-grid;
       grid-gap: 15px;
       grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, auto);
     }
     @include big-desktop {
       padding: 35px 0 15px 0;
@@ -85,12 +86,12 @@ $fontfamily: "Kanit", sans-serif;
       margin-top: 17px;
     }
 
-    img {
-      width: 60vw;
+    .car-front {
+      width: 150px;
       height: auto;
       position: absolute;
       right: 0;
-      top: 13em;
+      top: 15em;
       @include small-tablet {
         top: 170px;
         width: 250px;
@@ -98,6 +99,8 @@ $fontfamily: "Kanit", sans-serif;
       @include tablet {
         height: auto;
         top: 130px;
+        grid-column: 2;
+        grid-row:2;
       }
       @include big-desktop {
         position: absolute;
