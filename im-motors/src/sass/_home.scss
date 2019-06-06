@@ -253,6 +253,9 @@ $fontfamily: "Kanit", sans-serif;
       @include big-desktop {
       }
     }
+    h3 {
+      color: #e52528;
+    }
     .arrow {
       width: 30px;
       position: absolute;
