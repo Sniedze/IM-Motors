@@ -163,6 +163,67 @@ $fontfamily: "Kanit", sans-serif;
         }
       }
     }
+    .video-container {
+      cursor: pointer;
+      position: absolute;
+      padding: 10px;
+      border-radius: 10px;
+      width: 180px;
+      height: 100px;
+      background-color: #fccc5c;
+      top: 280px;
+      left: 45px;
+      @include tablet {
+        position: absolute;
+        width: 180px;
+        height: 170px;
+        top: 0;
+        left: 0;
+        position: relative;
+        grid-row: 1;
+        grid-column: 2;
+        padding: 20px;
+      }
+      @include big-desktop {
+        grid-row: 2;
+        grid-column: 1;
+        width: 50%;
+        height: 100px;
+        margin: 25px auto 0 45px;
+      }
+
+      a {
+        @include display-grid;
+        grid-template-columns: (2fr 1fr);
+        color: black;
+        &:hover {
+          text-decoration: none;
+        }
+        p {
+          @include tablet {
+            font-size: 15pt;
+            @include big-desktop {
+              font-size: 18pt;
+              padding: 8px auto;
+            }
+          }
+        }
+
+        .play-button {
+          width: 30px;
+          margin: 55px 8px auto 8px;
+          @include tablet {
+            margin-top: 99px;
+          }
+          @include desktop {
+            width: 40px;
+          }
+          @include big-desktop {
+            margin: 35px 10px auto auto;
+          }
+        }
+      }
+    }
   }
 
   .offers-container {
