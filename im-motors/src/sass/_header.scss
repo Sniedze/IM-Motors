@@ -31,18 +31,14 @@
   background-color: $graycolor;
   z-index: 500;
   @include tablet {
-    
     @include display-grid;
     grid-template-columns: repeat(2, auto);
   }
   @include small-tablet {
-    
   }
   @include desktop {
-   
   }
   @include big-desktop {
-    
   }
   a {
     @include tablet {
@@ -51,7 +47,6 @@
       margin-top: 5%;
     }
     @include tablet {
-      
       margin: 25px auto 25px 25px;
     }
 
@@ -84,7 +79,7 @@
     }
   }
   .active {
-    border-bottom: red 3px solid;
+    border-bottom: #e52528 3px solid;
   }
 
   nav {
@@ -128,9 +123,8 @@
           color: black;
           font-family: $fontfamily;
           @include tablet {
-      margin-left: 10px;
+            margin-left: 10px;
           }
-      
         }
         a:hover {
           color: #999b98;
