@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import FeedBackModal from "../FeedbackModal";
-import MembershipContactForm from "../membershipContactForm";
 class MembershipForm extends Component {
   state = {
     firstname: null,
