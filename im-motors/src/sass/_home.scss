@@ -339,10 +339,11 @@ $fontfamily: "Kanit", sans-serif;
       grid-template-columns: (1fr 1.5fr);
     }
     h2 {
-      color: black;
+      color: #fccc5c;
       padding-top: 1em;
       @include big-desktop {
-        padding: 16vh;
+        padding-top: 180px;
+        font-size: 26pt;
       }
     }
     .main-container {
