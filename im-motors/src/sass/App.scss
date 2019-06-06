@@ -38,10 +38,18 @@ html {
     }
     p {
       font-family: "PT Sans", sans-serif;
+      @include desktop {
+        font-size: 16pt;
+        
+      }
     }
     h2 {
       font-size: 19pt;
       text-align: center;
+      @include desktop {
+        font-size: 22pt;
+        
+      }
     }
     h1,
     h2,
