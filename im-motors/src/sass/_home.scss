@@ -246,8 +246,7 @@ $fontfamily: "Kanit", sans-serif;
     }
     @include tablet {
       height: 55vh;
-      background-image: url(../assets/side-car.png);
-      background-position: 50%;
+      background-image: url(../assets/bgforsearch.png);
     }
     @include big-desktop {
       height: 400px;
