@@ -310,7 +310,8 @@ $fontfamily: "Kanit", sans-serif;
     }
     @include tablet {
       height: 55vh;
-      background-image: url(../assets/bgforsearch.png);
+      background-image: url(../assets/side-car.png);
+      background-position: 50%;
     }
     @include big-desktop {
       height: 400px;
@@ -321,7 +322,7 @@ $fontfamily: "Kanit", sans-serif;
       grid-template-columns: (1fr 1.5fr);
     }
     h2 {
-      color: #fccc5c;
+      color: white;
       padding-top: 1em;
       @include big-desktop {
         padding-top: 180px;
