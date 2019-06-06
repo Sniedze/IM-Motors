@@ -25,7 +25,7 @@
 
 .header {
   position: fixed;
-  width: 100vw;
+  width: 100%;
   padding: 0.5em;
   border-bottom: 2px solid darkgray;
   background-color: $graycolor;
@@ -39,7 +39,7 @@
     
   }
   @include desktop {
-    width: 100vw;
+   
   }
   @include big-desktop {
     
@@ -52,7 +52,7 @@
     }
     @include tablet {
       
-      margin: 25px 0 25px 25px;
+      margin: 25px auto 25px 25px;
     }
 
     .logoImage {
@@ -120,7 +120,7 @@
           font-size: 2.8vw;
         }
         @include big-desktop {
-          font-size: 1.5vw;
+          font-size: 1.8vw;
         }
 
         a {

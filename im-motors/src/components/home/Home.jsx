@@ -5,7 +5,7 @@ import HomeFilter from "./filter/HomeFilter";
 import Categories from "./Categories";
 import TeenagerOffers from "./TeenagerOffers";
 import LandingPFooter from "./landingPFooter";
-import VideoLink from "../video/videoLink";
+
 import "../../../node_modules/video-react/dist/video-react.css";
 import carBack from "../../assets/car-back.png";
 
@@ -18,7 +18,7 @@ export default class Home extends Component {
         <Categories />
         <HomeFilter />
         <Reviews />
-        <VideoLink />
+       
         <img id="car-back" src={carBack} alt="back of the car" />
         <div className="map">
           <iframe

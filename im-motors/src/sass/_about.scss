@@ -47,6 +47,13 @@ $fontfamily: "Kanit", sans-serif;
     font-size: 16pt;
     grid-area: text;
     margin: 0 auto;
+    @include small-tablet{
+margin-top: 70px;
+    }
+    @include tablet{
+      margin-top: 150px;
+          }
+    
   }
 
   .form-container {

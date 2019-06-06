@@ -27,11 +27,14 @@ $redcolor: #e52528;
   }
 }
 html {
+  overflow-y: overlay;
   padding: 0;
-  width: 100%;
+  max-width: 100%;
   body {
-    margin: 0;
+    overflow-y: overlay;
+    margin: auto;
     background-color: #cecece !important;
+    width: 100%;
 
     li {
       font-family: "Kanit", sans-serif;
@@ -40,7 +43,6 @@ html {
       font-family: "PT Sans", sans-serif;
       @include desktop {
         font-size: 16pt;
-        
       }
     }
     h2 {
@@ -48,7 +50,6 @@ html {
       text-align: center;
       @include desktop {
         font-size: 22pt;
-        
       }
     }
     h1,

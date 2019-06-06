@@ -30,7 +30,7 @@
   justify-content: space-around;
 }
 .footer {
-  width: 100vw;
+  width: 100%;
   .contactinfo-container {
     @include flex-display;
     flex-direction: column;
