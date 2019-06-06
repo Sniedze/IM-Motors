@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 // import "./bootstrap/dist/css/bootstrap.min.css";
-import FeedBackModal from "./FeedbackModal";
 class MembershipContactForm extends Component {
   state = {
     firstname: null,
@@ -8,37 +7,11 @@ class MembershipContactForm extends Component {
     email: null,
     message: null
   };
-  handleChange = e => {
-    this.setState({
-      [e.target.id]: e.target.value
-    });
-  };
-  handleSubmit = event => {
-    event.preventDefault();
-    const data = this.state;
-
-    fetch("https://immotors-65ac.restdb.io/rest/membership-contact-form", {
-      async: true,
-      crossDomain: true,
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-        "x-apikey": "5ce2d6b1780a473c8df5c9ef",
-        "cache-control": "no-cache"
-      },
-      processData: false,
-      body: JSON.stringify(data)
-    }).then(response => {
-      response.json();
-    });
-    event.target.reset();
-    this.props.submitBtnHandler();
-  };
 
   render() {
     return (
       <div className="form-container membership-form-container">
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.props.handleSubmit}>
           <div className=" form-group ">
             <label htmlFor="firstname">First name</label>
             <span className="required">*</span>
@@ -47,7 +20,7 @@ class MembershipContactForm extends Component {
               type="text"
               id="firstname"
               className="form-control"
-              onChange={this.handleChange}
+              onChange={this.props.handleChange}
               required
             />
           </div>
@@ -57,7 +30,7 @@ class MembershipContactForm extends Component {
               type="text"
               id="lastname"
               className="form-control"
-              onChange={this.handleChange}
+              onChange={this.props.handleChange}
             />
           </div>
           <div className="form-group">
@@ -67,7 +40,7 @@ class MembershipContactForm extends Component {
               type="text"
               id="email"
               className="form-control"
-              onChange={this.handleChange}
+              onChange={this.props.handleChange}
               required
             />
           </div>
@@ -77,14 +50,13 @@ class MembershipContactForm extends Component {
               type="text"
               id="message"
               className="form-control"
-              onChange={this.handleChange}
+              onChange={this.props.handleChange}
             />
           </div>
           <div className="submit-button-container">
             <button className="submit-button">Submit</button>
           </div>
         </form>
-        <FeedBackModal username={this.state.firstname} />
       </div>
     );
   }
