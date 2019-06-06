@@ -117,7 +117,7 @@ export default class Car extends Component {
             {" "}
             <strong>{d}</strong>
           </span>{" "}
-          and get extra ...
+          and get 50% discount on GPS device
         </p>
         <div className="kellyblue-booking-wrapper">
           <div className="kelly-container">
