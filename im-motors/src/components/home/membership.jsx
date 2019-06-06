@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import CarImage from "../../assets/car-side.png";
-
+import VideoLink from "../video/videoLink";
 import Arrow from "../../assets/forward-arrow.png";
 class Membership extends Component {
   state = {};
@@ -19,7 +19,8 @@ class Membership extends Component {
             <img className="arrow" src={Arrow} alt="arrow" />
           </section>
         </Link>
-        <img src={CarImage} alt="car" />
+        <VideoLink />
+        <img className="car-front" src={CarImage} alt="car" />
       </div>
     );
   }

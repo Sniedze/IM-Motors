@@ -31,6 +31,7 @@
 }
 
 .carList {
+  width: 100%;
   padding-top: 80px;
   h3 {
     padding: 20px;
@@ -40,13 +41,13 @@
     }
   }
   button {
-    padding: 15px;
+    padding: 10px;
     font-size: 13pt;
     margin: 0 0px;
     background-color: #fccc5c;
     border-radius: 10px;
   }
-  #priceAsc{
+  #priceAsc {
     margin-left: 20px;
   }
   .car-posts {
