@@ -119,7 +119,6 @@ export default class HomeFilter extends Component {
               make={this.state.Manufacturer}
               model={this.state.Model}
               year={this.state.Year}
-              makerList={uniqueMakerList}
             />
           </div>
         </div>

@@ -1,41 +1,42 @@
+@mixin flex-display {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+@mixin tablet {
+  @media only screen and (min-width: 570px) {
+    @content;
+  }
+}
+@mixin small-tablet {
+  @media only screen and (min-width: 400px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media only screen and (min-width: 900px) {
+    @content;
+  }
+}
+@mixin big-desktop {
+  @media only screen and (min-width: 1300px) {
+    @content;
+  }
+}
+@mixin display-grid {
+  display: -ms-grid;
+  display: grid;
+}
+
 .special-offers {
-  @mixin flex-display {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-  }
-
-  @mixin tablet {
-    @media only screen and (min-width: 570px) {
-      @content;
-    }
-  }
-  @mixin small-tablet {
-    @media only screen and (min-width: 400px) {
-      @content;
-    }
-  }
-
-  @mixin desktop {
-    @media only screen and (min-width: 900px) {
-      @content;
-    }
-  }
-  @mixin big-desktop {
-    @media only screen and (min-width: 1300px) {
-      @content;
-    }
-  }
-  @mixin display-grid {
-    display: -ms-grid;
-    display: grid;
-  }
   #gps {
     color: #e52528;
   }
   .carList {
     padding-top: 80px;
-    .car-posts {
+    .car-post {
       @include tablet {
         @include display-grid;
         grid-template-columns: repeat(2, 1fr);
@@ -45,6 +46,7 @@
         grid-template-columns: repeat(3, 1fr);
       }
       @include big-desktop {
+        padding-top: 180px;
         @include display-grid;
         grid-template-columns: repeat(4, 1fr);
         grid-gap: 30px;

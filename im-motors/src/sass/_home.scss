@@ -613,6 +613,7 @@ $fontfamily: "Kanit", sans-serif;
           width: 97%;
           background-color: #fccc5c;
           border-radius: 5px;
+          border: none;
           @include tablet {
             margin-top: 30px;
             width: 300px;
@@ -625,7 +626,9 @@ $fontfamily: "Kanit", sans-serif;
             font-size: 24px;
             margin: 0px auto;
           }
-          
+          @include big-desktop {
+            width: 250px;
+          }
         }
       }
     }

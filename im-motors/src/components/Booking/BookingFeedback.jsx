@@ -6,8 +6,6 @@ class BookingFeedback extends Component {
     if (this.props.showBookingFeedback) {
       bookingfeedbackClasses = "b-feedback-modal b-feedback-open";
     }
-    console.log(this.props);
-
     return (
       <div className={bookingfeedbackClasses}>
         <h1>Dear Customer</h1>

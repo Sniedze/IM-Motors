@@ -47,13 +47,12 @@ $fontfamily: "Kanit", sans-serif;
     font-size: 16pt;
     grid-area: text;
     margin: 0 auto;
-    @include small-tablet{
-margin-top: 70px;
+    @include small-tablet {
+      margin-top: 70px;
     }
-    @include tablet{
+    @include tablet {
       margin-top: 150px;
-          }
-    
+    }
   }
 
   .form-container {
@@ -80,6 +79,7 @@ margin-top: 70px;
         height: 40px;
         background-color: #fccc5c;
         border-radius: 5px;
+        border: none;
       }
     }
   }

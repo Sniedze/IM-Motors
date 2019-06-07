@@ -33,7 +33,6 @@
     margin: 0 auto;
   }
   h2 {
-    
     margin-left: 1em;
     @include tablet {
       font-size: 22pt;
@@ -168,6 +167,7 @@
         height: 40px;
         background-color: #fccc5c;
         border-radius: 5px;
+        border: none;
       }
     }
   }
